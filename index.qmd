@@ -1,0 +1,15 @@
+---
+title: "personal_website_v2.2023-03-05"
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{r}
+#R
+1 + 1
+```
+
+
+

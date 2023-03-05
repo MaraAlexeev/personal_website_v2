@@ -1,0 +1,20 @@
+project:
+  type: website
+
+website:
+  title: "Mara Alexeev's Website"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - posts.qmd # add your posts.qmd file to your navbar!
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

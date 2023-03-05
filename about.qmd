@@ -1,0 +1,16 @@
+---
+title: "About Me"
+---
+
+# Who am I?
+
+My name is Mara Alexeev. I currently live in Jersey City, New Jersey, but I grew up on a farm in central Iowa. In fourth grade I was in love with space and wanted to be a part time astronaut and part time farmer.
+
+In the summer of 2022, I finished a masters in Biomedical Informatics at Harvard Medical School and a fellowship in Clinical Informatics at Boston Children's Hospital. My primary medical specialty is Pediatrics.
+
+Currently, I am the Director of Clinical Informatics at a health tech start up called Dandelion Health.
+
+I love learning human and computer languages. I’ve had a long love affair with Russian and German, and recently became interested in American Sign Language (and also the Russian Manual Alphabet!) and thinking about learning Norwegian. On the computer front, I’m always learning more  Python, R, and SQL. I enjoy data visualization and reproducible analysis and research.
+
+Interested in connecting or collaborating? [Send me a message on Linkedin](https://www.linkedin.com/in/maraalexeev/)!
+

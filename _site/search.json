@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Who am I?\nMy name is Mara Alexeev. I currently live in Jersey City, New Jersey, but I grew up on a farm in central Iowa. In fourth grade I was in love with space and wanted to be a part time astronaut and part time farmer.\nIn the summer of 2022, I finished a masters in Biomedical Informatics at Harvard Medical School and a fellowship in Clinical Informatics at Boston Children’s Hospital. My primary medical specialty is Pediatrics.\nCurrently, I am the Director of Clinical Informatics at a health tech start up called Dandelion Health.\nI love learning human and computer languages. I’ve had a long love affair with Russian and German, and recently became interested in American Sign Language (and also the Russian Manual Alphabet!) and thinking about learning Norwegian. On the computer front, I’m always learning more Python, R, and SQL. I enjoy data visualization and reproducible analysis and research.\nInterested in connecting or collaborating? Send me a message on Linkedin!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "personal_website_v2.2023-03-05",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n#R\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Mara’s Blog",
+    "section": "",
+    "text": "No matching items"
+  }
+]

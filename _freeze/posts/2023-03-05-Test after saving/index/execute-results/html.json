@@ -1,0 +1,14 @@
+{
+  "hash": "c60726a23eced75aa04d0a673975c80d",
+  "result": {
+    "markdown": "---\ntitle: Test after saving\nauthor: 'Mara Alexeev'\ndate: 2023-03-05\ndate-modified: '2023-03-05'\ncategories: [How-to,R,Python,Medicine,Family Life,Cooking]\ndraft: true\ndescription: ''\nimage: ''\narchives:\n  - function () ,.Internal(date())\ntoc: false\n\nformat:\n  html:\n    code-fold: show\n    code-tools: true\n---\n\n\n# Introduction\n\n# Conclusion\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
