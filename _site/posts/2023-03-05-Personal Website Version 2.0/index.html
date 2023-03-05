@@ -219,11 +219,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol type="1">
 <li><p>Make writing posts easy. Quarto does not have an add-in (yet) like Blogdown does to create a new blog post. So I leaned very, very heavily on <a href="https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/">Mark Edney’s R-Blogger’s post</a> on how to make a handy Shiny app to take the thinking out of setting up each blog post. The rough part of being just excited enough to blog, but with huge time constraints is that I might go months in between posting and inevitably forget things and it frustrates me.</p></li>
 <li><p>Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from <a href="https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/">a post by Samantha Csik.</a></p></li>
-<li><p>Enable discussions on my blog. I don’t think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it.</p></li>
+<li><p>Enable discussions on my blog. I don’t think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.</p></li>
 </ol>
 <section id="shiny-app-for-blog-post-creation" class="level2">
 <h2 class="anchored" data-anchor-id="shiny-app-for-blog-post-creation">Shiny App for Blog Post Creation</h2>
-<p>For setting up the Shiny App, the only major change I did was to make a multi-select option for categories for my blog post template from Mark’s original work. This is nice because it helps me make sure I am not duplicating categories (eg Medicine and medicine) because categories are case sensitive. I also added a <code>data-modified</code> section to my template because I like to capture when I update a post.</p>
+<p>For setting up the Shiny App, the only major change I did was to make a multi-select option for categories for my blog post template from Mark’s original work. This is nice because it helps me make sure I am not duplicating categories (eg Medicine and medicine) because categories are case sensitive. I also added a <code>data-modified</code> section to my template because I like to capture when I update a post. Also, I love the YAML template including <code>draft = 'true'</code> to harder to accidentally post a draft version of your post.</p>
 <p>Here’s the whole app below.</p>
 <div class="cell">
 <details>
@@ -307,6 +307,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+</section>
+<section id="blog-on-a-quarto-website" class="level2">
+<h2 class="anchored" data-anchor-id="blog-on-a-quarto-website">Blog on a Quarto Website</h2>
+<p>Samantha points out that a Quarto Blog is just a special point of a Quarto website. I actually got a little concerned about using Quarto as my blog because the directions of how to set up the individual posts had a lot of steps that I was worried I would not be able to do consistently over time. That’s when I thought to write a script to do it for me, and instead was saved several hours of work by Mark’s post.</p>
+</section>
+<section id="giscus" class="level2">
+<h2 class="anchored" data-anchor-id="giscus">giscus</h2>
+<p>Okay, so this is the main thrust of this post: Giscus. Which has painfully cute name. I was actually able to set it up on a test Quarto Book project, but of course that was months ago, and I can’t remember the process because I didn’t write it down! So for myself and for everyone else, here I go!</p>
+<p>First, why did I choose <a href="https://github.com/giscus/giscus">giscus</a>? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don’t use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page.</p>
+</section>
+</section>
+<section id="other-fiddly-things-with-quarto-website" class="level1">
+<h1>Other fiddly things with Quarto Website</h1>
+<section id="deploy-to-netlify" class="level2">
+<h2 class="anchored" data-anchor-id="deploy-to-netlify">Deploy to Netlify</h2>
+<p>https://quarto.org/docs/publishing/netlify.html</p>
 </section>
 </section>
 <section id="conclusion" class="level1">
@@ -531,11 +547,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>2) Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from <span class="co">[</span><span class="ot">a post by Samantha Csik.</span><span class="co">](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)</span></span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>3) Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it.</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>3) Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.</span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Shiny App for Blog Post Creation</span></span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>For setting up the Shiny App, the only major change I did was to make a multi-select option for categories for my blog post template from Mark's original work. This is nice because it helps me make sure I am not duplicating categories (eg Medicine and medicine) because categories are case sensitive. I also added a <span class="in">`data-modified`</span> section to my template because I like to capture when I update a post.</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>For setting up the Shiny App, the only major change I did was to make a multi-select option for categories for my blog post template from Mark's original work. This is nice because it helps me make sure I am not duplicating categories (eg Medicine and medicine) because categories are case sensitive. I also added a <span class="in">`data-modified`</span> section to my template because I like to capture when I update a post. Also, I love the YAML template including <span class="in">`draft = 'true'`</span> to harder to accidentally post a draft version of your post.</span>
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>Here's the whole app below.</span>
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
@@ -629,11 +645,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## giscus</span></span>
 <span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>Okay, so this is the main thrust of this post. </span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>Okay, so this is the main thrust of this post: Giscus. Which has painfully cute name. I was actually able to set it up on a test Quarto Book project, but of course that was months ago, and I can't remember the process because I didn't write it down! So for myself and for everyone else, here I go!</span>
 <span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusion</span></span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>First, why did I choose <span class="co">[</span><span class="ot">giscus</span><span class="co">](https://github.com/giscus/giscus)</span>? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don't use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page. </span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="fu"># Other fiddly things with Quarto Website</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deploy to Netlify</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>https://quarto.org/docs/publishing/netlify.html</span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusion</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

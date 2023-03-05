@@ -27,11 +27,11 @@ Three things I wanted out of the new website:
 
 2) Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from [a post by Samantha Csik.](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)
 
-3) Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it.
+3) Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.
 
 ## Shiny App for Blog Post Creation
 
-For setting up the Shiny App, the only major change I did was to make a multi-select option for categories for my blog post template from Mark's original work. This is nice because it helps me make sure I am not duplicating categories (eg Medicine and medicine) because categories are case sensitive. I also added a `data-modified` section to my template because I like to capture when I update a post.
+For setting up the Shiny App, the only major change I did was to make a multi-select option for categories for my blog post template from Mark's original work. This is nice because it helps me make sure I am not duplicating categories (eg Medicine and medicine) because categories are case sensitive. I also added a `data-modified` section to my template because I like to capture when I update a post. Also, I love the YAML template including `draft = 'true'` to harder to accidentally post a draft version of your post.
 
 Here's the whole app below.
 
@@ -125,7 +125,17 @@ Samantha points out that a Quarto Blog is just a special point of a Quarto websi
 
 ## giscus
 
-Okay, so this is the main thrust of this post. 
+Okay, so this is the main thrust of this post: Giscus. Which has painfully cute name. I was actually able to set it up on a test Quarto Book project, but of course that was months ago, and I can't remember the process because I didn't write it down! So for myself and for everyone else, here I go!
+
+First, why did I choose [giscus](https://github.com/giscus/giscus)? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don't use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page. 
+
+
+# Other fiddly things with Quarto Website
+
+## Deploy to Netlify
+
+https://quarto.org/docs/publishing/netlify.html
+
 
 
 # Conclusion

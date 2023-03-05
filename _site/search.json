@@ -9,7 +9,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "personal_website_v2.2023-03-05",
+    "title": "Mara’s Website",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n#R\n1 + 1\n\n[1] 2"
   },
@@ -18,6 +18,13 @@
     "href": "posts.html",
     "title": "Mara’s Blog",
     "section": "",
-    "text": "No matching items"
+    "text": "A sticky bun, but not every day\n\n\n\nR\n\n\nQuarto\n\n\nFamily Life\n\n\n\nSolving a cafe mystery\n\n\n\nMara Alexeev\n\n\nFeb 26, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2023-02-26-A sticky bun, but not every day/index.html",
+    "href": "posts/2023-02-26-A sticky bun, but not every day/index.html",
+    "title": "A sticky bun, but not every day",
+    "section": "",
+    "text": "In the summer of 2020 we moved to Brookline, MA. Our routine immediately developed that we would do daycare drop off and then stop by Temptations Cafe (Hi Nassib!!) We particularly enjoyed their sticky buns, but it took us about 128 trips to the cafe to understand the pattern of when sticky buns were available or not.\nHere I have made a github style waffle plot, that I believe makes the pattern of when sticky buns are available clearer. We finally noticed what the pattern was in October, when the days sticky buns were available increased."
   }
 ]
