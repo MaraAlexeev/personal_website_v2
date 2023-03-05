@@ -19,7 +19,7 @@ format:
 
 # Introduction
 
-I wanted to move away from my "original" blogdown method of blogging because I am really enthused about how great Quarto is. My blogdown project had accumulated so much code debris over the years because I started it when I was first learning to code, that it seemed easier to just take the posts and migrate them to a new Quarto Website + Blog than correcting all the mistakes accumulated over 4 years.
+I wanted to move away from my "original" blogdown method of blogging because I am really enthused about how great Quarto is. My blogdown project had accumulated so much code debris over the years because I started it when I was first learning to code, that it seemed easier to just take the posts and migrate them to a new Quarto Website + Blog than correcting all the mistakes accumulated over 4 years. I am initially going to post this on Github Pages, but once I have migrated content from my old site, I will reassign this repo to my Netlify account to deploy to my personalized domain.
 
 Three things I wanted out of the new website:
 
@@ -129,12 +129,19 @@ Okay, so this is the main thrust of this post: Giscus. Which has painfully cute 
 
 First, why did I choose [giscus](https://github.com/giscus/giscus)? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don't use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page. 
 
+## giscus steps
 
-# Other fiddly things with Quarto Website
+1)
 
-## Deploy to Netlify
+# Other fiddly things with Quarto Website to do
 
-https://quarto.org/docs/publishing/netlify.html
+Deploy this to my personal domain with Netlify.
+
+Transfer over my old posts to here.
+
+Get my CV links up here.
+
+Long term, figure out how to make it prettier.
 
 
 
