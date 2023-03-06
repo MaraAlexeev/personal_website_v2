@@ -214,7 +214,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>I wanted to move away from my “original” blogdown method of blogging because I am really enthused about how great Quarto is. My blogdown project had accumulated so much code debris over the years because I started it when I was first learning to code, that it seemed easier to just take the posts and migrate them to a new Quarto Website + Blog than correcting all the mistakes accumulated over 4 years.</p>
+<p>I wanted to move away from my “original” blogdown method of blogging because I am really enthused about how great Quarto is. My blogdown project had accumulated so much code debris over the years because I started it when I was first learning to code, that it seemed easier to just take the posts and migrate them to a new Quarto Website + Blog than correcting all the mistakes accumulated over 4 years. I am initially going to post this on Github Pages, but once I have migrated content from my old site, I will reassign this repo to my Netlify account to deploy to my personalized domain.</p>
 <p>Three things I wanted out of the new website:</p>
 <ol type="1">
 <li><p>Make writing posts easy. Quarto does not have an add-in (yet) like Blogdown does to create a new blog post. So I leaned very, very heavily on <a href="https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/">Mark Edney’s R-Blogger’s post</a> on how to make a handy Shiny app to take the thinking out of setting up each blog post. The rough part of being just excited enough to blog, but with huge time constraints is that I might go months in between posting and inevitably forget things and it frustrates me.</p></li>
@@ -317,13 +317,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Okay, so this is the main thrust of this post: Giscus. Which has painfully cute name. I was actually able to set it up on a test Quarto Book project, but of course that was months ago, and I can’t remember the process because I didn’t write it down! So for myself and for everyone else, here I go!</p>
 <p>First, why did I choose <a href="https://github.com/giscus/giscus">giscus</a>? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don’t use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page.</p>
 </section>
+<section id="giscus-steps" class="level2">
+<h2 class="anchored" data-anchor-id="giscus-steps">giscus steps</h2>
+<ol type="1">
+<li><p>You have to add giscus as an app on Github.</p></li>
+<li><p>Depending on your settings, you additionally may need to add the repo of interest to you configuration settings on giscus.</p></li>
+<li><p>Enable discussions on your repo (settings -&gt; features -&gt; discussions).</p></li>
+<li><p>Go to <a href="https://giscus.app/">giscus.app</a> and follow instructions there and it will give you some good information like repo-id which you will need to put in your <code>_quarto.yml</code>.</p></li>
+<li><p>Take the information from the giscus.app and update your <code>_quarto.yml</code> to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the <code>_quarto.yml</code>.</p></li>
+</ol>
+<p>Paste the output and what ended up working:</p>
+<ol start="6" type="1">
+<li>For pages you don’t want to have comments on put in the yaml header of that page <code>comments: false</code>. I do this for my blog post listing page and my about page.</li>
+</ol>
 </section>
-<section id="other-fiddly-things-with-quarto-website" class="level1">
-<h1>Other fiddly things with Quarto Website</h1>
-<section id="deploy-to-netlify" class="level2">
-<h2 class="anchored" data-anchor-id="deploy-to-netlify">Deploy to Netlify</h2>
-<p>https://quarto.org/docs/publishing/netlify.html</p>
 </section>
+<section id="other-fiddly-things-with-quarto-website-to-do" class="level1">
+<h1>Other fiddly things with Quarto Website to do</h1>
+<p>Deploy this to my personal domain with Netlify.</p>
+<p>Transfer over my old posts to here.</p>
+<p>Get my CV links up here.</p>
+<p>Long term, figure out how to make it prettier.</p>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
