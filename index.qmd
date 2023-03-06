@@ -1,8 +1,9 @@
 ---
 title: "Mara's Website"
+comments: false
 ---
 
-This is a Quarto website.
+This is a Quarto website with a blog.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
