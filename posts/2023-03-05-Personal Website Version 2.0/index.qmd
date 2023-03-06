@@ -131,7 +131,17 @@ First, why did I choose [giscus](https://github.com/giscus/giscus)? I loved that
 
 ## giscus steps
 
-1)
+1) You have to add giscus as an app on Github
+
+2) Depending on your settings, you additionally may need to add the repo of interest to you configuration settings on giscus
+
+3) Enable discussions on your repo (settings -> features -> discussions)
+
+4) Go to [giscus.app](https://giscus.app/) and follow instructions there and it will give you some good information like repo-id which you will need to put in your `_quarto.yml`
+
+3) Set up `_quarto.yml` to include information about the repo, giscus, and some ids.
+
+
 
 # Other fiddly things with Quarto Website to do
 
