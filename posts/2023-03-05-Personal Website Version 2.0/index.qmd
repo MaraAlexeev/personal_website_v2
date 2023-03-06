@@ -143,6 +143,8 @@ First, why did I choose [giscus](https://github.com/giscus/giscus)? I loved that
 
 Paste the output and what ended up working: 
 
+6) For pages you don't want to have comments on put in the yaml header of that page `comments: false`. I do this for my blog post listing page and my about page.
+
 
 
 
