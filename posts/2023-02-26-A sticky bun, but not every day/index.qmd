@@ -17,44 +17,51 @@ format:
     code-tools: true
 ---
 
-In the summer of 2020 we moved to Brookline, MA. Our routine immediately developed that we would do daycare drop off and then stop by Temptations Cafe (Hi Nassib!!) We particularly enjoyed their sticky buns, but it took us about 128 trips to the cafe to understand the pattern of when sticky buns were available or not. 
 
-Here I have made a github style waffle plot, that I believe makes the pattern of when sticky buns are available clearer. We finally noticed what the pattern was in October, when the days sticky buns were available increased.
-
-I copied the `gh_waffle` function from [Matti Vuorre's blog post](https://mvuorre.github.io/posts/2016-03-24-github-waffle-plot/) with some minor modifications.
 ```{r include = FALSE}
-knitr::opts_chunk$set(echo=FALSE)
+knitr::opts_chunk$set(echo=FALSE, warning = FALSE)
 
 library(readr)
 library(tidyverse)
 library(janitor)
 library(scales)
+```
 
+```{r}
 sticky_bun <- read_csv("./data/Sticky bun dataset - stick_bun.csv", 
     col_types = cols(`day of week` = col_integer()), 
     na = "0") |>
   janitor::clean_names()
 
+sticky_bun_visits <- nrow(sticky_bun)
+
 sticky_bun$date <- lubridate::as_date(sticky_bun$date)
+
+sticky_bun <- sticky_bun |>
+  group_by(date) |>
+  summarise(total_sticky_bun = sum(sticky_bun))
 
 sticky_bun <- sticky_bun |> 
   mutate(week = lubridate::week(date)) |>
-  replace_na(list(sticky_bun = 0)) |>
-  mutate(name_dow = lubridate::wday(day_of_week, label = TRUE, abbr = TRUE )) 
+  replace_na(list(total_sticky_bun = 0)) |>
+  mutate(name_dow = lubridate::wday(date, label = TRUE, abbr = TRUE )) |>
+  mutate(day_of_week = lubridate::wday(date)) |>
+  mutate(year = lubridate::year(date))
 
-sticky_bun$sticky_bun <- as.integer(sticky_bun$sticky_bun)
+distinct_dates <- sticky_bun |> distinct(date)
+
+sticky_bun <- sticky_bun |> select(date, day_of_week, total_sticky_bun, year, week, name_dow)
 ```
 ```{r}
-
 gh_waffle <- function(data, pal = "D", dir = -1) {
-  p <- ggplot(data, aes(x = week, y = name_dow, fill = sticky_bun)) +
+  p <- ggplot(data, aes(x = week, y = name_dow, fill = total_sticky_bun)) +
    
      scale_fill_viridis_c(
       name = "Sticky buns",
       option = pal, # Variable color palette
       direction = dir, # Variable color direction
     #  na.value = "yellow",
-      limits = c(0, max(data$sticky_bun))
+      limits = c(0, max(data$total_sticky_bun))
     ) +
     
    
@@ -65,37 +72,45 @@ gh_waffle <- function(data, pal = "D", dir = -1) {
 
      scale_x_continuous(
       expand = c(0, 0),
-      breaks = seq(1, 21, length = 5),
+      breaks = seq(1, 52, length = 12),
       labels = c(
-      #  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "July", "August", "September", "October", "November" #"Dec"
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
       )
     ) +
 
     theme(
       axis.title = element_blank(),
       axis.ticks = element_blank(), 
-      axis.text.y = element_text(size = 10),
+      axis.text.y = element_text(size = 7),
       panel.grid = element_blank(),
       legend.position = "bottom",
-      aspect.ratio = 1/7,
+    #  aspect.ratio = 1/7,
       legend.key.width = unit(1, "cm"),
       strip.text = element_text(hjust = 0.00, face = "bold", size = 12)
     )
 
   
 }
-
-```
-```{r, out}
-gh_waffle(sticky_bun) + 
-#  guides(fill="none") + 
-  labs(title = "Sticky Bun Purchases by Day of the Week")
-
 #improvements desired
 #better alignment of the month names
 #improve the gh_waffle graph function to not need the heavy manipulation
 #of the x scale
 ```
+
+In the summer of 2020 we moved to Brookline, MA. Our routine immediately developed that we would do daycare drop off and then stop by Temptations Cafe (Hi Nassib!!) We particularly enjoyed their sticky buns, but it took us about 128 trips to the cafe on 108 dates to recognize the pattern of when sticky buns were available or not. 
+
+Here I have made a github style waffle plot, that I believe makes the pattern of when sticky buns are available clearer. We finally noticed what the pattern was in October, when the days sticky buns were available increased.
+
+I copied the `gh_waffle` function from [Matti Vuorre's blog post](https://mvuorre.github.io/posts/2016-03-24-github-waffle-plot/) with some minor modifications.
+
+```{r}
+plot_sticky_bun <- gh_waffle(sticky_bun) + 
+  labs(title = "Sticky Bun Purchases by Day of the Week")
+
+plot_sticky_bun
+```
+
+
 
 

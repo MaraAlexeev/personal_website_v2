@@ -18,7 +18,7 @@
     "href": "posts/2023-02-26-A sticky bun, but not every day/index.html",
     "title": "A sticky bun, but not every day",
     "section": "",
-    "text": "In the summer of 2020 we moved to Brookline, MA. Our routine immediately developed that we would do daycare drop off and then stop by Temptations Cafe (Hi Nassib!!) We particularly enjoyed their sticky buns, but it took us about 128 trips to the cafe to understand the pattern of when sticky buns were available or not.\nHere I have made a github style waffle plot, that I believe makes the pattern of when sticky buns are available clearer. We finally noticed what the pattern was in October, when the days sticky buns were available increased.\nI copied the gh_waffle function from Matti Vuorre’s blog post with some minor modifications."
+    "text": "In the summer of 2020 we moved to Brookline, MA. Our routine immediately developed that we would do daycare drop off and then stop by Temptations Cafe (Hi Nassib!!) We particularly enjoyed their sticky buns, but it took us about 128 trips to the cafe on 108 dates to recognize the pattern of when sticky buns were available or not.\nHere I have made a github style waffle plot, that I believe makes the pattern of when sticky buns are available clearer. We finally noticed what the pattern was in October, when the days sticky buns were available increased.\nI copied the gh_waffle function from Matti Vuorre’s blog post with some minor modifications."
   },
   {
     "objectID": "posts.html",
