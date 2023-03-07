@@ -65,10 +65,10 @@ gh_waffle <- function(data, pal = "D", dir = -1) {
 
      scale_x_continuous(
       expand = c(0, 0),
-      breaks = seq(1, 52, length = 12),
+      breaks = seq(1, 21, length = 5),
       labels = c(
-        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "July", "August", "September", "October", "November", "Dec"
+      #  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "July", "August", "September", "October", "November" #"Dec"
       )
     ) +
 
