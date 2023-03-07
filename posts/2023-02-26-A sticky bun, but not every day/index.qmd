@@ -22,7 +22,6 @@ In the summer of 2020 we moved to Brookline, MA. Our routine immediately develop
 Here I have made a github style waffle plot, that I believe makes the pattern of when sticky buns are available clearer. We finally noticed what the pattern was in October, when the days sticky buns were available increased.
 
 I copied the `gh_waffle` function from [Matti Vuorre's blog post](https://mvuorre.github.io/posts/2016-03-24-github-waffle-plot/) with some minor modifications.
-
 ```{r include = FALSE}
 knitr::opts_chunk$set(echo=FALSE)
 
@@ -45,7 +44,6 @@ sticky_bun <- sticky_bun |>
 
 sticky_bun$sticky_bun <- as.integer(sticky_bun$sticky_bun)
 ```
-
 ```{r}
 
 gh_waffle <- function(data, pal = "D", dir = -1) {
@@ -70,14 +68,14 @@ gh_waffle <- function(data, pal = "D", dir = -1) {
       breaks = seq(1, 52, length = 12),
       labels = c(
         "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        "July", "August", "September", "October", "November", "Dec"
       )
     ) +
 
     theme(
       axis.title = element_blank(),
       axis.ticks = element_blank(), 
-      axis.text.y = element_text(size = 7),
+      axis.text.y = element_text(size = 10),
       panel.grid = element_blank(),
       legend.position = "bottom",
       aspect.ratio = 1/7,
@@ -89,10 +87,9 @@ gh_waffle <- function(data, pal = "D", dir = -1) {
 }
 
 ```
-
-```{r}
+```{r, out}
 gh_waffle(sticky_bun) + 
-  guides(fill="none") + 
+#  guides(fill="none") + 
   labs(title = "Sticky Bun Purchases by Day of the Week")
 
 #improvements desired

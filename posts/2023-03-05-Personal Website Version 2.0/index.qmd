@@ -146,7 +146,9 @@ Paste the output and what ended up working:
 6) For pages you don't want to have comments on put in the yaml header of that page `comments: false`. I do this for my blog post listing page and my about page.
 
 
+Problem: The giscus does not work as expected. Comments do not persist on the page and also do not show up at the bottom though they go to the discussions page. Also they have really strange names.
 
+Ideas: get ride of docs and have github page render from root.
 
 # Other fiddly things with Quarto Website to do
 
