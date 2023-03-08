@@ -156,6 +156,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="../../about.html">
  <span class="menu-text">About Me</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://maraalexeev.github.io/cv/">
+ <span class="menu-text">CV</span></a>
+  </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -339,7 +343,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Deploy this to my personal domain with Netlify.</p>
 <p>Transfer over my old posts to here.</p>
 <p>Get my CV links up here.</p>
+<ul>
+<li><p>This was actually much easier than expected! All you need to do for external links is put the following in the _quarto.yml file</p>
+<p><code>navbar:</code></p>
+<p><code>left:</code></p>
+<p><code>- href: index.qmd</code></p>
+<p><code>text: Home</code></p>
+<p><code>- posts.qmd # add your posts.qmd file to your navbar!</code></p>
+<p><code>- about.qmd</code></p>
+<p><code>- href: https://maraalexeev.github.io/cv/</code></p>
+<p><code>text: CV</code></p></li>
+</ul>
 <p>Long term, figure out how to make it prettier.</p>
+<ul>
+<li><p>Probably gonna finally need to learn some css</p></li>
+<li><p>img {</p>
+<p>max-width: 100%;</p>
+<p>}</p></li>
+</ul>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
@@ -561,11 +582,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>Three things I wanted out of the new website:</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>1) Make writing posts easy. Quarto does not have an add-in (yet) like Blogdown does to create a new blog post. So I leaned very, very heavily on <span class="co">[</span><span class="ot">Mark Edney's R-Blogger's post</span><span class="co">](https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/)</span> on how to make a handy Shiny app to take the thinking out of setting up each blog post. The rough part of being just excited enough to blog, but with huge time constraints is that I might go months in between posting and inevitably forget things and it frustrates me. </span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>1)  Make writing posts easy. Quarto does not have an add-in (yet) like Blogdown does to create a new blog post. So I leaned very, very heavily on <span class="co">[</span><span class="ot">Mark Edney's R-Blogger's post</span><span class="co">](https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/)</span> on how to make a handy Shiny app to take the thinking out of setting up each blog post. The rough part of being just excited enough to blog, but with huge time constraints is that I might go months in between posting and inevitably forget things and it frustrates me.</span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>2) Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from <span class="co">[</span><span class="ot">a post by Samantha Csik.</span><span class="co">](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>2)  Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from <span class="co">[</span><span class="ot">a post by Samantha Csik.</span><span class="co">](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)</span></span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>3) Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>3)  Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.</span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Shiny App for Blog Post Creation</span></span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
@@ -665,43 +686,65 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>Okay, so this is the main thrust of this post: Giscus. Which has painfully cute name. I was actually able to set it up on a test Quarto Book project, but of course that was months ago, and I can't remember the process because I didn't write it down! So for myself and for everyone else, here I go!</span>
 <span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>First, why did I choose <span class="co">[</span><span class="ot">giscus</span><span class="co">](https://github.com/giscus/giscus)</span>? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don't use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page. </span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>First, why did I choose <span class="co">[</span><span class="ot">giscus</span><span class="co">](https://github.com/giscus/giscus)</span>? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don't use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page.</span>
 <span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="fu">## giscus steps</span></span>
 <span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>1) You have to add giscus as an app on Github.</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>1)  You have to add giscus as an app on Github.</span>
 <span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>2) Depending on your settings, you additionally may need to add the repo of interest to you configuration settings on giscus.</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>2)  Depending on your settings, you additionally may need to add the repo of interest to you configuration settings on giscus.</span>
 <span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>3) Enable discussions on your repo (settings -&gt; features -&gt; discussions).</span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>3)  Enable discussions on your repo (settings -<span class="sc">\&gt;</span> features -<span class="sc">\&gt;</span> discussions).</span>
 <span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>4) Go to <span class="co">[</span><span class="ot">giscus.app</span><span class="co">](https://giscus.app/)</span> and follow instructions there and it will give you some good information like repo-id which you will need to put in your <span class="in">`_quarto.yml`</span>.</span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>4)  Go to <span class="co">[</span><span class="ot">giscus.app</span><span class="co">](https://giscus.app/)</span> and follow instructions there and it will give you some good information like repo-id which you will need to put in your <span class="in">`_quarto.yml`</span>.</span>
 <span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>5) Take the information from the giscus.app and update your <span class="in">`_quarto.yml`</span> to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the <span class="in">`_quarto.yml`</span>. </span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>5)  Take the information from the giscus.app and update your <span class="in">`_quarto.yml`</span> to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the <span class="in">`_quarto.yml`</span>.</span>
 <span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>Paste the output and what ended up working: </span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>Paste the output and what ended up working:</span>
 <span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>6) For pages you don't want to have comments on put in the yaml header of that page <span class="in">`comments: false`</span>. I do this for my blog post listing page and my about page.</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>6)  For pages you don't want to have comments on put in the yaml header of that page <span class="in">`comments: false`</span>. I do this for my blog post listing page and my about page.</span>
 <span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>Problem: The giscus does not work as expected. Comments do not persist on the page and also do not show up at the bottom though they go to the discussions page. Also they have really strange names.</span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>Ideas: get ride of docs and have github page render from root.</span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a><span class="fu"># Other fiddly things with Quarto Website to do</span></span>
-<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>Deploy this to my personal domain with Netlify.</span>
-<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>Transfer over my old posts to here.</span>
-<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>Get my CV links up here.</span>
-<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>Long term, figure out how to make it prettier.</span>
-<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>Problem: The giscus does not work as expected. Comments do not persist on the page and also do not show up at the bottom though they go to the discussions page. Also they have really strange names.</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>Ideas: get ride of docs and have github page render from root.</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a><span class="fu"># Other fiddly things with Quarto Website to do</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>Deploy this to my personal domain with Netlify.</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>Transfer over my old posts to here.</span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>Get my CV links up here.</span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>This was actually much easier than expected! All you need to do for external links is put the following in the <span class="sc">\_</span>quarto.yml file</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>    <span class="in">`navbar:`</span></span>
 <span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusion</span></span>
-<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>    <span class="in">`left:`</span></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>    <span class="in">`- href: index.qmd`</span></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>    <span class="in">`text: Home`</span></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>    <span class="in">`- posts.qmd # add your posts.qmd file to your navbar!`</span></span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>    <span class="in">`- about.qmd`</span></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>    <span class="in">`- href: https://maraalexeev.github.io/cv/`</span></span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>    <span class="in">`text: CV`</span></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>Long term, figure out how to make it prettier.</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Probably gonna finally need to learn some css</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>img {</span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>    max-width: 100%;</span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusion</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

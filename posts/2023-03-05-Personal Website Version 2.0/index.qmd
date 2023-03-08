@@ -23,11 +23,11 @@ I wanted to move away from my "original" blogdown method of blogging because I a
 
 Three things I wanted out of the new website:
 
-1) Make writing posts easy. Quarto does not have an add-in (yet) like Blogdown does to create a new blog post. So I leaned very, very heavily on [Mark Edney's R-Blogger's post](https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/) on how to make a handy Shiny app to take the thinking out of setting up each blog post. The rough part of being just excited enough to blog, but with huge time constraints is that I might go months in between posting and inevitably forget things and it frustrates me. 
+1)  Make writing posts easy. Quarto does not have an add-in (yet) like Blogdown does to create a new blog post. So I leaned very, very heavily on [Mark Edney's R-Blogger's post](https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/) on how to make a handy Shiny app to take the thinking out of setting up each blog post. The rough part of being just excited enough to blog, but with huge time constraints is that I might go months in between posting and inevitably forget things and it frustrates me.
 
-2) Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from [a post by Samantha Csik.](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)
+2)  Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from [a post by Samantha Csik.](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)
 
-3) Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.
+3)  Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.
 
 ## Shiny App for Blog Post Creation
 
@@ -127,24 +127,23 @@ Samantha points out that a Quarto Blog is just a special point of a Quarto websi
 
 Okay, so this is the main thrust of this post: Giscus. Which has painfully cute name. I was actually able to set it up on a test Quarto Book project, but of course that was months ago, and I can't remember the process because I didn't write it down! So for myself and for everyone else, here I go!
 
-First, why did I choose [giscus](https://github.com/giscus/giscus)? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don't use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page. 
+First, why did I choose [giscus](https://github.com/giscus/giscus)? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don't use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page.
 
 ## giscus steps
 
-1) You have to add giscus as an app on Github.
+1)  You have to add giscus as an app on Github.
 
-2) Depending on your settings, you additionally may need to add the repo of interest to you configuration settings on giscus.
+2)  Depending on your settings, you additionally may need to add the repo of interest to you configuration settings on giscus.
 
-3) Enable discussions on your repo (settings -> features -> discussions).
+3)  Enable discussions on your repo (settings -\> features -\> discussions).
 
-4) Go to [giscus.app](https://giscus.app/) and follow instructions there and it will give you some good information like repo-id which you will need to put in your `_quarto.yml`.
+4)  Go to [giscus.app](https://giscus.app/) and follow instructions there and it will give you some good information like repo-id which you will need to put in your `_quarto.yml`.
 
-5) Take the information from the giscus.app and update your `_quarto.yml` to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the `_quarto.yml`. 
+5)  Take the information from the giscus.app and update your `_quarto.yml` to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the `_quarto.yml`.
 
-Paste the output and what ended up working: 
+Paste the output and what ended up working:
 
-6) For pages you don't want to have comments on put in the yaml header of that page `comments: false`. I do this for my blog post listing page and my about page.
-
+6)  For pages you don't want to have comments on put in the yaml header of that page `comments: false`. I do this for my blog post listing page and my about page.
 
 Problem: The giscus does not work as expected. Comments do not persist on the page and also do not show up at the bottom though they go to the discussions page. Also they have really strange names.
 
@@ -158,10 +157,31 @@ Transfer over my old posts to here.
 
 Get my CV links up here.
 
+-   This was actually much easier than expected! All you need to do for external links is put the following in the \_quarto.yml file
+
+    ``` yml
+      navbar:
+        left:
+          - href: index.qmd
+            text: Home
+          - posts.qmd # add your posts.qmd file to your navbar!
+          - about.qmd
+          - href: https://maraalexeev.github.io/cv/ #your desired URL
+            text: CV #the text that shows up on the navbar
+    ```
+
 Long term, figure out how to make it prettier.
 
+-   Probably gonna finally need to learn some css
 
+-   I did one thing to help make sure figures don't go off the (here, phone) screen which happened with a plot I made for my first (manually) migrated blog post here. Just add this to the `style.css` file to cap image output to the max width of the screen.
+
+    ``` css
+    img {
+
+    max-width: 100%;
+
+    }
+    ```
 
 # Conclusion
-
-

@@ -10,6 +10,8 @@ website:
         text: Home
       - posts.qmd # add your posts.qmd file to your navbar!
       - about.qmd
+      - href: https://maraalexeev.github.io/cv/
+        text: CV
   comments: 
     giscus:
       repo: MaraAlexeev/personal_website_v2
