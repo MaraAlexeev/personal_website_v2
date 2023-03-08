@@ -16,9 +16,9 @@ website:
     giscus:
       repo: MaraAlexeev/personal_website_v2
       repo-id: R_kgDOJFwsOQ
-      category: Blog Post Discussion
+      category: General
       category-id: DIC_kwDOJFwsOc4CUrDd
-      mapping: pathname
+      mapping: title
       reactions-enabled: TRUE
       input-position: bottom
       theme: light

@@ -345,21 +345,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Get my CV links up here.</p>
 <ul>
 <li><p>This was actually much easier than expected! All you need to do for external links is put the following in the _quarto.yml file</p>
-<p><code>navbar:</code></p>
-<p><code>left:</code></p>
-<p><code>- href: index.qmd</code></p>
-<p><code>text: Home</code></p>
-<p><code>- posts.qmd # add your posts.qmd file to your navbar!</code></p>
-<p><code>- about.qmd</code></p>
-<p><code>- href: https://maraalexeev.github.io/cv/</code></p>
-<p><code>text: CV</code></p></li>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> posts.qmd</span><span class="co"> # add your posts.qmd file to your navbar!</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://maraalexeev.github.io/cv/</span><span class="co"> #your desired URL</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> CV</span><span class="co"> #the text that shows up on the navbar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 <p>Long term, figure out how to make it prettier.</p>
 <ul>
 <li><p>Probably gonna finally need to learn some css</p></li>
-<li><p>img {</p>
-<p>max-width: 100%;</p>
-<p>}</p></li>
+<li><p>I did one thing to help make sure figures don’t go off the (here, phone) screen which happened with a plot I made for my first (manually) migrated blog post here. Just add this to the <code>style.css</code> file to cap image output to the max width of the screen.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>img {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">max-width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
 <section id="conclusion" class="level1">
@@ -555,196 +558,195 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<script src="https://giscus.app/client.js" data-repo="MaraAlexeev/personal_website_v2" data-repo-id="R_kgDOJFwsOQ" data-category="Blog Post Discussion" data-category-id="DIC_kwDOJFwsOc4CUrDd" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+<script src="https://giscus.app/client.js" data-repo="MaraAlexeev/personal_website_v2" data-repo-id="R_kgDOJFwsOQ" data-category="General" data-category-id="DIC_kwDOJFwsOc4CUrDd" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Personal Website Version 2.0</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> 'Mara Alexeev'</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2023-03-05</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-modified:</span><span class="co"> '`r Sys.Date()`'</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Quarto,R,How-to]</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> ''</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> ''</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="an">archives:</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - function () ,.Internal(date())</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> false</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>I wanted to move away from my "original" blogdown method of blogging because I am really enthused about how great Quarto is. My blogdown project had accumulated so much code debris over the years because I started it when I was first learning to code, that it seemed easier to just take the posts and migrate them to a new Quarto Website + Blog than correcting all the mistakes accumulated over 4 years. I am initially going to post this on Github Pages, but once I have migrated content from my old site, I will reassign this repo to my Netlify account to deploy to my personalized domain.</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>Three things I wanted out of the new website:</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>1)  Make writing posts easy. Quarto does not have an add-in (yet) like Blogdown does to create a new blog post. So I leaned very, very heavily on <span class="co">[</span><span class="ot">Mark Edney's R-Blogger's post</span><span class="co">](https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/)</span> on how to make a handy Shiny app to take the thinking out of setting up each blog post. The rough part of being just excited enough to blog, but with huge time constraints is that I might go months in between posting and inevitably forget things and it frustrates me.</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>2)  Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from <span class="co">[</span><span class="ot">a post by Samantha Csik.</span><span class="co">](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>3)  Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Shiny App for Blog Post Creation</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>For setting up the Shiny App, the only major change I did was to make a multi-select option for categories for my blog post template from Mark's original work. This is nice because it helps me make sure I am not duplicating categories (eg Medicine and medicine) because categories are case sensitive. I also added a <span class="in">`data-modified`</span> section to my template because I like to capture when I update a post. Also, I love the YAML template including <span class="in">`draft = 'true'`</span> to harder to accidentally post a draft version of your post.</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>Here's the whole app below.</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, "Shiny app to create a blog post"}</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval = FALSE</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Source https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(miniUI)</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>QGadget <span class="ot">&lt;-</span> <span class="cf">function</span>() {....}</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> miniUI<span class="sc">::</span><span class="fu">miniPage</span>(</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  miniUI<span class="sc">::</span><span class="fu">gadgetTitleBar</span>(<span class="st">"Quarto Blog Post"</span>),</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  miniUI<span class="sc">::</span><span class="fu">miniContentPanel</span>(</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    shiny<span class="sc">::</span><span class="fu">textInput</span>(<span class="st">"title"</span>, <span class="st">"Title"</span>, <span class="at">placeholder =</span> <span class="st">"Post Title"</span>),</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    shiny<span class="sc">::</span><span class="fu">selectInput</span>(<span class="st">"categories"</span>, <span class="st">"Categories"</span>, </span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>                       <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">"How-to"</span>, </span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"R"</span>, <span class="st">"Python"</span>, <span class="st">"Quarto"</span>,</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Medicine"</span>, </span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Family Life"</span>, <span class="st">"Cooking"</span>),</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>                       <span class="at">multiple =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  shiny<span class="sc">::</span><span class="fu">observeEvent</span>(input<span class="sc">$</span>done, {</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Blog_post</span>(input<span class="sc">$</span>title, input<span class="sc">$</span>categories)</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stopApp</span>(<span class="st">"Post Created"</span>)</span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>shiny<span class="sc">::</span><span class="fu">runGadget</span>(ui, server, <span class="at">viewer =</span> shiny<span class="sc">::</span><span class="fu">dialogViewer</span>(<span class="st">"Quarto Blog Post"</span>))</span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>Blog_post <span class="ot">&lt;-</span> <span class="cf">function</span>(title, categories){</span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">title =</span> title,</span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>               <span class="at">author =</span> <span class="st">"'Mara Alexeev'"</span>,</span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>               <span class="at">date =</span> <span class="fu">Sys.Date</span>(),</span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>               <span class="at">date_modified =</span> <span class="st">"'`r Sys.Date()`'"</span>,</span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>               <span class="at">categories =</span> categories,</span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>                 </span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>               <span class="at">draft =</span> <span class="st">'true'</span>,</span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>               <span class="at">description =</span> <span class="st">"''"</span>,</span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>               <span class="at">image =</span> <span class="st">"''"</span>,</span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>               <span class="at">archives =</span> <span class="fu">format</span>(date, <span class="st">"%Y/%m"</span>),</span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>               <span class="at">toc =</span> <span class="st">'false'</span>,</span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>               <span class="at">fold =</span> <span class="st">"true"</span>,</span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>               <span class="at">tools =</span> <span class="st">'true'</span>,</span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>               <span class="at">link =</span>  <span class="st">'false'</span>)</span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>  Template <span class="ot">&lt;-</span> <span class="st">'---</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="st">title: {{title}}</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="st">author: {{author}}</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="st">date: {{date}}</span></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="st">date-modified: {{date_modified}}</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="st">categories: [{{categories}}]</span></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="st">draft: {{draft}}</span></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="st">description: {{description}}</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="st">image: {{image}}</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="st">archives:</span></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="st">  - {{archives}}</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="st">toc: {{toc}}</span></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="st">format:</span></span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="st">  html:</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="st">    code-fold: {{fold}}</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="st">    code-tools: {{tools}}</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="st">---</span></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="st"># Introduction</span></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="st"># Conclusion</span></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="st">'</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(<span class="fu">paste0</span>(<span class="st">"./posts/"</span>,data<span class="sc">$</span>date, <span class="st">"-"</span>, title))</span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(whisker<span class="sc">::</span><span class="fu">whisker.render</span>(Template, data), <span class="fu">paste0</span>(<span class="st">"./posts/"</span>,data<span class="sc">$</span>date, <span class="st">"-"</span>, title, <span class="st">"/index.qmd"</span>))</span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.edit</span>(<span class="fu">paste0</span>(<span class="st">"./posts/"</span>,data<span class="sc">$</span>date, <span class="st">"-"</span>, title, <span class="st">"/index.qmd"</span>))</span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Blog on a Quarto Website</span></span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>Samantha points out that a Quarto Blog is just a special point of a Quarto website. I actually got a little concerned about using Quarto as my blog because the directions of how to set up the individual posts had a lot of steps that I was worried I would not be able to do consistently over time. That's when I thought to write a script to do it for me, and instead was saved several hours of work by Mark's post.</span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## giscus</span></span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>Okay, so this is the main thrust of this post: Giscus. Which has painfully cute name. I was actually able to set it up on a test Quarto Book project, but of course that was months ago, and I can't remember the process because I didn't write it down! So for myself and for everyone else, here I go!</span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>First, why did I choose <span class="co">[</span><span class="ot">giscus</span><span class="co">](https://github.com/giscus/giscus)</span>? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don't use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page.</span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="fu">## giscus steps</span></span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>1)  You have to add giscus as an app on Github.</span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>2)  Depending on your settings, you additionally may need to add the repo of interest to you configuration settings on giscus.</span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>3)  Enable discussions on your repo (settings -<span class="sc">\&gt;</span> features -<span class="sc">\&gt;</span> discussions).</span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>4)  Go to <span class="co">[</span><span class="ot">giscus.app</span><span class="co">](https://giscus.app/)</span> and follow instructions there and it will give you some good information like repo-id which you will need to put in your <span class="in">`_quarto.yml`</span>.</span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>5)  Take the information from the giscus.app and update your <span class="in">`_quarto.yml`</span> to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the <span class="in">`_quarto.yml`</span>.</span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>Paste the output and what ended up working:</span>
-<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>6)  For pages you don't want to have comments on put in the yaml header of that page <span class="in">`comments: false`</span>. I do this for my blog post listing page and my about page.</span>
-<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>Problem: The giscus does not work as expected. Comments do not persist on the page and also do not show up at the bottom though they go to the discussions page. Also they have really strange names.</span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>Ideas: get ride of docs and have github page render from root.</span>
-<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a><span class="fu"># Other fiddly things with Quarto Website to do</span></span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>Deploy this to my personal domain with Netlify.</span>
-<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>Transfer over my old posts to here.</span>
-<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>Get my CV links up here.</span>
-<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>This was actually much easier than expected! All you need to do for external links is put the following in the <span class="sc">\_</span>quarto.yml file</span>
-<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>    <span class="in">`navbar:`</span></span>
-<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>    <span class="in">`left:`</span></span>
-<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>    <span class="in">`- href: index.qmd`</span></span>
-<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>    <span class="in">`text: Home`</span></span>
-<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>    <span class="in">`- posts.qmd # add your posts.qmd file to your navbar!`</span></span>
-<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>    <span class="in">`- about.qmd`</span></span>
-<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>    <span class="in">`- href: https://maraalexeev.github.io/cv/`</span></span>
-<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>    <span class="in">`text: CV`</span></span>
-<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>Long term, figure out how to make it prettier.</span>
-<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Probably gonna finally need to learn some css</span>
-<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>img {</span>
-<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>    max-width: 100%;</span>
-<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusion</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="markdown" data-shortcodes="false"><code>---
+title: Personal Website Version 2.0
+author: 'Mara Alexeev'
+date: 2023-03-05
+date-modified: '`r Sys.Date()`'
+categories: [Quarto,R,How-to]
+draft: true
+description: ''
+image: ''
+archives:
+  - function () ,.Internal(date())
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# Introduction
+
+I wanted to move away from my "original" blogdown method of blogging because I am really enthused about how great Quarto is. My blogdown project had accumulated so much code debris over the years because I started it when I was first learning to code, that it seemed easier to just take the posts and migrate them to a new Quarto Website + Blog than correcting all the mistakes accumulated over 4 years. I am initially going to post this on Github Pages, but once I have migrated content from my old site, I will reassign this repo to my Netlify account to deploy to my personalized domain.
+
+Three things I wanted out of the new website:
+
+1)  Make writing posts easy. Quarto does not have an add-in (yet) like Blogdown does to create a new blog post. So I leaned very, very heavily on [Mark Edney's R-Blogger's post](https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/) on how to make a handy Shiny app to take the thinking out of setting up each blog post. The rough part of being just excited enough to blog, but with huge time constraints is that I might go months in between posting and inevitably forget things and it frustrates me.
+
+2)  Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from [a post by Samantha Csik.](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)
+
+3)  Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.
+
+## Shiny App for Blog Post Creation
+
+For setting up the Shiny App, the only major change I did was to make a multi-select option for categories for my blog post template from Mark's original work. This is nice because it helps me make sure I am not duplicating categories (eg Medicine and medicine) because categories are case sensitive. I also added a `data-modified` section to my template because I like to capture when I update a post. Also, I love the YAML template including `draft = 'true'` to harder to accidentally post a draft version of your post.
+
+Here's the whole app below.
+
+```{r, "Shiny app to create a blog post"}
+#| eval = FALSE
+
+# Source https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/
+#
+
+library(shiny)
+library(miniUI)
+
+QGadget &lt;- function() {....}
+
+ui &lt;- miniUI::miniPage(
+  miniUI::gadgetTitleBar("Quarto Blog Post"),
+  miniUI::miniContentPanel(
+    shiny::textInput("title", "Title", placeholder = "Post Title"),
+    shiny::selectInput("categories", "Categories", 
+                       choices = list("How-to", 
+                                      "R", "Python", "Quarto",
+                                      "Medicine", 
+                                      "Family Life", "Cooking"),
+                       multiple = TRUE)
+
+  )
+)
+
+server &lt;- function(input, output, session) {
+  
+  shiny::observeEvent(input$done, {
+    Blog_post(input$title, input$categories)
+    stopApp("Post Created")
+  })
+}
+
+shiny::runGadget(ui, server, viewer = shiny::dialogViewer("Quarto Blog Post"))
+
+Blog_post &lt;- function(title, categories){
+  data &lt;- list(title = title,
+               author = "'Mara Alexeev'",
+               date = Sys.Date(),
+               date_modified = "'`r Sys.Date()`'",
+               categories = categories,
+                 
+               draft = 'true',
+               description = "''",
+               image = "''",
+               archives = format(date, "%Y/%m"),
+               toc = 'false',
+               fold = "true",
+               tools = 'true',
+               link =  'false')
+  
+  Template &lt;- '---
+title: {{title}}
+author: {{author}}
+date: {{date}}
+date-modified: {{date_modified}}
+categories: [{{categories}}]
+draft: {{draft}}
+description: {{description}}
+image: {{image}}
+archives:
+  - {{archives}}
+toc: {{toc}}
+
+format:
+  html:
+    code-fold: {{fold}}
+    code-tools: {{tools}}
+---
+
+# Introduction
+
+# Conclusion
+
+'
+  
+  dir.create(paste0("./posts/",data$date, "-", title))
+  writeLines(whisker::whisker.render(Template, data), paste0("./posts/",data$date, "-", title, "/index.qmd"))
+  file.edit(paste0("./posts/",data$date, "-", title, "/index.qmd"))
+}
+
+
+```
+
+## Blog on a Quarto Website
+
+Samantha points out that a Quarto Blog is just a special point of a Quarto website. I actually got a little concerned about using Quarto as my blog because the directions of how to set up the individual posts had a lot of steps that I was worried I would not be able to do consistently over time. That's when I thought to write a script to do it for me, and instead was saved several hours of work by Mark's post.
+
+## giscus
+
+Okay, so this is the main thrust of this post: Giscus. Which has painfully cute name. I was actually able to set it up on a test Quarto Book project, but of course that was months ago, and I can't remember the process because I didn't write it down! So for myself and for everyone else, here I go!
+
+First, why did I choose [giscus](https://github.com/giscus/giscus)? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don't use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page.
+
+## giscus steps
+
+1)  You have to add giscus as an app on Github.
+
+2)  Depending on your settings, you additionally may need to add the repo of interest to you configuration settings on giscus.
+
+3)  Enable discussions on your repo (settings -\&gt; features -\&gt; discussions).
+
+4)  Go to [giscus.app](https://giscus.app/) and follow instructions there and it will give you some good information like repo-id which you will need to put in your `_quarto.yml`.
+
+5)  Take the information from the giscus.app and update your `_quarto.yml` to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the `_quarto.yml`.
+
+Paste the output and what ended up working:
+
+6)  For pages you don't want to have comments on put in the yaml header of that page `comments: false`. I do this for my blog post listing page and my about page.
+
+Problem: The giscus does not work as expected. Comments do not persist on the page and also do not show up at the bottom though they go to the discussions page. Also they have really strange names.
+
+Ideas: get ride of docs and have github page render from root.
+
+# Other fiddly things with Quarto Website to do
+
+Deploy this to my personal domain with Netlify.
+
+Transfer over my old posts to here.
+
+Get my CV links up here.
+
+-   This was actually much easier than expected! All you need to do for external links is put the following in the \_quarto.yml file
+
+    ``` yml
+      navbar:
+        left:
+          - href: index.qmd
+            text: Home
+          - posts.qmd # add your posts.qmd file to your navbar!
+          - about.qmd
+          - href: https://maraalexeev.github.io/cv/ #your desired URL
+            text: CV #the text that shows up on the navbar
+    ```
+
+Long term, figure out how to make it prettier.
+
+-   Probably gonna finally need to learn some css
+
+-   I did one thing to help make sure figures don't go off the (here, phone) screen which happened with a plot I made for my first (manually) migrated blog post here. Just add this to the `style.css` file to cap image output to the max width of the screen.
+
+    ``` css
+    img {
+
+    max-width: 100%;
+
+    }
+    ```
+
+# Conclusion</code></pre>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
