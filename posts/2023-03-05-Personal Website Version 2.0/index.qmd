@@ -4,8 +4,8 @@ author: 'Mara Alexeev'
 date: 2023-03-05
 date-modified: '`r Sys.Date()`'
 categories: [Quarto,R,How-to]
-draft: true
-description: ''
+draft: false
+description: 'Building a new Quarto website'
 image: ''
 archives:
   - function () ,.Internal(date())
@@ -17,7 +17,7 @@ format:
     code-tools: true
 ---
 
-# Introduction
+# New Quarto Website
 
 I wanted to move away from my "original" blogdown method of blogging because I am really enthused about how great Quarto is. My blogdown project had accumulated so much code debris over the years because I started it when I was first learning to code, that it seemed easier to just take the posts and migrate them to a new Quarto Website + Blog than correcting all the mistakes accumulated over 4 years. I am initially going to post this on Github Pages, but once I have migrated content from my old site, I will reassign this repo to my Netlify account to deploy to my personalized domain.
 
@@ -27,7 +27,7 @@ Three things I wanted out of the new website:
 
 2)  Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from [a post by Samantha Csik.](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)
 
-3)  Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.
+3)  Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. Last fall I saw a cool method called giscus, so will use that.
 
 ## Shiny App for Blog Post Creation
 
@@ -141,19 +141,30 @@ First, why did I choose [giscus](https://github.com/giscus/giscus)? I loved that
 
 5)  Take the information from the giscus.app and update your `_quarto.yml` to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the `_quarto.yml`.
 
-Paste the output and what ended up working:
+``` yaml
+  comments: 
+    giscus:
+      repo: MaraAlexeev/personal_website_v2
+      repo-id: FAKE_REPO_ID #Get this from giscus.app
+      category: General
+      category-id: FAKE_CATEGORY_ID #Get this from giscus.app
+      mapping: title #pathname was very gross format
+      reactions-enabled: TRUE
+      input-position: bottom
+      theme: light
+```
 
 6)  For pages you don't want to have comments on put in the yaml header of that page `comments: false`. I do this for my blog post listing page and my about page.
-
-Problem: The giscus does not work as expected. Comments do not persist on the page and also do not show up at the bottom though they go to the discussions page. Also they have really strange names.
-
-Ideas: get ride of docs and have github page render from root.
 
 # Other fiddly things with Quarto Website to do
 
 Deploy this to my personal domain with Netlify.
 
+-   Only hard part was finding the applications part of my Github Settings to authorize Netlify to access the correct repo.
+
 Transfer over my old posts to here.
+
+-   Fear this will just be a manual process as I have time for it. I do have a `last modified` part to my post template so that I can keep track of original post dates and update dates.
 
 Get my CV links up here.
 
@@ -183,5 +194,3 @@ Long term, figure out how to make it prettier.
 
     }
     ```
-
-# Conclusion

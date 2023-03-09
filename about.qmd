@@ -15,3 +15,4 @@ I love learning human and computer languages. I’ve had a long love affair with
 
 Interested in connecting or collaborating? [Send me a message on Linkedin](https://www.linkedin.com/in/maraalexeev/)!
 
+![Mara at the Tandy, age 3](./images/MaraAtTheTandy.jpg "No internal hard drive!!"){fig-align="center"}

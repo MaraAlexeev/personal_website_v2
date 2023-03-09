@@ -8,6 +8,7 @@
 
 <meta name="author" content="Mara Alexeev">
 <meta name="dcterms.date" content="2023-03-05">
+<meta name="description" content="Building a new Quarto website">
 
 <title>Mara Alexeev’s Website - Personal Website Version 2.0</title>
 <style>
@@ -171,7 +172,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <div class="quarto-title-block"><div><h1 class="title">Personal Website Version 2.0</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
-                                <div class="quarto-categories">
+                  <div>
+        <div class="description">
+          Building a new Quarto website
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">Quarto</div>
                 <div class="quarto-category">R</div>
                 <div class="quarto-category">How-to</div>
@@ -199,7 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">March 7, 2023</p>
+        <p class="date-modified">March 8, 2023</p>
       </div>
     </div>
       
@@ -216,14 +222,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+<section id="new-quarto-website" class="level1">
+<h1>New Quarto Website</h1>
 <p>I wanted to move away from my “original” blogdown method of blogging because I am really enthused about how great Quarto is. My blogdown project had accumulated so much code debris over the years because I started it when I was first learning to code, that it seemed easier to just take the posts and migrate them to a new Quarto Website + Blog than correcting all the mistakes accumulated over 4 years. I am initially going to post this on Github Pages, but once I have migrated content from my old site, I will reassign this repo to my Netlify account to deploy to my personalized domain.</p>
 <p>Three things I wanted out of the new website:</p>
 <ol type="1">
 <li><p>Make writing posts easy. Quarto does not have an add-in (yet) like Blogdown does to create a new blog post. So I leaned very, very heavily on <a href="https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/">Mark Edney’s R-Blogger’s post</a> on how to make a handy Shiny app to take the thinking out of setting up each blog post. The rough part of being just excited enough to blog, but with huge time constraints is that I might go months in between posting and inevitably forget things and it frustrates me.</p></li>
 <li><p>Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from <a href="https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/">a post by Samantha Csik.</a></p></li>
-<li><p>Enable discussions on my blog. I don’t think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.</p></li>
+<li><p>Enable discussions on my blog. I don’t think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. Last fall I saw a cool method called giscus, so will use that.</p></li>
 </ol>
 <section id="shiny-app-for-blog-post-creation" class="level2">
 <h2 class="anchored" data-anchor-id="shiny-app-for-blog-post-creation">Shiny App for Blog Post Creation</h2>
@@ -330,43 +336,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Go to <a href="https://giscus.app/">giscus.app</a> and follow instructions there and it will give you some good information like repo-id which you will need to put in your <code>_quarto.yml</code>.</p></li>
 <li><p>Take the information from the giscus.app and update your <code>_quarto.yml</code> to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the <code>_quarto.yml</code>.</p></li>
 </ol>
-<p>Paste the output and what ended up working:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">comments</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">giscus</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> MaraAlexeev/personal_website_v2</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">repo-id</span><span class="kw">:</span><span class="at"> FAKE_REPO_ID</span><span class="co"> #Get this from giscus.app</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">category</span><span class="kw">:</span><span class="at"> General</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">category-id</span><span class="kw">:</span><span class="at"> FAKE_CATEGORY_ID</span><span class="co"> #Get this from giscus.app</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">mapping</span><span class="kw">:</span><span class="at"> title</span><span class="co"> #pathname was very gross format</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">reactions-enabled</span><span class="kw">:</span><span class="at"> </span><span class="ch">TRUE</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">input-position</span><span class="kw">:</span><span class="at"> bottom</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> light</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="6" type="1">
 <li>For pages you don’t want to have comments on put in the yaml header of that page <code>comments: false</code>. I do this for my blog post listing page and my about page.</li>
 </ol>
-<p>Problem: The giscus does not work as expected. Comments do not persist on the page and also do not show up at the bottom though they go to the discussions page. Also they have really strange names.</p>
-<p>Ideas: get ride of docs and have github page render from root.</p>
 </section>
 </section>
 <section id="other-fiddly-things-with-quarto-website-to-do" class="level1">
 <h1>Other fiddly things with Quarto Website to do</h1>
 <p>Deploy this to my personal domain with Netlify.</p>
+<ul>
+<li>Only hard part was finding the applications part of my Github Settings to authorize Netlify to access the correct repo.</li>
+</ul>
 <p>Transfer over my old posts to here.</p>
+<ul>
+<li>Fear this will just be a manual process as I have time for it. I do have a <code>last modified</code> part to my post template so that I can keep track of original post dates and update dates.</li>
+</ul>
 <p>Get my CV links up here.</p>
 <ul>
 <li><p>This was actually much easier than expected! All you need to do for external links is put the following in the _quarto.yml file</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> posts.qmd</span><span class="co"> # add your posts.qmd file to your navbar!</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://maraalexeev.github.io/cv/</span><span class="co"> #your desired URL</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> CV</span><span class="co"> #the text that shows up on the navbar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> posts.qmd</span><span class="co"> # add your posts.qmd file to your navbar!</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://maraalexeev.github.io/cv/</span><span class="co"> #your desired URL</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> CV</span><span class="co"> #the text that shows up on the navbar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 <p>Long term, figure out how to make it prettier.</p>
 <ul>
 <li><p>Probably gonna finally need to learn some css</p></li>
 <li><p>I did one thing to help make sure figures don’t go off the (here, phone) screen which happened with a plot I made for my first (manually) migrated blog post here. Just add this to the <code>style.css</code> file to cap image output to the max width of the screen.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>img {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">max-width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>img {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">max-width</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
 
 
 <!-- -->
@@ -566,8 +582,8 @@ author: 'Mara Alexeev'
 date: 2023-03-05
 date-modified: '`r Sys.Date()`'
 categories: [Quarto,R,How-to]
-draft: true
-description: ''
+draft: false
+description: 'Building a new Quarto website'
 image: ''
 archives:
   - function () ,.Internal(date())
@@ -579,7 +595,7 @@ format:
     code-tools: true
 ---
 
-# Introduction
+# New Quarto Website
 
 I wanted to move away from my "original" blogdown method of blogging because I am really enthused about how great Quarto is. My blogdown project had accumulated so much code debris over the years because I started it when I was first learning to code, that it seemed easier to just take the posts and migrate them to a new Quarto Website + Blog than correcting all the mistakes accumulated over 4 years. I am initially going to post this on Github Pages, but once I have migrated content from my old site, I will reassign this repo to my Netlify account to deploy to my personalized domain.
 
@@ -589,7 +605,7 @@ Three things I wanted out of the new website:
 
 2)  Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from [a post by Samantha Csik.](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)
 
-3)  Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. I saw last fall a cool method called giscus.
+3)  Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. Last fall I saw a cool method called giscus, so will use that.
 
 ## Shiny App for Blog Post Creation
 
@@ -703,19 +719,30 @@ First, why did I choose [giscus](https://github.com/giscus/giscus)? I loved that
 
 5)  Take the information from the giscus.app and update your `_quarto.yml` to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the `_quarto.yml`.
 
-Paste the output and what ended up working:
+``` yaml
+  comments: 
+    giscus:
+      repo: MaraAlexeev/personal_website_v2
+      repo-id: FAKE_REPO_ID #Get this from giscus.app
+      category: General
+      category-id: FAKE_CATEGORY_ID #Get this from giscus.app
+      mapping: title #pathname was very gross format
+      reactions-enabled: TRUE
+      input-position: bottom
+      theme: light
+```
 
 6)  For pages you don't want to have comments on put in the yaml header of that page `comments: false`. I do this for my blog post listing page and my about page.
-
-Problem: The giscus does not work as expected. Comments do not persist on the page and also do not show up at the bottom though they go to the discussions page. Also they have really strange names.
-
-Ideas: get ride of docs and have github page render from root.
 
 # Other fiddly things with Quarto Website to do
 
 Deploy this to my personal domain with Netlify.
 
+-   Only hard part was finding the applications part of my Github Settings to authorize Netlify to access the correct repo.
+
 Transfer over my old posts to here.
+
+-   Fear this will just be a manual process as I have time for it. I do have a `last modified` part to my post template so that I can keep track of original post dates and update dates.
 
 Get my CV links up here.
 
@@ -744,9 +771,7 @@ Long term, figure out how to make it prettier.
     max-width: 100%;
 
     }
-    ```
-
-# Conclusion</code></pre>
+    ```</code></pre>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
