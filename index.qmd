@@ -35,6 +35,8 @@ data <- bind_rows(data, (data |>
   summarise(find_out = round(sum(find_out), 1)) |>
   mutate(project = "Combined Amount")))
 
+data$find_out <- round(data$find_out, 1)
+
 plot <- data |> 
   ggplot(aes(x = fiddle, y = find_out)) +
   geom_point(aes(color = project)) +
