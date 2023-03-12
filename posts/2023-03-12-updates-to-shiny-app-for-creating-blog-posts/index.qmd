@@ -4,7 +4,7 @@ author: 'Mara Alexeev'
 date: 2023-03-12
 date-modified: '`r Sys.Date()`'
 categories: [Quarto]
-draft: true
+draft: false
 description: Improve the slug!
 slug: updates-to-shiny-app-for-creating-a-blog-posts
 image: ''
