@@ -6,7 +6,7 @@ date-modified: '`r Sys.Date()`'
 categories: [Book Review]
 draft: false
 description: 'A book report, partially forgotten'
-image: ''
+image: 'image_for_blog_post.jpg'
 archives:
   - function () ,.Internal(date())
 toc: false
@@ -19,7 +19,7 @@ format:
 
 # The Prize
 
-I read _The Prize_ by Daniel Yergin two plus years ago while in the haze of a new baby and starting a masters and doing a fellowship, so a book report written at that time would probably be a patchy effort at best. Thus a book report written two years later is most certainly entirely suspect. However, I loved the book, and I now recommend it to anyone who will let me get to the point in a conversation where we are talking books. 
+I read _The Prize: The Epic Quest for Oil, Money, and Power_ by Daniel Yergin two plus years ago while in the haze of a new baby and starting a masters and doing a fellowship, so a book report written at that time would probably be a patchy effort at best. Thus a book report written two years later is most certainly entirely suspect. However, I loved the book, and I now recommend it to anyone who will let me get to the point in a conversation where we are talking books. 
 
 # Selected unpolished thoughts
 

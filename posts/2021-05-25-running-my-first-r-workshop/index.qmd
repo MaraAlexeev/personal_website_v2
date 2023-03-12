@@ -7,7 +7,7 @@ categories: [R]
 draft: false
 description: And thoughts for making it better!
 slug: running-my-first-r-workshop
-image: ''
+image: './images/image_for_blog_post.png'
 archives:
   - function () ,.Internal(date())
 toc: false

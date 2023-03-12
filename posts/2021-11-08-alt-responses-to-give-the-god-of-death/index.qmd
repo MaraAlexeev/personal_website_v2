@@ -5,12 +5,14 @@ date: 2021-11-08
 date-modified: '`r Sys.Date()`'
 categories: [R,Project]
 draft: false
+image: './images/image_for_blog_post.png'
 description: Today???
 slug: alt-responses-to-give-the-god-of-death
 archives:
   - function () ,.Internal(date())
 toc: true
-
+execute:
+  freeze: auto  # re-render only when source changes
 format:
   html:
     code-fold: true
@@ -354,8 +356,9 @@ plot_average_lifespan_by_sex_dc +
   theme_economist() + 
   scale_x_continuous(breaks = seq(1000, 2021, 100)) + 
   coord_cartesian(ylim = c(40, 90))
-```
 
+
+```
 
 # Dirty data
 
@@ -442,4 +445,13 @@ For anyone wanting to reproduce my work, you can see my raw code below as well a
 sessionInfo()
 ```
 
+
+```{r}
+image_for_blog_post <- plot_average_lifespan_by_sex_dc + 
+    theme_economist() + 
+     scale_x_continuous(breaks = seq(1000, 2021, 100)) + 
+     coord_cartesian(ylim = c(40, 90))
+
+ggsave(file = "./images/image_for_blog_post.png" )
+```
 

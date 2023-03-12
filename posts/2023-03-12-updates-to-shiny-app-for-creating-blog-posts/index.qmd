@@ -7,7 +7,7 @@ categories: [Quarto]
 draft: false
 description: Improve the slug!
 slug: updates-to-shiny-app-for-creating-a-blog-posts
-image: ''
+image: 'image_for_blog_post.png'
 archives:
   - function () ,.Internal(date())
 toc: false

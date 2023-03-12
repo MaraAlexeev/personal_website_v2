@@ -17,7 +17,7 @@ Blog_post <- function(title, categories, description){
                slug = stringr::str_replace_all(stringr::str_to_lower(title), "[^[:alnum:]]", "-"), 
                draft = 'true',
                description = description,
-               image = "''",
+               image = "'image_for_blog_post.png'",
                archives = format(date, "%Y/%m"),
                toc = 'false',
                fold = "true",

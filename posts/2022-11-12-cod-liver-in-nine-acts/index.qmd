@@ -6,7 +6,7 @@ date-modified: '`r Sys.Date()`'
 categories: [Cooking]
 draft: false
 description: 'So much cod liver'
-image: ''
+image: './images/image_for_blog_post.jpg'
 archives:
   - function (x) ,{,    UseMethod(&quot;date&quot;),}
 toc: false

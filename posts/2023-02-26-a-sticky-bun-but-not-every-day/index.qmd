@@ -6,7 +6,7 @@ date-modified: '`r Sys.Date()`'
 categories: [R,Quarto,Family Life]
 draft: false
 description: Solving a cafe mystery
-image: ''
+image: 'plot_sticky_bun.png'
 archives:
   - function () ,.Internal(date())
 toc: false
@@ -111,6 +111,8 @@ plot_sticky_bun <- gh_waffle(sticky_bun) +
   labs(title = "Sticky Bun Purchases by Day of the Week")
 
 plot_sticky_bun
+
+ggsave('plot_sticky_bun.png')
 ```
 
 
