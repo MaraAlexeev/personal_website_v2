@@ -5,7 +5,7 @@ date: 2022-11-12
 date-modified: '`r Sys.Date()`'
 categories: [Cooking]
 draft: false
-description: ''
+description: 'So much cod liver'
 image: ''
 archives:
   - function (x) ,{,    UseMethod(&quot;date&quot;),}
