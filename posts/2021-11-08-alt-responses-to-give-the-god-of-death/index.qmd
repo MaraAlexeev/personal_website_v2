@@ -7,7 +7,6 @@ categories: [R,Project]
 draft: false
 description: Today???
 slug: alt-responses-to-give-the-god-of-death
-image: ''
 archives:
   - function () ,.Internal(date())
 toc: true
