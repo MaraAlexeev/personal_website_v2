@@ -1,0 +1,38 @@
+---
+title: Updates to Shiny App for Creating a Blog Posts
+author: 'Mara Alexeev'
+date: 2023-03-12
+date-modified: '`r Sys.Date()`'
+categories: [Quarto]
+draft: true
+description: Improve the slug!
+slug: updates-to-shiny-app-for-creating-a-blog-posts
+image: ''
+archives:
+  - function () ,.Internal(date())
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# Updates on Shiny App
+
+Last week I wrote about how I found someone else who had written a Shiny app to create blog posts with a small amount of manual input, like the title of the post, and the app would then create the necessary files for the Quarto website format and start the post with a predetermined template with the components you added into the Shiny app.
+
+This weekend while I was transferring more posts over from my old website, I noticed a few annoying and related features.
+
+My posts's folders were named something like this `2023-01-01-This Test Post is Amazing`, but then my URL paths when I rendered my website were awful looking like `website.com/2023-01-01-This%20Test%20Post%20is%20Amazing`. Also, if I tried to include some types of punctuation, like a colon, in my title, which is the source of the folder name and URL, it would break my Shiny app.
+
+Solution: I added a "slugifying" part to my Shiny App:
+
+``` R
+slug = stringr::str_replace_all(stringr::str_to_lower(title), "[^[:alnum:]]", "-")
+```
+Now the transformed version of the title, the slug, doesn't have any punctuation except for dashes or capital letters, so now the URLs and folder names look much better. Also, my title can have "special" punctuation without breaking my Shiny app. The app was failing in writing file names, so while I don't know exactly why that is, I do have a sense that file names often don't like crazy characters. 
+
+Finally, one more thing I need to do to improve my Shiny app is fix some directory issues. Currently I can only run my Shiny app when I highlight all the code and select run. If I try to run it from the console, it can't find the correct directory to put the new post in. I suspect this has something to do with how the working directory is determined.
+
+Until next time friends!

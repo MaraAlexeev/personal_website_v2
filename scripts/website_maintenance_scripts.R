@@ -6,7 +6,7 @@
 ## fix path issues so can run from 
 
  
-## slugify title
+## slugify title in shiny app
 x <- "Test Text a1~!@#$%^&*(){}_+:\"<>?,./;'[]=" #or whatever
 x_slug <-   stringr::str_replace_all(stringr::str_to_lower(x), "[^[:alnum:]]", "-") 
 
