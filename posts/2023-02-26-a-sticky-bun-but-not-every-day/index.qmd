@@ -5,7 +5,6 @@ date: 2023-02-26
 date-modified: '`r Sys.Date()`'
 categories: [R,Quarto,Family Life]
 draft: false
-alaises: a-sticky-bun-but-not-every-day
 description: Solving a cafe mystery
 image: ''
 archives:
