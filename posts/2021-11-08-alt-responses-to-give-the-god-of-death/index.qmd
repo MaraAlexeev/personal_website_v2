@@ -4,7 +4,7 @@ author: 'Mara Alexeev'
 date: 2021-11-08
 date-modified: '`r Sys.Date()`'
 categories: [R,Project]
-draft: true
+draft: false
 description: Today???
 slug: alt-responses-to-give-the-god-of-death
 image: ''
@@ -40,8 +40,9 @@ library(ggthemes)
 
 In July 2020, my husband presented me with two tweets about change of the average age of death over time ([tweet 1](https://twitter.com/patrickc/status/1284582707897364480?ref_src=twsrc%5Etfw) and [tweet 2](https://twitter.com/paulg/status/1284578860827324417)) and challenged me to make some cooler graphs. 
 
-![Patrick Collison, tweet](./images/tweet_1.png"){fig-align="center"}
-![Paul Graham, tweet](./images/tweet_2.png"){fig-align="center"}
+![](./images/tweet_1.png){fig-align="center"}
+
+![](./images/tweet_2.png){fig-align="center"}
 
 # Motivations
 
