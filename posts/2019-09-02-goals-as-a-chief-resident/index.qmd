@@ -1,0 +1,23 @@
+---
+title: Goals as a chief resident
+author: 'Mara Alexeev'
+date: 2019-09-02
+date-modified: '`r Sys.Date()`'
+categories: [Medicine]
+draft: false
+description: Game plan for helping residents at MSKCC Kids
+slug: goals-as-a-chief-resident
+image: 'image_for_blog_post.jpg'
+archives:
+  - function (x) ,{,    UseMethod(&quot;date&quot;),}
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# Introduction
+
+# Conclusion

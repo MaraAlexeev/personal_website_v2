@@ -1,0 +1,40 @@
+---
+title: The first post of the new website
+author: 'Mara Alexeev'
+date: 2019-08-31
+date-modified: '`r Sys.Date()`'
+categories: [How-to,R,Project]
+draft: false
+description: Squarespace to Blogdown
+slug: the-first-post-of-the-new-website
+image: 'image_for_blog_post.png'
+archives:
+  - function (x) ,{,    UseMethod(&quot;date&quot;),}
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+*Note from March 2023: This post describes my migration from Squarespace to a blogdown website in August 2019. I migrated again in March 2023 from blogdown to a quarto website.* 
+
+This is my first post on my new website built with the R package blogdown, the help of many online help pages, and my lovely husband. I am using Github and Netlify as well. I don't have the energy to write a post about how I built this, but here is the list of things that caused pain: 
+
+* in my config.toml file I had replaced the baseurl default of `baseurl = "/"` with `baseurl = "https://www.maraalexeev.com"`
+ * this causes problems so just keep it as the /
+
+* on Netlify there is a deploy setting that I did incorrectly so my page worked locally but not online
+ * Answer [here](https://community.netlify.com/t/common-issue-i-ve-deployed-my-site-but-i-still-see-page-not-found/125/2)
+ 
+* somehow I got a post on my page from 1 AD (suspect no date was included on something), I renamed my file from a `foo.Rmarkdown` to `foo.Rmd` and the problem went away, but I can't be certain that I didn't also do something else in my quest. 
+ * Tip [here](https://stackoverflow.com/questions/52304679/why-does-a-year-0001-appear-on-my-blogdown-hugo-blog)
+ 
+Overall, this was an amazing but slightly frustrating experience with most of the frustration being at the deployment phase. Now that I have site up and running, I am beyond excited to start doing more with it. I especially am excited about figuring out how to have my data easily accessible for someone re-running my analysis in something that I post. 
+ 
+A few quick things that I hope to do soon are: 
+
+1. Understand more of what an R project means and how to use it in my workflow
+2. Figure out how to store files and content in a reasonable method
+3. Get amazing at Rmarkdown
+4. Upload old content from my previous website
