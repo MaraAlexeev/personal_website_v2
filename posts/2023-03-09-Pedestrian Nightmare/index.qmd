@@ -1,0 +1,28 @@
+---
+title: Pedestrian Nightmare
+author: 'Mara Alexeev'
+date: 2021-12-05
+date-modified: '`r Sys.Date()`'
+categories: [Family Life]
+draft: false
+description: 'Dreaming about pedestrian first spaces'
+image: ''
+archives:
+  - function () ,.Internal(date())
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# Big parenting fears
+
+One of my biggest fears as a parent is the threat of cars to the well-being of my children. And unlike other lurking parenting fears, this one is upsetting because it is a fairly rational fear based on the causes of death and injury to children in and out of vehicles.
+
+I hope to learn a bit more about how my own community could make streets safer and better for folks, so putting this here as a promise to myself.
+
+```{r, echo=FALSE, fig.cap="Nightmare interaction of pedestrian areas and cars."}
+knitr::include_graphics("./busy_car.png")
+```

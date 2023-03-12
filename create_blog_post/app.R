@@ -3,6 +3,7 @@
 
 library(shiny)
 library(miniUI)
+library(whisker)
 
 QGadget <- function() {....}
 
@@ -11,7 +12,7 @@ ui <- miniUI::miniPage(
   miniUI::miniContentPanel(
     shiny::textInput("title", "Title", placeholder = "Post Title"),
     shiny::selectInput("categories", "Categories", 
-                       choices = list("How-to", 
+                       choices = list("How-to", "Book Review",
                                       "R", "Python", "Quarto",
                                       "Medicine", 
                                       "Family Life", "Cooking"),
@@ -67,11 +68,12 @@ format:
 
 # Introduction
 
-# Conclusion
+# Conclusion'
 
-'
+
   
   dir.create(paste0("./posts/",data$date, "-", title))
   writeLines(whisker::whisker.render(Template, data), paste0("./posts/",data$date, "-", title, "/index.qmd"))
   file.edit(paste0("./posts/",data$date, "-", title, "/index.qmd"))
 }
+

@@ -18,7 +18,7 @@ website:
       repo-id: R_kgDOJFwsOQ
       category: General
       category-id: DIC_kwDOJFwsOc4CUrDd
-      mapping: title
+      mapping: title #pathname was very gross format
       reactions-enabled: TRUE
       input-position: bottom
       theme: light

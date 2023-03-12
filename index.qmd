@@ -1,16 +1,63 @@
 ---
-title: "Mara's Website"
 comments: false
 ---
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning = FALSE, message=FALSE
+)
+```
 
-This is a Quarto website with a blog.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-#R
-1 + 1
+```{r, echo = FALSE, warning = FALSE, message=FALSE}
+library(ggplot2)
+library(ggthemes)
+library(tidyverse)
+library(plotly)
+library(gt)
 ```
 
 
+```{r, echo = FALSE, warning = FALSE, message=FALSE}
 
+
+x <- seq(0, 10)
+y <- seq(0, 10)
+
+data <- tibble(fiddle = x, find_out = y, project = 1)
+
+data <- bind_rows(data, tibble(fiddle = x, find_out = y*(runif(11, 0.75, 1.5)), project = 2))
+
+data <- bind_rows(data, tibble(fiddle = x, find_out = y*(runif(11, 0.5, 2)), project = 3))
+
+data$project <- as_factor(data$project)
+
+data <- bind_rows(data, (data |>
+  group_by(fiddle) |> 
+  summarise(find_out = round(sum(find_out), 1)) |>
+  mutate(project = "Combined Amount")))
+
+plot <- data |> 
+  ggplot(aes(x = fiddle, y = find_out)) +
+  geom_point(aes(color = project)) +
+
+  labs(title = "Fiddly Little Project Returns", subtitle = "The whole point", x = "Fiddle Amount", y = "Find Out Amount", color = "Project") +
+  theme(legend.position="right") +
+   # theme(axis.text.x=element_blank(), #remove x axis labels
+   #      axis.ticks.x=element_blank(), #remove x axis ticks
+   #      axis.text.y=element_blank(),  #remove y axis labels
+   #      axis.ticks.y=element_blank()  #remove y axis ticks
+   #      )
+  scale_x_continuous(limits = c(0, 10), breaks = c(0, 2, 4, 6, 8, 10)) +
+  scale_y_continuous(breaks = c(0, 10, 20, 30, 40 )) +
+   theme_minimal()
+```
+
+```{r}
+interactive_plot <- ggplotly(plot)
+```
+
+
+```{r}
+
+interactive_plot
+
+```
