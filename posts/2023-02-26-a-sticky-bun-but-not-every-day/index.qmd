@@ -112,7 +112,7 @@ plot_sticky_bun <- gh_waffle(sticky_bun) +
 
 plot_sticky_bun
 
-ggsave('plot_sticky_bun.png')
+#ggsave('plot_sticky_bun.png')
 ```
 
 
