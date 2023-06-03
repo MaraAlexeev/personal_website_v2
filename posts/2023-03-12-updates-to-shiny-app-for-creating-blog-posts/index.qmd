@@ -1,5 +1,5 @@
 ---
-title: Updates to Shiny App for Creating a Blog Posts
+title: Updates to Shiny App for Creating Blog Posts
 author: 'Mara Alexeev'
 date: 2023-03-12
 date-modified: '`r Sys.Date()`'
