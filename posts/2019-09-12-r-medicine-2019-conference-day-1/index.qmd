@@ -57,6 +57,28 @@ Attended a workshop by Alison Hill. Here are some of my notes to future self to 
 1. qcc
 1. comorbidity
 
+# Make a table in Rmarkdown
+
+|Column 1 left justify|Column 2 centered|Columne 3 right justified|
+|:--|:-:|--:|
+|A|B|C|
+
+Holy cow, that worked on the first try!
+
+# Pets not Livestock
+
+Alison Horst advised us that if our figures are more like pets than livestock, we should name them!!!
+
+Here's my attempt to name some figures and link them throughout the document. 
+
+```{r libraries}
+library(tidyverse)
+```
+
+
+```{r simple bar graph}
+bar_graph_mtcars <- ggplot(mtcars, aes(x = drv)) + geom_bar()
+```
 
 # Resources
 
