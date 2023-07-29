@@ -133,3 +133,4 @@ shiny::runGadget(ui, server, viewer = shiny::dialogViewer("Quarto Blog Post"))
 #   # file.edit(paste0("./posts/",data$date, "-", title, "/index.qmd"))
 # }
 
+
