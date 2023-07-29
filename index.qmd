@@ -1,6 +1,7 @@
 ---
 comments: false
 ---
+
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(
   echo = FALSE, warning = FALSE, message=FALSE
@@ -14,7 +15,6 @@ library(tidyverse)
 library(plotly)
 library(gt)
 ```
-
 
 ```{r, echo = FALSE, warning = FALSE, message=FALSE}
 
@@ -57,9 +57,24 @@ plot <- data |>
 interactive_plot <- ggplotly(plot)
 ```
 
-
 ```{r}
 
 interactive_plot
 
 ```
+
+# Welcome
+
+While I am not a fan of the words used in a certain meme that sounds a wee bit like **"Fiddle around, find out"** I am a strong believer that there is nothing more true than learning by doing. I love that the original meme implies that the input to the finding out is probably not of high quality. I think the there is room for a second part of the process captured by **"tear down, build up"**.
+
+The initial finding out is rewarding, but a further process of tearing it apart and trying to build something from your learning is a powerful act. I believe most of my life I have held back from doing and sharing many such investigations because I did not believe I could contribute anything interesting and that revealing my own ignorance or limits was both shameful and prideful.
+
+Prideful? Because to put my words to paper (or webpage) that are so far from perfection and quality I knowingly pollute the discourse, and I should know how inadequate I am and not make those ramblings available to anyone else.
+
+Now I understand it doesn't matter at all if I contribute anything wider than my own improvement because my improvement **is the worthwhile goal**. And resolving myself to creating something, allows me to bring what is in my mind to the world. With these in the world, they can be further shaped or shattered and discarded. But thus exposed, I am then open to the judgment of others and their criticisms, yet I have had the courage to put words down. And hopefully the sense to release them when **finding out** better or more refined conclusions.
+
+From Hegel,
+
+> A will which resolves on nothing is not an actual will; the characterless man can never resolve on anything. The reason for such indecision may also lie in an over-refined sensibility which knows that, in determining something, it enters the realm of finitude, imposing a limit on itself and relinquishing infinity; yet it does not wish to renounce the totality which it intends. Such a disposition is dead, even if its aspiration is to be beautiful. 'Whoever aspires to great things', says Goethe, 'must be able to limit himself.' Only by making resolutions can the human being enter actuality, however painful the process may be; for inertia would rather not emerge from that inward brooding in which it reserves a universal possibility for itself. But possibility is not yet actuality. The will which is sure of itself does not therefore lose itself in what it determines.
+
+So time to find out.

@@ -6,8 +6,6 @@ website:
   title: "Mara Alexeev's Website"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
       - posts.qmd # add your posts.qmd file to your navbar!
       - about.qmd
       - href: https://maraalexeev.github.io/cv/
