@@ -6,7 +6,7 @@ date-modified: '`r Sys.Date()`'
 categories: [R,Family Life]
 description: Plotting my mood over 5+ years
 slug: mom-s-mood-meter
-image: 'image_for_blog_post.png'
+image: 'image_for_blog_post.jpg'
 archives:
   - function () ,.Internal(date())
 toc: false

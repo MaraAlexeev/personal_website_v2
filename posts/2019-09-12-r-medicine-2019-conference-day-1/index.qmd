@@ -6,7 +6,7 @@ date-modified: '`r Sys.Date()`'
 categories: [R]
 draft: false
 description: Shipping up to Boston!
-image: 'image_for_blog_post.png'
+image: 'image_for_blog_post.jpg'
 archives:
   - function () ,.Internal(date())
 toc: false
