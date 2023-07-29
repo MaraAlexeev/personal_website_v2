@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 library(ggplot2)
 library(ggthemes)
 library(tidyverse)
-library(plotly)
+
 library(gt)
 ```
 
@@ -37,6 +37,7 @@ data <- bind_rows(data, (data |>
 
 data$find_out <- round(data$find_out, 1)
 
+
 plot <- data |> 
   ggplot(aes(x = fiddle, y = find_out)) +
   geom_point(aes(color = project)) +
@@ -50,18 +51,14 @@ plot <- data |>
    #      )
   scale_x_continuous(limits = c(0, 10), breaks = c(0, 2, 4, 6, 8, 10)) +
   scale_y_continuous(breaks = c(0, 10, 20, 30, 40 )) +
-   theme_minimal()
+   theme_minimal() +
+  theme(legend.position = 'none' )
 ```
 
 ```{r}
-interactive_plot <- ggplotly(plot)
+plot
 ```
 
-```{r}
-
-interactive_plot
-
-```
 
 # Welcome
 
