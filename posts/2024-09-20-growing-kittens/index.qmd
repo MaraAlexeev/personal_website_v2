@@ -7,7 +7,7 @@ categories: [R]
 draft: false
 description: How quickly do kittens gain weight?
 slug: growing-kittens
-image: 'image_for_blog_post.png'
+image: 'image_for_blog_post.jpg'
 archives:
   - function () ,.Internal(date())
 toc: true

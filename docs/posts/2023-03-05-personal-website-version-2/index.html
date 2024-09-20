@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,9 +20,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -49,43 +50,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -140,25 +111,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <span class="navbar-title">Mara Alexeev’s Website</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
  <span class="menu-text">Mara’s Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://maraalexeev.github.io/cv/">
+    <a class="nav-link" href="https://maraalexeev.github.io/cv/" rel="" target="">
  <span class="menu-text">CV</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -201,7 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">July 29, 2023</p>
+        <p class="date-modified">September 20, 2024</p>
       </div>
     </div>
       
@@ -413,9 +386,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -531,6 +518,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -572,202 +645,202 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="MaraAlexeev/personal_website_v2" data-repo-id="R_kgDOJFwsOQ" data-category="General" data-category-id="DIC_kwDOJFwsOc4CUrDd" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<pre class="markdown" data-shortcodes="false"><code>---
-title: Personal Website Version 2.0
-author: 'Mara Alexeev'
-date: 2023-03-05
-date-modified: '`r Sys.Date()`'
-categories: [Quarto,R,How-to]
-draft: false
-description: 'Building a new Quarto website'
-image: 'image_for_blog_post.png'
-archives:
-  - function () ,.Internal(date())
-toc: false
-
-format:
-  html:
-    code-fold: true
-    code-tools: true
----
-
-# New Quarto Website
-
-I wanted to move away from my "original" blogdown method of blogging because I am really enthused about how great Quarto is. My blogdown project had accumulated so much code debris over the years because I started it when I was first learning to code, that it seemed easier to just take the posts and migrate them to a new Quarto Website + Blog than correcting all the mistakes accumulated over 4 years. I am initially going to post this on Github Pages, but once I have migrated content from my old site, I will reassign this repo to my Netlify account to deploy to my personalized domain.
-
-Three things I wanted out of the new website:
-
-1)  Make writing posts easy. Quarto does not have an add-in (yet) like Blogdown does to create a new blog post. So I leaned very, very heavily on [Mark Edney's R-Blogger's post](https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/) on how to make a handy Shiny app to take the thinking out of setting up each blog post. The rough part of being just excited enough to blog, but with huge time constraints is that I might go months in between posting and inevitably forget things and it frustrates me.
-
-2)  Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from [a post by Samantha Csik.](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)
-
-3)  Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. Last fall I saw a cool method called giscus, so will use that.
-
-## Shiny App for Blog Post Creation
-
-For setting up the Shiny App, the only major change I did was to make a multi-select option for categories for my blog post template from Mark's original work. This is nice because it helps me make sure I am not duplicating categories (eg Medicine and medicine) because categories are case sensitive. I also added a `data-modified` section to my template because I like to capture when I update a post. Also, I love the YAML template including `draft = 'true'` to harder to accidentally post a draft version of your post.
-
-Here's the whole app below.
-
-```{r, "Shiny app to create a blog post"}
-#| eval = FALSE
-
-# Source https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/
-#
-
-library(shiny)
-library(miniUI)
-
-QGadget &lt;- function() {....}
-
-ui &lt;- miniUI::miniPage(
-  miniUI::gadgetTitleBar("Quarto Blog Post"),
-  miniUI::miniContentPanel(
-    shiny::textInput("title", "Title", placeholder = "Post Title"),
-    shiny::selectInput("categories", "Categories", 
-                       choices = list("How-to", 
-                                      "R", "Python", "Quarto",
-                                      "Medicine", 
-                                      "Family Life", "Cooking"),
-                       multiple = TRUE)
-
-  )
-)
-
-server &lt;- function(input, output, session) {
-  
-  shiny::observeEvent(input$done, {
-    Blog_post(input$title, input$categories)
-    stopApp("Post Created")
-  })
-}
-
-shiny::runGadget(ui, server, viewer = shiny::dialogViewer("Quarto Blog Post"))
-
-Blog_post &lt;- function(title, categories){
-  data &lt;- list(title = title,
-               author = "'Mara Alexeev'",
-               date = Sys.Date(),
-               date_modified = "'`r Sys.Date()`'",
-               categories = categories,
-                 
-               draft = 'true',
-               description = "''",
-               image = "''",
-               archives = format(date, "%Y/%m"),
-               toc = 'false',
-               fold = "true",
-               tools = 'true',
-               link =  'false')
-  
-  Template &lt;- '---
-title: {{title}}
-author: {{author}}
-date: {{date}}
-date-modified: {{date_modified}}
-categories: [{{categories}}]
-draft: {{draft}}
-description: {{description}}
-image: {{image}}
-archives:
-  - {{archives}}
-toc: {{toc}}
-
-format:
-  html:
-    code-fold: {{fold}}
-    code-tools: {{tools}}
----
-
-# Introduction
-
-# Conclusion
-
-'
-  
-  dir.create(paste0("./posts/",data$date, "-", title))
-  writeLines(whisker::whisker.render(Template, data), paste0("./posts/",data$date, "-", title, "/index.qmd"))
-  file.edit(paste0("./posts/",data$date, "-", title, "/index.qmd"))
-}
-
-
-```
-
-## Blog on a Quarto Website
-
-Samantha points out that a Quarto Blog is just a special point of a Quarto website. I actually got a little concerned about using Quarto as my blog because the directions of how to set up the individual posts had a lot of steps that I was worried I would not be able to do consistently over time. That's when I thought to write a script to do it for me, and instead was saved several hours of work by Mark's post.
-
-## giscus
-
-Okay, so this is the main thrust of this post: Giscus. Which has painfully cute name. I was actually able to set it up on a test Quarto Book project, but of course that was months ago, and I can't remember the process because I didn't write it down! So for myself and for everyone else, here I go!
-
-First, why did I choose [giscus](https://github.com/giscus/giscus)? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don't use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page.
-
-## giscus steps
-
-1)  You have to add giscus as an app on Github.
-
-2)  Depending on your settings, you additionally may need to add the repo of interest to you configuration settings on giscus.
-
-3)  Enable discussions on your repo (settings -\&gt; features -\&gt; discussions).
-
-4)  Go to [giscus.app](https://giscus.app/) and follow instructions there and it will give you some good information like repo-id which you will need to put in your `_quarto.yml`.
-
-5)  Take the information from the giscus.app and update your `_quarto.yml` to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the `_quarto.yml`.
-
-``` yaml
-  comments: 
-    giscus:
-      repo: MaraAlexeev/personal_website_v2
-      repo-id: FAKE_REPO_ID #Get this from giscus.app
-      category: General
-      category-id: FAKE_CATEGORY_ID #Get this from giscus.app
-      mapping: title #pathname was very gross format
-      reactions-enabled: TRUE
-      input-position: bottom
-      theme: light
-```
-
-6)  For pages you don't want to have comments on put in the yaml header of that page `comments: false`. I do this for my blog post listing page and my about page.
-
-# Other fiddly things with Quarto Website to do
-
-Deploy this to my personal domain with Netlify.
-
--   Only hard part was finding the applications part of my Github Settings to authorize Netlify to access the correct repo.
-
-Transfer over my old posts to here.
-
--   Fear this will just be a manual process as I have time for it. I do have a `last modified` part to my post template so that I can keep track of original post dates and update dates.
-
-Get my CV links up here.
-
--   This was actually much easier than expected! All you need to do for external links is put the following in the \_quarto.yml file
-
-    ``` yml
-      navbar:
-        left:
-          - href: index.qmd
-            text: Home
-          - posts.qmd # add your posts.qmd file to your navbar!
-          - about.qmd
-          - href: https://maraalexeev.github.io/cv/ #your desired URL
-            text: CV #the text that shows up on the navbar
-    ```
-
-Long term, figure out how to make it prettier.
-
--   Probably gonna finally need to learn some css
-
--   I did one thing to help make sure figures don't go off the (here, phone) screen which happened with a plot I made for my first (manually) migrated blog post here. Just add this to the `style.css` file to cap image output to the max width of the screen.
-
-    ``` css
-    img {
-
-    max-width: 100%;
-
-    }
-    ```</code></pre>
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Personal Website Version 2.0</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> 'Mara Alexeev'</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2023-03-05</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-modified:</span><span class="co"> '`r Sys.Date()`'</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Quarto,R,How-to]</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> 'Building a new Quarto website'</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> 'image_for_blog_post.png'</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="an">archives:</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - function () ,.Internal(date())</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> false</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="fu"># New Quarto Website</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>I wanted to move away from my "original" blogdown method of blogging because I am really enthused about how great Quarto is. My blogdown project had accumulated so much code debris over the years because I started it when I was first learning to code, that it seemed easier to just take the posts and migrate them to a new Quarto Website + Blog than correcting all the mistakes accumulated over 4 years. I am initially going to post this on Github Pages, but once I have migrated content from my old site, I will reassign this repo to my Netlify account to deploy to my personalized domain.</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>Three things I wanted out of the new website:</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>1)  Make writing posts easy. Quarto does not have an add-in (yet) like Blogdown does to create a new blog post. So I leaned very, very heavily on <span class="co">[</span><span class="ot">Mark Edney's R-Blogger's post</span><span class="co">](https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/)</span> on how to make a handy Shiny app to take the thinking out of setting up each blog post. The rough part of being just excited enough to blog, but with huge time constraints is that I might go months in between posting and inevitably forget things and it frustrates me.</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>2)  Have a website plus a blog so the Quarto Website + Blog was a great combo idea that I was able to execute with help from <span class="co">[</span><span class="ot">a post by Samantha Csik.</span><span class="co">](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>3)  Enable discussions on my blog. I don't think I have much traffic on my blog, but I know a few people have used things I have written because when I was Googling myself I found someone thanking me in their blog post about something I had had to troubleshoot in my blog and of course then blogged about it. Last fall I saw a cool method called giscus, so will use that.</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Shiny App for Blog Post Creation</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>For setting up the Shiny App, the only major change I did was to make a multi-select option for categories for my blog post template from Mark's original work. This is nice because it helps me make sure I am not duplicating categories (eg Medicine and medicine) because categories are case sensitive. I also added a <span class="in">`data-modified`</span> section to my template because I like to capture when I update a post. Also, I love the YAML template including <span class="in">`draft = 'true'`</span> to harder to accidentally post a draft version of your post.</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>Here's the whole app below.</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, "Shiny app to create a blog post"}</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval = FALSE</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Source https://www.r-bloggers.com/2022/08/creating-posts-for-quarto-blog/</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(miniUI)</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>QGadget <span class="ot">&lt;-</span> <span class="cf">function</span>() {....}</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> miniUI<span class="sc">::</span><span class="fu">miniPage</span>(</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>  miniUI<span class="sc">::</span><span class="fu">gadgetTitleBar</span>(<span class="st">"Quarto Blog Post"</span>),</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>  miniUI<span class="sc">::</span><span class="fu">miniContentPanel</span>(</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    shiny<span class="sc">::</span><span class="fu">textInput</span>(<span class="st">"title"</span>, <span class="st">"Title"</span>, <span class="at">placeholder =</span> <span class="st">"Post Title"</span>),</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    shiny<span class="sc">::</span><span class="fu">selectInput</span>(<span class="st">"categories"</span>, <span class="st">"Categories"</span>, </span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>                       <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">"How-to"</span>, </span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"R"</span>, <span class="st">"Python"</span>, <span class="st">"Quarto"</span>,</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Medicine"</span>, </span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Family Life"</span>, <span class="st">"Cooking"</span>),</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>                       <span class="at">multiple =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>  shiny<span class="sc">::</span><span class="fu">observeEvent</span>(input<span class="sc">$</span>done, {</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Blog_post</span>(input<span class="sc">$</span>title, input<span class="sc">$</span>categories)</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stopApp</span>(<span class="st">"Post Created"</span>)</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>shiny<span class="sc">::</span><span class="fu">runGadget</span>(ui, server, <span class="at">viewer =</span> shiny<span class="sc">::</span><span class="fu">dialogViewer</span>(<span class="st">"Quarto Blog Post"</span>))</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>Blog_post <span class="ot">&lt;-</span> <span class="cf">function</span>(title, categories){</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">title =</span> title,</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>               <span class="at">author =</span> <span class="st">"'Mara Alexeev'"</span>,</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>               <span class="at">date =</span> <span class="fu">Sys.Date</span>(),</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>               <span class="at">date_modified =</span> <span class="st">"'`r Sys.Date()`'"</span>,</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>               <span class="at">categories =</span> categories,</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>                 </span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>               <span class="at">draft =</span> <span class="st">'true'</span>,</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>               <span class="at">description =</span> <span class="st">"''"</span>,</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>               <span class="at">image =</span> <span class="st">"''"</span>,</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>               <span class="at">archives =</span> <span class="fu">format</span>(date, <span class="st">"%Y/%m"</span>),</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>               <span class="at">toc =</span> <span class="st">'false'</span>,</span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>               <span class="at">fold =</span> <span class="st">"true"</span>,</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>               <span class="at">tools =</span> <span class="st">'true'</span>,</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>               <span class="at">link =</span>  <span class="st">'false'</span>)</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>  Template <span class="ot">&lt;-</span> <span class="st">'---</span></span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a><span class="st">title: {{title}}</span></span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a><span class="st">author: {{author}}</span></span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a><span class="st">date: {{date}}</span></span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a><span class="st">date-modified: {{date_modified}}</span></span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a><span class="st">categories: [{{categories}}]</span></span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a><span class="st">draft: {{draft}}</span></span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="st">description: {{description}}</span></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a><span class="st">image: {{image}}</span></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a><span class="st">archives:</span></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a><span class="st">  - {{archives}}</span></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="st">toc: {{toc}}</span></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a><span class="st">format:</span></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="st">  html:</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="st">    code-fold: {{fold}}</span></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="st">    code-tools: {{tools}}</span></span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="st">---</span></span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="st"># Introduction</span></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a><span class="st"># Conclusion</span></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="st">'</span></span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(<span class="fu">paste0</span>(<span class="st">"./posts/"</span>,data<span class="sc">$</span>date, <span class="st">"-"</span>, title))</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeLines</span>(whisker<span class="sc">::</span><span class="fu">whisker.render</span>(Template, data), <span class="fu">paste0</span>(<span class="st">"./posts/"</span>,data<span class="sc">$</span>date, <span class="st">"-"</span>, title, <span class="st">"/index.qmd"</span>))</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.edit</span>(<span class="fu">paste0</span>(<span class="st">"./posts/"</span>,data<span class="sc">$</span>date, <span class="st">"-"</span>, title, <span class="st">"/index.qmd"</span>))</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Blog on a Quarto Website</span></span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>Samantha points out that a Quarto Blog is just a special point of a Quarto website. I actually got a little concerned about using Quarto as my blog because the directions of how to set up the individual posts had a lot of steps that I was worried I would not be able to do consistently over time. That's when I thought to write a script to do it for me, and instead was saved several hours of work by Mark's post.</span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## giscus</span></span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>Okay, so this is the main thrust of this post: Giscus. Which has painfully cute name. I was actually able to set it up on a test Quarto Book project, but of course that was months ago, and I can't remember the process because I didn't write it down! So for myself and for everyone else, here I go!</span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>First, why did I choose <span class="co">[</span><span class="ot">giscus</span><span class="co">](https://github.com/giscus/giscus)</span>? I loved that it supported multiple languages (human languages because I sometimes blog about languages that don't use the Latin alphabet), it has some math notation ability, and it is open source and has a great github page.</span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a><span class="fu">## giscus steps</span></span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>1)  You have to add giscus as an app on Github.</span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>2)  Depending on your settings, you additionally may need to add the repo of interest to you configuration settings on giscus.</span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>3)  Enable discussions on your repo (settings -<span class="sc">\&gt;</span> features -<span class="sc">\&gt;</span> discussions).</span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>4)  Go to <span class="co">[</span><span class="ot">giscus.app</span><span class="co">](https://giscus.app/)</span> and follow instructions there and it will give you some good information like repo-id which you will need to put in your <span class="in">`_quarto.yml`</span>.</span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>5)  Take the information from the giscus.app and update your <span class="in">`_quarto.yml`</span> to include information about the repo, giscus, and some ids. Unfortunately, it is not formatted the way you need to put it into the <span class="in">`_quarto.yml`</span>.</span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">comments</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">giscus</span><span class="kw">:</span></span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> MaraAlexeev/personal_website_v2</span></span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">repo-id</span><span class="kw">:</span><span class="at"> FAKE_REPO_ID</span><span class="co"> #Get this from giscus.app</span></span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">category</span><span class="kw">:</span><span class="at"> General</span></span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">category-id</span><span class="kw">:</span><span class="at"> FAKE_CATEGORY_ID</span><span class="co"> #Get this from giscus.app</span></span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">mapping</span><span class="kw">:</span><span class="at"> title</span><span class="co"> #pathname was very gross format</span></span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">reactions-enabled</span><span class="kw">:</span><span class="at"> </span><span class="ch">TRUE</span></span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">input-position</span><span class="kw">:</span><span class="at"> bottom</span></span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> light</span></span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a>6)  For pages you don't want to have comments on put in the yaml header of that page <span class="in">`comments: false`</span>. I do this for my blog post listing page and my about page.</span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a><span class="fu"># Other fiddly things with Quarto Website to do</span></span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a>Deploy this to my personal domain with Netlify.</span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Only hard part was finding the applications part of my Github Settings to authorize Netlify to access the correct repo.</span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a>Transfer over my old posts to here.</span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Fear this will just be a manual process as I have time for it. I do have a <span class="in">`last modified`</span> part to my post template so that I can keep track of original post dates and update dates.</span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a>Get my CV links up here.</span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>This was actually much easier than expected! All you need to do for external links is put the following in the <span class="sc">\_</span>quarto.yml file</span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a>    <span class="in">``` yml</span></span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span>posts.qmd<span class="co"> # add your posts.qmd file to your navbar!</span></span>
+<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span>about.qmd</span>
+<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://maraalexeev.github.io/cv/</span><span class="co"> #your desired URL</span></span>
+<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">text</span><span class="kw">:</span><span class="at"> CV</span><span class="co"> #the text that shows up on the navbar</span></span>
+<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="in">```</span></span>
+<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a>Long term, figure out how to make it prettier.</span>
+<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Probably gonna finally need to learn some css</span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>I did one thing to help make sure figures don't go off the (here, phone) screen which happened with a plot I made for my first (manually) migrated blog post here. Just add this to the <span class="in">`style.css`</span> file to cap image output to the max width of the screen.</span>
+<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a>    <span class="in">``` css</span></span>
+<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a>    img <span class="op">{</span></span>
+<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a>    max<span class="op">-</span>width<span class="op">:</span> <span class="dv">100</span><span class="op">%;</span></span>
+<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a>    <span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
