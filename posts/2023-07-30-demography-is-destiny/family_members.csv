@@ -1,0 +1,44 @@
+Side,Name,Cousin,Offspring
+Paternal,Carol,John,4
+Paternal,Carol,Diane,2
+Paternal,Shelia ,Pamela,0
+Paternal,Shelia ,Gregory,2
+Paternal,Charles,Ben,0
+Paternal,Charles,Janelle,0
+Paternal,Charles,Adriene,0
+Paternal,Charles,Andrew,2
+Paternal,Charles,Robert,0
+Paternal,Duane,Michael,2
+Paternal,Duane,Matthew,2
+Paternal,Duane,Mara,2
+Paternal,Duane,Patrick,0
+Paternal,Thomas,NA,NA
+Paternal,James,Sara,1
+Paternal,James,Jennifer,2
+Paternal,Gordon,Tennille,0
+Paternal,Gordon,Dustin,1
+Paternal,Gordon,Desiree,1
+Paternal,Wanda,Thomas,1
+Paternal,Wanda,Steven,1
+Paternal,Nora,NA,NA
+Maternal,Donald,Greg,2
+Maternal,Donald,Patricia,4
+Maternal,Donald,Margaret ,3
+Maternal,Donald,Mary,4
+Maternal,Donald,Jennifer,3
+Maternal,Donald,Paul,3
+Maternal,Donald,Erin,4
+Maternal,Jon,Thomas,0
+Maternal,Jon,Andy,2
+Maternal,Jon,Dan,0
+Maternal,Jon,Molly,6
+Maternal,Madelyn,Michelle,4
+Maternal,Madelyn,Adrian,2
+Maternal,Richard,Laura,1
+Maternal,Richard,Sara,1
+Maternal,Denise,Michael,2
+Maternal,Denise,Matthew,2
+Maternal,Denise,Mara,2
+Maternal,Denise,Patrick,0
+Maternal,Shiela,Mary,0
+Maternal,Shiela,Annie,0

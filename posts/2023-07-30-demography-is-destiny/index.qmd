@@ -1,0 +1,78 @@
+---
+title: Demography is Destiny
+author: 'Mara Alexeev'
+date: 2023-07-30
+date-modified: '`r Sys.Date()`'
+categories: [R,Project,Book Review]
+draft: true
+description: Will anyone please think about the children!?
+slug: demography-is-destiny
+image: 'image_for_blog_post.png'
+archives:
+  - function () ,.Internal(date())
+toc: true
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# Family changes in one generation
+
+From a very personal perspective I have noticed many interesting things about how family structures are changing and am wondering how much these changes are local to me or specific to my family or social circles. 
+
+Doing a count (supported by my brother the family history buff) I come up that I had 33 first cousins. My children have 4. This seems like an insane contraction. Also, I grew up near many cousins and grandmothers. My children even don't live in the same time zone as their cousins. 
+
+```{r}
+library(readr)
+library(tidyverse)
+
+family_members <- read_csv("family_members.csv") |> 
+  janitor::clean_names()
+```
+
+My family by the numbers!
+
+```{r}
+size_moms_fam <- 6
+with_kids_mom <- 6
+
+size_dads_fam <- 9
+with_kids_dad <- 7
+
+paternal_fist_cousins <- 20
+maternal_first_cousins <- 21
+
+first_cousins_with_kids_mom <- 21 - 5
+first_cousins_with_kids_dad <- 20 - 7
+
+first_cousin_offspring_mom <- 45
+first_cousin_offspring_dad <- 23
+```
+
+```{r}
+with_kids <- tibble( cohort = c("Gen 1", "Gen 1", "Gen 2", "Gen 2"), percent_with_kids = c((6/6), (7/9), ((21-5)/21), ((20-7)/20)), side = c("maternal", "paternal", "maternal", "paternal"))
+
+
+```
+
+```{r}
+with_kids |> ggplot(aes(x = cohort, y = percent_with_kids, fill = side)) + geom_col() + facet_grid(.~side) + theme(legend.position = "none")
+```
+
+
+```{r}
+kid_count <- tibble( generation = c(-1, -1, 0, 0, 1, 1), 
+                     kids = c( 6, 9, 21, 20, 45, 23), 
+                     ave_family_size = c(6, 9, 21/6, 20/9, 45/21, 23/20),
+                     side = c("maternal", "paternal", "maternal", "paternal", "maternal", "paternal"))
+```
+
+```{r}
+kid_count |> ggplot(aes(x = generation, y = ave_family_size, fill = side)) + geom_col() + facet_grid(.~side) + theme(legend.position = "none")
+```
+
+
+
+# Conclusion

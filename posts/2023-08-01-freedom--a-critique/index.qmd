@@ -1,0 +1,43 @@
+---
+title: Freedom, a critique
+author: 'Mara Alexeev'
+date: 2023-08-01
+date-modified: '`r Sys.Date()`'
+categories: [Family Life,Book Review]
+draft: true
+description: Reflections on freedom after motherhood
+slug: freedom--a-critique
+image: 'motherhood_thorns.jpg'
+archives:
+  - function (x) ,{,    UseMethod(&quot;date&quot;),}
+toc: true
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# Inspiration
+
+## The Case Against the Sexual Revolution
+
+Author [Louise Perry](https://www.louisemperry.co.uk/)
+
+
+
+## Feminism Against Progress
+
+Author [Mary Harrington](https://reactionaryfeminist.com/about/)
+
+## A random tweet
+
+![](tweet_burden.png)
+
+Author [Alex Kaschuta](https://www.alexkaschuta.com/about)
+
+
+
+
+
+Feminism 

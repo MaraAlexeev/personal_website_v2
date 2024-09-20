@@ -1,0 +1,89 @@
+---
+title: 'Book Review: Outlive'
+author: 'Mara Alexeev'
+date: 2023-08-05
+date-modified: last-modified
+categories: [Book Review]
+draft: true
+description: Read Outlive with a physician friend
+slug: book-review--outlive
+image: 'image_for_blog_post.png'
+archives:
+  - function () ,.Internal(date())
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# Part I
+
+Chapter 1: 
+Fast death vs Slow death
+
+Shouldn't treat metabolic diseases like DMII like a broken bone which is a binary state. Waiting to a threshold like hgba1c 6.5% is strange.
+
+Oh god, already mentioned testosterone. Author's goal: actionable operating manual for the practice of longevity.
+
+Proactive medicine not preventative.
+
+Chapter 2: 
+Reminds me of Molly Maloof from my training. The person crazy enough to say that medicine is crazy.
+
+Medicine 1.0: nature causes disease not the gods
+Medicine 2.0: there are germs
+
+Claim: that beyond infectious diseases, medicine 2.0 hasn't delivered much on improved life expectancies.
+
+Toward Med 3.0: emphasis on prevention
+
+Seems huckster with the claim that he is helping patients with CGM. 
+
+He is concerned that the financial incentives of the US health care system are not aligned with having a healthier population.
+
+He sees Medicine 3.0 as putting the patient more in charge, demanding more from them. This strikes me as concerning because I have seen how much has been put on a lot of people while placing them in a terrible environment--having the education and knowledge doesn't seem super likely to produce great results. And for people who are motivated, how do they fare?
+
+Chapter 3: Objective, Strategy, Tactics
+The end of life for a lot of people is fairly painful and lonely.
+He asks his patients to sketch out what they want their future to look like. He imagines that with Medicine 3.0 that the healthy part of our lives could extend many more years as well as add years at the end of life.
+
+If the objective is longer, healthier life, what is the strategy? 
+
+The strategy: Still waiting.
+
+Three vectors of healthspan: cognitive, physical, emotional. 
+
+Maybe the strategy is to not decline in those three categories?
+
+Tactics: start working to improve healthspan before there are any problems.
+
+Medicine 2.0 Tactics: procedures and medications. 
+
+Medicine 3.0 Tactics: exercise, nutrition, sleep, emotional health, exogenous molecule (drugs, hormones, supplements).
+
+Exercise: strength, stability, aerobic efficiency, peak aerobic capacity. 
+
+He feels sleep is an undervalued cause of problems.
+
+Critical of RCTs because he feels that waiting for the evidence is devastating blow to taking action now on things that he feels have a high probability of helping. He recognizes there are limitations to that, but fears no one will do the 100+ year study to learn what are improved ways of living healthier lives.
+
+Impression of part 1: 
+Don't feel I have seen anything new here yet. I feel like the strategy was a bit of a missed opportunity to not articulate it more clearly. 
+
+Very interesting to think about the nature of how experiments are funded and conducted. Why is there not a study of a 100,000 Americans looking at different interventions to improve the lives of the generations to come after us?
+
+# Part II
+
+Chapter 4: Centenarians
+
+Do you think Jeanne Calment was real??
+
+Male centenarians, although rarer than female centenarians, score better on cognitive and functional tests than the females.
+
+Compression of morbidity 
+
+
+ 
+# Conclusion

@@ -12,7 +12,7 @@ Blog_post <- function(title, categories, description){
   data <- list(title = title,
                author = "'Mara Alexeev'",
                date = Sys.Date(),
-               date_modified = "'`r Sys.Date()`'",
+               date_modified = "last-modified",
                categories = categories,
                slug = stringr::str_replace_all(stringr::str_to_lower(title), "[^[:alnum:]]", "-"), 
                draft = 'true',
@@ -132,5 +132,7 @@ shiny::runGadget(ui, server, viewer = shiny::dialogViewer("Quarto Blog Post"))
 #   # writeLines(whisker::whisker.render(Template, data), paste0("./posts/",data$date, "-", title, "/index.qmd"))
 #   # file.edit(paste0("./posts/",data$date, "-", title, "/index.qmd"))
 # }
+
+
 
 

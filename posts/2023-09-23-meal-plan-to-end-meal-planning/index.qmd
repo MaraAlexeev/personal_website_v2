@@ -1,0 +1,41 @@
+---
+title: Meal plan to end meal planning
+author: 'Mara Alexeev'
+date: 2023-09-23
+date-modified: last-modified
+categories: [Cooking,Family Life,Project]
+draft: true
+description: How I learned to stop worrying and love the meal template
+slug: meal-plan-to-end-meal-planning
+image: 'image_for_blog_post.png'
+archives:
+  - function () ,.Internal(date())
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# Introduction
+
+I am tired of bad or no meals. I am tried of scraps. I am tired of throwing food out. I am tired of thinking about food that isn't a fun meal. I love organization. I love big meal days like Thanksgiving, but the grinding routine of cooking most days for just my family and two very picky eaters is frustrating. 
+
+My primary goals are to feed my family healthy food, cooked at home, with minimal fuss and less weekly planning.
+
+Secondary goals are to have less food waste, fewer meals out, have a system that accommodates schedule flexibility, and can easily be adapted if I come to dread a dish.
+
+Tertiary goals include eating more seasonal food, to try the occasional new dish, and coordinate meals that share common ingredients over the week to make less waste.
+
+Idea one: 
+Make a list of standard recipes. 
+Get them all in Paprika (my recipe storage system)
+Get a template in google sheets up for weekly planning
+Share via blog!
+
+https://docs.google.com/spreadsheets/d/1jrLo2dw1A4lYPGsiH4BEgp7bghS469DBad7Xh0rRpk4/edit#gid=994856743 
+
+Idea: Set up four weekly template.
+
+# Conclusion
