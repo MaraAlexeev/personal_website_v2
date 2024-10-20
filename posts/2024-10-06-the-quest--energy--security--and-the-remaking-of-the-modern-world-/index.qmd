@@ -1,0 +1,28 @@
+---
+title: "The Quest: Energy, Security, and the Remaking of the Modern World" 
+author: 'Mara Alexeev'
+date: 2024-10-06
+date-modified: last-modified
+categories: [Book Review]
+draft: true
+description: Brief comments on Yergin's work
+slug: the-quest--energy--security--and-the-remaking-of-the-modern-world-
+image: 'lawn_mower.jpg'
+archives:
+  - function () ,.Internal(date())
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# The past is just behind us
+
+My father told me recently that he was the first generation of our family to never use horses on the farm. He was relaying a story about how in the rafters of one of the buildings on the family farm, we have a horse sleigh. He does not know anything about the ways in which it was used and would not know how to attach horses to it even if he had the gear and horses. I actually doubt this given how mechancially inclined my father is, I think given all the components and some time, he would likely be able to cobble it all together quite well. 
+
+
+My grandfather was born in Iowa in 1915 and used horse t
+
+# Conclusion
