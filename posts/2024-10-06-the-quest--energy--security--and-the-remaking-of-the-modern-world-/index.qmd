@@ -1,10 +1,9 @@
 ---
 title: "The Quest: Energy, Security, and the Remaking of the Modern World" 
 author: 'Mara Alexeev'
-date: 2024-10-06
+date: 2025-06-08
 date-modified: last-modified
 categories: [Book Review]
-draft: true
 description: Brief comments on Yergin's work
 slug: the-quest--energy--security--and-the-remaking-of-the-modern-world-
 image: 'lawn_mower.jpg'
@@ -20,9 +19,20 @@ format:
 
 # The past is just behind us
 
-My father told me recently that he was the first generation of our family to never use horses on the farm. He was relaying a story about how in the rafters of one of the buildings on the family farm, we have a horse sleigh. He does not know anything about the ways in which it was used and would not know how to attach horses to it even if he had the gear and horses. I actually doubt this given how mechancially inclined my father is, I think given all the components and some time, he would likely be able to cobble it all together quite well. 
+My father told me recently that he was the first generation of our family to never use horses on the farm. He was relaying a story about how in the rafters of one of the buildings on the family farm, we have a horse sleigh. He does not know anything how it was used and would not know how to attach horses to it even if he had the gear and horses. I actually doubt this given how mechanically inclined my father is, I think given all the components and some time, he would likely be able to cobble it all together quite well.
 
+My grandfather was born in Iowa in 1915 and used horses as a child on the farm. I do not know when and what type of tractors first arrived on the farm in our little spot of central Iowa. I do know that after returning from serving in Europe after World War II my grandfather had some sort of coupon that allowed him to purchase a tractor, which was a boon to him and his family. He lived in the larger but nearby town and worked as a carpenter for some time before returning to take over the family farm, where I grew up.
 
-My grandfather was born in Iowa in 1915 and used horse t
+My grandfather sadly died at age 70 in 1986 when I was only four months old, so I have no memory of him and only a few pictures of us together.
 
-# Conclusion
+Here we have a seismic event, historically speaking, the mechanization of farming--and in two generations--we have a complete rupture with the prior way of farming, which presumably more closely resembled the prior 1000 years of farming by an order of magnitude with what came after following that debut of the tractor. Lost to me are also the stories of how my great^Nth^ grandparents navigated the transition from farming in West/Central Europe to the Midwest of the United States.
+
+Here on our 2 acre home in Georgia we have a small, useful lawn tractor.
+
+![Our Cub Cadet lawn tractor with another delightfully useful tool: a wagon.](lawn_mower.jpg)
+
+The usefulness of this little device is huge, and we rarely use it for mowing--a true American pastime. I am time poor these days, so I pay someone to mow so I can spend time doing landscaping and gardening work, which is work I both enjoy and do not want to outsource as I love the experimentation and gradual process to change our grass lawn into a more complicated space for activities beyond merely mowing.
+
+I imagine my grandmothers and grandfathers for time immemorial cultivating family gardens or larger areas with nothing but their own power, hand tools, and, if they were lucky, some draft animals, and I reflect upon the tools and access to exploitable energy I have today.
+
+Yergin's [The Quest: Energy, Security, and the Remaking of the Modern World]{.underline} was a good book especially with regards to understanding the incentives behind "alternative" energy policy in the 20th and 21st century, but it did not reorder my world view and understanding of history the way his prior book [The Prize]{.underline} did. A bit rich to ask for that level of impact twice. I think a more accessible book with material from [The Prize]{.underline} and this book could be hewn from the source material to successfully transmit to any reasonably curious middle schooler in the United States how profound our access to energy has remade the world and our lives.
