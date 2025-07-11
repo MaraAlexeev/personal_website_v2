@@ -1,0 +1,165 @@
+---
+title: 16th Biggest City per US State
+author: 'Mara Alexeev'
+date: 2025-07-11
+date-modified: last-modified
+categories: [R]
+description: Down the rabbit hole of US Census Bureau Data
+slug: 16th-biggest-city-per-us-state
+image: 'image_for_blog_post.png'
+archives:
+  - function () ,.Internal(date())
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+execute:
+  warning: false
+  message: false
+---
+
+# Marshalltown, Iowa
+
+[Marshalltown, Iowa](https://en.wikipedia.org/wiki/Marshalltown,_Iowa) is a city in Central Iowa that is probably best known for things you might see in the stores like Lowe's and Home Depot: Lennox and the Marshalltown Company. Lennox makes all sorts of AC and heating applicances, and the Marshalltown Company, which makes an incredible number of specialized tools used in everything from tiling your bathroom to archaeological expeditions. I think many of these big "handyman" stores will have part of aisle dedicated to these tools. In in a story that feels like it could have only ever happened in 19th century America, a single man and local blacksmith, [David Lennox](https://en.wikipedia.org/wiki/Dave_Lennox), is a pivotal person in both companies.
+
+I grew up near Marshalltown and attended school there before leaving for college in 2004. A friend from medical school messaged me today to tell me that she happened upon the trivia that Marshalltown is the 16th largest city in Iowa. I didn't know how to put in that in perspective. I guess that it is probably still under 30,000 people. It seems to be growing slightly when I go visit my parents, and I feel like it was in the 25,000 range when I moved away 21(!) years ago. 
+
+# Census Bureau
+
+So I had to head over to the [CB's website](https://www2.census.gov/programs-surveys/popest/datasets/) to see what the 16th largest cities in other states look like around the United States. 
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+```
+```{r}
+#| label: read-from-local-file
+
+# The path to the local data file
+# The file is in a subfolder called "data"
+file_path <- "data/sub-est2024.csv"
+
+# Read the data from the CSV file
+# The 'tryCatch' block will show a helpful message if the file is not found.
+local_data <- tryCatch({
+  read_csv(file_path)
+}, error = function(e) {
+  message("Error reading file: ", e$message)
+  message("\nPlease make sure '", file_path, "' exists and is a valid CSV file.")
+  # Return an empty tibble or NULL if the file can't be read
+  tibble() 
+})
+
+```
+```{r}
+ local_data <- local_data %>%
+    mutate(
+      sumlev_desc = case_when(
+        SUMLEV == "040" ~ "State",
+        SUMLEV == "050" ~ "County",
+        SUMLEV == "061" ~ "Minor Civil Division",
+        SUMLEV == "071" ~ "Minor Civil Division place part",
+        SUMLEV == "157" ~ "County place part",
+        SUMLEV == "162" ~ "Incorporated place",
+        SUMLEV == "170" ~ "Consolidated city",
+        SUMLEV == "172" ~ "Consolidated city -- place within consolidated city",
+        TRUE ~ "Other" # A default for any values not in the key
+      )
+    )
+```
+
+But before we get to granular level data, let's just look at the state level. Who is #16???
+
+```{r}
+  ranked_states <- local_data %>%
+    filter(SUMLEV == "040") %>%
+    arrange(desc(POPESTIMATE2024)) %>%
+    mutate(Rank = row_number()) %>%
+    select(Rank, STNAME, POPESTIMATE2024)
+
+  # Assign the 16th ranked state name to a variable
+  state_16 <- ranked_states$STNAME[16]
+
+  # Display the table
+  knitr::kable(
+    ranked_states,
+    caption = "State Population Estimates for 2024, in Descending Order",
+    col.names = c("Rank", "State Name", "2024 Population Estimate"),
+    format.args = list(big.mark = ","))
+```
+
+So our 16th largest state is `r state_16`!
+
+But let's see what the 16th largest "city" is in each state. I will need to get some better understanding of how the CB defines their cities to make sure I am filtering on the correct codes, but I want to get this out quickly for my curious friends! Marshalltown doesn't come out as the 16th based on 2024 population estimates. Let's see what happened over the past 5 years in Iowa with the top 25 cities.
+
+```{r}
+  ranked_cities_by_state_all <- local_data %>%
+    filter(SUMLEV %in% c("162", "170", "172")) %>%
+    group_by(STNAME) %>%
+    arrange(desc(POPESTIMATE2024)) %>%
+    mutate(Rank = row_number()) %>%
+    filter(Rank == 16 ) %>%
+    ungroup() %>%
+    select(STNAME, NAME, POPESTIMATE2024) %>%
+    arrange(STNAME)
+
+  
+    knitr::kable(
+    ranked_cities_by_state_all,
+    caption = "16th Largest City or Place by 2024 Population Within Each State order alphabetically by State Name",
+    col.names = c("State Name", "Place Name", "2024 Population Estimate"),
+    format.args = list(big.mark = ",")
+  )
+    
+    ranked_cities_by_state_by_pop <-ranked_cities_by_state_all %>% arrange(desc(POPESTIMATE2024))
+    
+    knitr::kable(
+    ranked_cities_by_state_by_pop,
+    caption = "16th Largest City or Place by 2024 Population Within Each State ordered by Population Size",
+    col.names = c("State Name", "Place Name", "2024 Population Estimate"),
+    format.args = list(big.mark = ",")
+  )
+    
+    
+
+```
+
+And here's how Marshalltown landed.
+```{r}
+ 
+  ranked_cities_by_iowa <- local_data %>%
+  filter(STNAME == "Iowa") %>%
+    filter(SUMLEV %in% c("162", "170", "172")) %>%
+    arrange(desc(POPESTIMATE2024)) %>%
+    mutate(Rank = row_number()) %>%
+    filter(Rank <= 25 ) %>%
+   
+    select(
+      NAME,
+      Rank,
+      ESTIMATESBASE2020,
+    
+      POPESTIMATE2021,
+      POPESTIMATE2022,
+      POPESTIMATE2023,
+      POPESTIMATE2024
+    ) %>%
+  arrange(Rank) %>%
+  
+    knitr::kable(
+      caption = "Population Data for Iowa",
+       col.names = c("Place Name", "Rank", "2020 Pop. Est.", "2021 Pop. Est.", "2022 Pop. Est.", "2023 Pop. Est.", "2024 Pop. Est."),
+      format.args = list(big.mark = ",")
+    )
+
+ ranked_cities_by_iowa
+```
+
+
+Waukeeeeeeee!! 😈
+
