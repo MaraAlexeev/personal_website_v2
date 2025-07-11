@@ -6,7 +6,8 @@ date-modified: last-modified
 categories: [R]
 description: Down the rabbit hole of US Census Bureau Data
 slug: 16th-biggest-city-per-us-state
-image: 'image_for_blog_post.png'
+image: 'mara-on-tractor.jpg'
+image-alt: "Digging a stump out at my parents' farm near Haverhill, Iowa in 2023."
 archives:
   - function () ,.Internal(date())
 toc: false
@@ -22,13 +23,13 @@ execute:
 
 # Marshalltown, Iowa
 
-[Marshalltown, Iowa](https://en.wikipedia.org/wiki/Marshalltown,_Iowa) is a city in Central Iowa that is probably best known for things you might see in the stores like Lowe's and Home Depot: Lennox and the Marshalltown Company. Lennox makes all sorts of AC and heating applicances, and the Marshalltown Company, which makes an incredible number of specialized tools used in everything from tiling your bathroom to archaeological expeditions. I think many of these big "handyman" stores will have part of aisle dedicated to these tools. In in a story that feels like it could have only ever happened in 19th century America, a single man and local blacksmith, [David Lennox](https://en.wikipedia.org/wiki/Dave_Lennox), is a pivotal person in both companies.
+[Marshalltown, Iowa](https://en.wikipedia.org/wiki/Marshalltown,_Iowa) is a city in Central Iowa that is probably best known for things you might see in the stores like Lowe's and Home Depot: Lennox and the Marshalltown Company. Lennox makes all sorts of AC and heating applicances, and the Marshalltown Company, which makes an incredible number of specialized tools used in everything from tiling your bathroom to archaeological expeditions. I think many of these big "handyman" stores will have part of an aisle dedicated to these tools. In a story that feels like it could have only ever happened in 19th century America, a single man and local blacksmith, [David Lennox](https://en.wikipedia.org/wiki/Dave_Lennox), was a pivotal person in both companies.
 
-I grew up near Marshalltown and attended school there before leaving for college in 2004. A friend from medical school messaged me today to tell me that she happened upon the trivia that Marshalltown is the 16th largest city in Iowa. I didn't know how to put in that in perspective. I guess that it is probably still under 30,000 people. It seems to be growing slightly when I go visit my parents, and I feel like it was in the 25,000 range when I moved away 21(!) years ago. 
+I grew up near Marshalltown, and I attended school in Marshalltown until leaving for college in 2004. A friend from medical school messaged me today to tell me that she happened upon the trivia that Marshalltown is the 16th largest city in Iowa. I didn't know how to put in that in perspective. I guess that it is probably still under 30,000 people. It seems to be growing slightly when I go visit my parents, and I feel like it was in the 25,000 range when I moved away 21(!) years ago. 
 
 # Census Bureau
 
-So I had to head over to the [CB's website](https://www2.census.gov/programs-surveys/popest/datasets/) to see what the 16th largest cities in other states look like around the United States. 
+So I had to head over to the [Census Bureau's website](https://www2.census.gov/programs-surveys/popest/datasets/) to see what the 16th largest cities in other states look like around the United States. 
 
 ```{r}
 #| label: setup
@@ -78,9 +79,9 @@ But before we get to granular level data, let's just look at the state level. Wh
 ```{r}
   ranked_states <- local_data %>%
     filter(SUMLEV == "040") %>%
-    arrange(desc(POPESTIMATE2024)) %>%
+    arrange(desc(ESTIMATESBASE2020)) %>%
     mutate(Rank = row_number()) %>%
-    select(Rank, STNAME, POPESTIMATE2024)
+    select(Rank, STNAME, ESTIMATESBASE2020)
 
   # Assign the 16th ranked state name to a variable
   state_16 <- ranked_states$STNAME[16]
@@ -88,40 +89,40 @@ But before we get to granular level data, let's just look at the state level. Wh
   # Display the table
   knitr::kable(
     ranked_states,
-    caption = "State Population Estimates for 2024, in Descending Order",
-    col.names = c("Rank", "State Name", "2024 Population Estimate"),
+    caption = "State Population for 2020 Census, in Descending Order",
+    col.names = c("Rank", "State Name", "2020 Population Base"),
     format.args = list(big.mark = ","))
 ```
 
 So our 16th largest state is `r state_16`!
 
-But let's see what the 16th largest "city" is in each state. I will need to get some better understanding of how the CB defines their cities to make sure I am filtering on the correct codes, but I want to get this out quickly for my curious friends! Marshalltown doesn't come out as the 16th based on 2024 population estimates. Let's see what happened over the past 5 years in Iowa with the top 25 cities.
+But let's see what the 16th largest "city" is in each state. I will need to get some better understanding of how the Census Bureau defines their cities to make sure I am filtering on the correct codes, but I want to get this out quickly for my curious friends! Marshalltown does come out as the 16th based on 2020 population estimates. 
 
 ```{r}
   ranked_cities_by_state_all <- local_data %>%
     filter(SUMLEV %in% c("162", "170", "172")) %>%
     group_by(STNAME) %>%
-    arrange(desc(POPESTIMATE2024)) %>%
+    arrange(desc(ESTIMATESBASE2020)) %>%
     mutate(Rank = row_number()) %>%
     filter(Rank == 16 ) %>%
     ungroup() %>%
-    select(STNAME, NAME, POPESTIMATE2024) %>%
+    select(STNAME, NAME, ESTIMATESBASE2020) %>%
     arrange(STNAME)
 
   
     knitr::kable(
     ranked_cities_by_state_all,
-    caption = "16th Largest City or Place by 2024 Population Within Each State order alphabetically by State Name",
-    col.names = c("State Name", "Place Name", "2024 Population Estimate"),
+    caption = "16th Largest City or Place by 2020 Population Within Each State order alphabetically by State Name",
+    col.names = c("State Name", "Place Name", "2020 Census Population"),
     format.args = list(big.mark = ",")
   )
     
-    ranked_cities_by_state_by_pop <-ranked_cities_by_state_all %>% arrange(desc(POPESTIMATE2024))
+    ranked_cities_by_state_by_pop <-ranked_cities_by_state_all %>% arrange(desc(ESTIMATESBASE2020))
     
     knitr::kable(
     ranked_cities_by_state_by_pop,
-    caption = "16th Largest City or Place by 2024 Population Within Each State ordered by Population Size",
-    col.names = c("State Name", "Place Name", "2024 Population Estimate"),
+    caption = "16th Largest City or Place by 2020 Census Population Within Each State ordered by Population Size",
+    col.names = c("State Name", "Place Name", "2020 Census Population"),
     format.args = list(big.mark = ",")
   )
     
@@ -129,7 +130,7 @@ But let's see what the 16th largest "city" is in each state. I will need to get 
 
 ```
 
-And here's how Marshalltown landed.
+Let's see what happened over the past 5 years in Iowa with the top 25 cities. Did Marshalltown hold on???
 ```{r}
  
   ranked_cities_by_iowa <- local_data %>%
