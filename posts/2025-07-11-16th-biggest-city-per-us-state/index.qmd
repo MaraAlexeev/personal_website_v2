@@ -10,7 +10,7 @@ image: 'mara-on-tractor.jpg'
 image-alt: "Digging a stump out at my parents' farm near Haverhill, Iowa in 2023."
 archives:
   - function () ,.Internal(date())
-toc: false
+toc: true
 
 format:
   html:
@@ -37,6 +37,8 @@ So I had to head over to the [Census Bureau's website](https://www2.census.gov/p
 #| warning: false
 
 library(tidyverse)
+library(crosstalk)
+library(DT)
 ```
 ```{r}
 #| label: read-from-local-file
@@ -48,13 +50,18 @@ file_path <- "data/sub-est2024.csv"
 # Read the data from the CSV file
 # The 'tryCatch' block will show a helpful message if the file is not found.
 local_data <- tryCatch({
-  read_csv(file_path)
+  # Explicitly set the SUMLEV column to be read as character to preserve leading zeros
+  # Added locale to handle "invalid UTF-8" warnings by specifying the file encoding.
+  read_csv(file_path, 
+           col_types = cols(SUMLEV = col_character()),
+           locale = locale(encoding = "latin1"))
 }, error = function(e) {
   message("Error reading file: ", e$message)
   message("\nPlease make sure '", file_path, "' exists and is a valid CSV file.")
   # Return an empty tibble or NULL if the file can't be read
   tibble() 
 })
+
 
 ```
 ```{r}
@@ -73,6 +80,7 @@ local_data <- tryCatch({
       )
     )
 ```
+
 
 But before we get to granular level data, let's just look at the state level. Who is #16???
 
@@ -98,9 +106,12 @@ So our 16th largest state is `r state_16`!
 
 But let's see what the 16th largest "city" is in each state. I will need to get some better understanding of how the Census Bureau defines their cities to make sure I am filtering on the correct codes, but I want to get this out quickly for my curious friends! Marshalltown does come out as the 16th based on 2020 population estimates. 
 
+
+
 ```{r}
   ranked_cities_by_state_all <- local_data %>%
-    filter(SUMLEV %in% c("162", "170", "172")) %>%
+    distinct(STNAME, NAME, ESTIMATESBASE2020, .keep_all = TRUE) %>%
+    filter(SUMLEV %in% c( "162", "61", "50")) %>%
     group_by(STNAME) %>%
     arrange(desc(ESTIMATESBASE2020)) %>%
     mutate(Rank = row_number()) %>%
@@ -109,20 +120,24 @@ But let's see what the 16th largest "city" is in each state. I will need to get 
     select(STNAME, NAME, ESTIMATESBASE2020) %>%
     arrange(STNAME)
 
-  
+    ranked_cities_by_state_all %>%
+      mutate(Order = row_number()) %>%
+  relocate(Order) %>%
+      
     knitr::kable(
-    ranked_cities_by_state_all,
     caption = "16th Largest City or Place by 2020 Population Within Each State order alphabetically by State Name",
-    col.names = c("State Name", "Place Name", "2020 Census Population"),
+    col.names = c("Order", "State Name", "Place Name", "2020 Census Population"),
     format.args = list(big.mark = ",")
   )
     
-    ranked_cities_by_state_by_pop <-ranked_cities_by_state_all %>% arrange(desc(ESTIMATESBASE2020))
+    ranked_cities_by_state_by_pop <-ranked_cities_by_state_all %>% 
+      arrange(desc(ESTIMATESBASE2020)) %>% mutate(Order = row_number()) %>%
+  relocate(Order) 
     
-    knitr::kable(
-    ranked_cities_by_state_by_pop,
+
+    knitr::kable(ranked_cities_by_state_by_pop ,
     caption = "16th Largest City or Place by 2020 Census Population Within Each State ordered by Population Size",
-    col.names = c("State Name", "Place Name", "2020 Census Population"),
+    col.names = c("Order", "State Name", "Place Name", "2020 Census Population"),
     format.args = list(big.mark = ",")
   )
     
@@ -130,12 +145,12 @@ But let's see what the 16th largest "city" is in each state. I will need to get 
 
 ```
 
-Let's see what happened over the past 5 years in Iowa with the top 25 cities. Did Marshalltown hold on???
+Let's see what happened over the past 5 years in Iowa with the top 25 cities. Did Marshalltown hold on in 2024???
 ```{r}
  
   ranked_cities_by_iowa <- local_data %>%
   filter(STNAME == "Iowa") %>%
-    filter(SUMLEV %in% c("162", "170", "172")) %>%
+filter(SUMLEV %in% c( "162", "61", "50")) %>%
     arrange(desc(POPESTIMATE2024)) %>%
     mutate(Rank = row_number()) %>%
     filter(Rank <= 25 ) %>%
@@ -163,4 +178,72 @@ Let's see what happened over the past 5 years in Iowa with the top 25 cities. Di
 
 
 Waukeeeeeeee!! 😈
+
+# Looking for the outliers
+
+While I don't think I understand my data well enough!
+```{r}
+local_data %>%
+    filter(SUMLEV %in% c("162", "61", "50")) %>%
+    group_by(STNAME) %>%
+    summarise(Count = n(), .groups = 'drop') %>% 
+    arrange(Count) %>%
+    knitr::kable(
+      caption = "Count of Selected Places per State", 
+      col.names = c("State Name", "Selected Places")
+    )
+```
+
+Check out Hawaii, New Hampshire, and Rhode Island below. My filtering above is not capturing what I believe reality is, or rather what typical non-Census Bureau people think about what should be on that list. I suspect I am filtering a variable called `SUMLEV` incorrectly or incorrectly __for some states__, which might have special ways they show up in the data.
+
+```{r}
+#| label: interactive-city-table
+#| echo: false
+#| warning: false
+#| message: false
+if (nrow(local_data) > 0) {
+  # Prepare the data: Top 25 cities/places within each state
+  top_25_cities <- local_data %>%
+#    filter(SUMLEV %in% c("162", "170", "172")) %>%
+    filter(SUMLEV %in% c( "162", "61", "50")) %>%
+    group_by(STNAME) %>%
+    arrange(desc(POPESTIMATE2020)) %>%
+    mutate(Rank = row_number()) %>%
+    filter(Rank <= 25) %>%
+    ungroup() %>%
+    select(
+      `State` = STNAME,
+      `Rank` = Rank,
+      `Place Name` = NAME,
+      `2020 Population Estimate` = POPESTIMATE2020
+    )
+
+  # Create a shared data object for crosstalk
+  shared_cities <- crosstalk::SharedData$new(top_25_cities)
+
+  # Create the interactive UI using bscols for a sidebar layout
+  crosstalk::bscols(
+    widths = c(3, 9),
+    crosstalk::filter_select(
+      id = "state_filter",
+      label = "Select a State:",
+      sharedData = shared_cities,
+      group = ~State
+    ),
+    DT::datatable(
+      shared_cities,
+      caption = "Top 25 Cities and Places per State by Population for 2020 Census Data",
+      options = list(pageLength = 25, lengthMenu = c(10, 25, 50)),
+      class = "cell-border stripe",
+      rownames = FALSE
+    ) %>%
+      DT::formatRound(columns = "2020 Population Estimate", digits = 0, mark = ",")
+  )
+} else {
+  "Data could not be loaded."
+}
+```
+
+
+
 
