@@ -31,17 +31,28 @@ library(zoo)
 
 data_mood <- read_sheet(ss= 'https://docs.google.com/spreadsheets/d/1rQhDJreU-S-P8xxO2L6w9IP3N---E1NxSYa3jPib2gU/edit#gid=1501523757', sheet = 'Form Responses 1')
 
+data_mood_2 <- read_sheet(ss= 'https://docs.google.com/spreadsheets/d/1rQhDJreU-S-P8xxO2L6w9IP3N---E1NxSYa3jPib2gU/edit#gid=1501523757', sheet = 'Form Responses 2')
 
 
 data_mood <- data_mood |>
   janitor::clean_names()
 
-```
+data_mood_2 <- data_mood_2 |>
+  janitor::clean_names()
 
-```{r}
 data_mood_subset <-  data_mood |>
   select(timestamp, tiredness, stress, happiness, how_do_i_physically_feel) |>
   rename(discomfort = how_do_i_physically_feel) 
+
+data_mood_2_subset <-  data_mood_2 |>
+  select(timestamp, tiredness, stress, happiness, how_do_i_physically_feel) |>
+  rename(discomfort = how_do_i_physically_feel) 
+
+data_mood_subset <- bind_rows(data_mood_subset, data_mood_2_subset)
+```
+
+```{r}
+
 
 data_mood_subset <- data_mood_subset |> 
   pivot_longer(!timestamp, names_to = 'measurement_type', values_to = 'value') 
