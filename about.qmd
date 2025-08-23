@@ -9,10 +9,10 @@ My name is Mara Alexeev. I currently live in Athens, Georgia, but I grew up on a
 
 In the summer of 2022, I finished a masters in Biomedical Informatics at Harvard Medical School and a fellowship in Clinical Informatics at Boston Children's Hospital. My primary medical specialty is Pediatrics.
 
-Currently, I am the Director of Clinical Informatics at a health tech start up called Dandelion Health.
+Currently, I am the Director of Clinical Informatics at a health tech start up called Layer Health.
 
-I love learning human and computer languages. I’ve had a long love affair with Russian and German, and recently became interested in American Sign Language (and also the Russian Manual Alphabet!) and thinking about learning Latin. On the computer front, I’m always learning more Python, R, and SQL. I enjoy data visualization and reproducible analysis and research.
+I love learning human and computer languages. I’ve had a long love affair with Russian and German, and interested in American Sign Language (and also the Russian Manual Alphabet!), and casually learning a bit of Latin and Spanish.
 
-Interested in connecting or collaborating? [Send me a message on Linkedin](https://www.linkedin.com/in/maraalexeev/)!
+At home you can find me reading, cooking, in the garden, and chasing my children around. 
 
 ![Mara at the Tandy, age 3](./images/MaraAtTheTandy.jpg "No internal hard drive!!"){fig-align="center"}
