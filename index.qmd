@@ -62,7 +62,7 @@ plot
 
 # Welcome
 
-While I am not a fan of the words used in a certain meme that sounds a wee bit like **"Fiddle around, find out"** I am a strong believer that there is nothing more true than learning by doing. I love that the original meme implies that the input to the finding out can be low quality. However, I think the there is room for a second part of the process captured by the phrase **"tear down, build up"**.
+While I am not a fan of the words used in a certain meme that sounds a wee bit like **"Fiddle around, find out"** I am a strong believer that learning by doing is the most effective method to learn. I love that the original meme implies that the input to the finding out can be low quality. However, I think the there is room for a second part of the process captured by the phrase **"tear down, build up"**.
 
 The initial discovery is rewarding, but a further process of tearing it apart and building something from your learning is delightful. I believe most of my life I have held back from doing and sharing many such investigations because I did not believe I could contribute anything interesting.
 
