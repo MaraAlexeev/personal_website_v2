@@ -42,7 +42,7 @@ plot <- data |>
   ggplot(aes(x = fiddle, y = find_out)) +
   geom_point(aes(color = project)) +
 
-  labs(title = "Fiddly Little Project Returns", subtitle = "The whole point", x = "Fiddle Amount", y = "Find Out Amount", color = "Project") +
+  labs(title = "Fiddly Little Project Returns", subtitle = "The whole point", x = "Fiddle Around Amount", y = "Find Out Amount", color = "Project") +
   theme(legend.position="right") +
    # theme(axis.text.x=element_blank(), #remove x axis labels
    #      axis.ticks.x=element_blank(), #remove x axis ticks
@@ -60,7 +60,7 @@ plot
 ```
 
 
-# Welcome
+# Let's learn something interesting
 
 While I am not a fan of the words used in a certain meme that sounds a wee bit like **"Fiddle around, find out"** I am a strong believer that learning by doing is the most effective method to learn. I love that the original meme implies that the input to the finding out can be low quality. However, I think the there is room for a second part of the process captured by the phrase **"tear down, build up"**.
 
