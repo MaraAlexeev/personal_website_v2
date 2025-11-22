@@ -1,0 +1,28 @@
+---
+title: Exploring crime data
+author: 'Mara Alexeev'
+date: 2025-09-20
+date-modified: last-modified
+categories: [R,Quarto]
+draft: true
+description: "Exploring crime data, part 1"
+slug: exploring-crime-data
+image: 'image_for_blog_post.png'
+archives:
+  - function () ,.Internal(date())
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+
+# Introduction
+
+I saw a plot and a screenshot of a tweet from X.com when I was wasting time on Substack. Sigh. I could not believe the plot, so I went looking for the data. 
+
+
+
+# Conclusion

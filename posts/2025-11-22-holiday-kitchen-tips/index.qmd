@@ -1,0 +1,49 @@
+---
+title: Holiday Kitchen Tips
+author: 'Mara Alexeev'
+date: 2025-11-22
+date-modified: last-modified
+categories: [Family Life]
+draft: false
+description: Get your kitchen and pantry ready for the holiday season
+slug: holiday-kitchen-tips
+image: 'pantry-prep.jpg'
+archives:
+  - function () ,.Internal(date())
+toc: true
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# Before Thanksgiving
+
+Shelf stable food accumulates. It fills the nooks and crannies of a kitchen and pantry. How do you end up with a 5 extra gelatin packets, two different kinds of SPAM, and probably 4 different kinds of jams and preserves, etc?
+
+A weekend or two before Thanksgiving I set aside time to prepare the kitchen for the busy stretch of cooking between Thanksgiving, Christmas, and New Year's. 
+
+Over the year I collect extra boxes of pasta, jams, gelatin pouches, random canned items, and canned fish. As I prepare to cook for the holidays, this is a great time to make use of things that I already have in the kitchen, remove clutter, reconsider how I organize the kitchen, and complete an inventory to avoid frantic dashes to the store for cream of tartar on the eve of some major holiday. 
+
+# Tasks
+
+1. Do a deep clean of the kitchen. Don't open the cupboards yet! Make sure you have plenty of clean space on your counters and tables. 
+
+2. Collect items from the kitchen you haven't used in the past year and consider donating them or gifting them to someone who would find them useful. If you aren't sure, designate a box as a holding center, place the items in there, and if you haven't used them in another 3 months, you know you don't need them. If you are newly inspired by an item, incorporate it into your cooking routine. Either get more space or a new kitchen toy--win, win!
+
+3. Now in a clean, empty kitchen pull out your shelf stable goods and group them into reasonable categories (canned veggies together, pasta together etc.). As you do this, note what organization has and has not worked for you. Do you have 3 jars of paprika and no baking soda? Can reach items you use frequently or do you have to use a step stool to grab those items? Is it a pain to keep nuts in one spot? Are you eating your nuts so slowly they have gone off?
+
+4. Clean out any boxes or other storage items. Would you benefit from either a smaller inventory or do you need to add a few more bins to organize your nuts and dried fruits in a more sane fashion? Take note of what might help the kitchen function better. A few $2 dollar bins can tame the pasta madness or grain chaos. 
+
+5. Discard any items that are not worth saving. Check that pantry stables like flour, sugar, spices, etc are sufficient for the extra baking and cooking you will be doing. Add items to your shopping list.
+
+6. Use the items you have in your next week of cooking or even as part of the upcoming holiday cooking! Ask a friend if they need 3 cans of pineapple juice. Or look up a new punch recipe if to see how you could use them for your new favorite holiday drink. I don't recommend trying out new dishes on guests at holidays because it can be stressful cooking something you haven't ever made before and disappointing if it doesn't taste good, so consider being adventurous beforehand. I often don't take this advice, but I am never unhappy when I do take this advice. For Christmas 2024 I made an elaborate salmon and rice dish that was wrapped in a sheet of dough. I didn't know the importance of lamination for that type of dough, so my first attempt at the recipe with a cheap cabbage filling the week before saved Christmas dinner from a very bad crust. 
+
+7. Order or run out and get those organizing items you think you need. You can't believe how much $20 of simple bins will improve you kitchen life.
+
+8. If you haven't already, take a marker plus/minus some masking tape to date items, so you know when you opened things or when they expire if not in the original packaging. Commit yourself to the habit of doing this when you get items or open them in the first place. This is even more important for fridge items.
+
+9. Place everything back and think about where items show live now. What needs to be easily grabbed, what can be put on top shelves for visibility (eg a spare ketchup and jams) that you can get the step stool for but won't be annoyed at the extra 15 steps of movement to get an item you need. 
+
+10. Go forth and make lovely meals!

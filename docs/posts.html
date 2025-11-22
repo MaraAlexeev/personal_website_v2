@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mara Alexeev’s Website - Mara’s Blog</title>
+<title>Mara’s Blog – Mara Alexeev's Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,22 +32,30 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,8 +64,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -71,7 +81,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 18,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
@@ -90,45 +101,74 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Mara Alexeev’s Website</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" rel="" target="" aria-current="page">
- <span class="menu-text">Mara’s Blog</span></a>
+    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+<span class="menu-text">Mara’s Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About Me</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://maraalexeev.github.io/cv/" rel="" target="">
- <span class="menu-text">CV</span></a>
+    <a class="nav-link" href="https://maraalexeev.github.io/cv/"> 
+<span class="menu-text">CV</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -138,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(15)</span></div><div class="category" data-category="Book Review">Book Review <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Cooking">Cooking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Family Life">Family Life <span class="quarto-category-count">(3)</span></div><div class="category" data-category="How-to">How-to <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Medicine">Medicine <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Project">Project <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Quarto">Quarto <span class="quarto-category-count">(3)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(9)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(24)</span></div><div class="category" data-category="Qm9vayUyMFJldmlldw==">Book Review <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Q29va2luZw==">Cooking <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RmFtaWx5JTIwTGlmZQ==">Family Life <span class="quarto-category-count">(8)</span></div><div class="category" data-category="SG93LXRv">How-to <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TWVkaWNpbmU=">Medicine <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UHJvamVjdA==">Project <span class="quarto-category-count">(4)</span></div><div class="category" data-category="UXVhcnRv">Quarto <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(11)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -157,7 +197,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 
 
@@ -165,23 +207,83 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="R" data-listing-date-sort="1752206400000" data-listing-file-modified-sort="1752284949681" data-listing-date-modified-sort="1752284949000" data-listing-reading-time-sort="8">
+<div class="g-col-1" data-index="0" data-categories="RmFtaWx5JTIwTGlmZQ==" data-listing-date-sort="1763787600000" data-listing-file-modified-sort="1763828747974" data-listing-date-modified-sort="1763828747000" data-listing-reading-time-sort="4" data-listing-word-count-sort="743">
+<a href="./posts/2025-11-22-holiday-kitchen-tips/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/2025-11-22-holiday-kitchen-tips/pantry-prep.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Holiday Kitchen Tips
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RmFtaWx5JTIwTGlmZQ=='); return false;">Family Life</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Get your kitchen and pantry ready for the holiday season</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Mara Alexeev
+</div>
+<div class="listing-date">
+Nov 22, 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="UiUyQ1F1YXJ0bw==" data-listing-date-sort="1758340800000" data-listing-file-modified-sort="1758396030538" data-listing-date-modified-sort="1758396030000" data-listing-reading-time-sort="1" data-listing-word-count-sort="35">
+<a href="./posts/2025-09-20-exploring-crime-data/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/2025-09-20-exploring-crime-data/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exploring crime data
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRv'); return false;">Quarto</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Exploring crime data, part 1</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Mara Alexeev
+</div>
+<div class="listing-date">
+Sep 20, 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Ug==" data-listing-date-sort="1752206400000" data-listing-file-modified-sort="1752284949681" data-listing-date-modified-sort="1752284949000" data-listing-reading-time-sort="8" data-listing-word-count-sort="1542">
 <a href="./posts/2025-07-11-16th-biggest-city-per-us-state/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2025-07-11-16th-biggest-city-per-us-state/mara-on-tractor.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="Digging a stump out at my parents&amp;#039; farm near Haverhill, Iowa in 2023.">
+<img loading="lazy" src="./posts/2025-07-11-16th-biggest-city-per-us-state/mara-on-tractor.jpg" class="thumbnail-image card-img" style="height: 150px;" alt="Digging a stump out at my parents&amp;#039; farm near Haverhill, Iowa in 2023.">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 16th Biggest City per US State
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-</div>
-<div class="card-text listing-description">
-Down the rabbit hole of US Census Bureau Data
+<div class="card-text listing-description delink">
+<p>Down the rabbit hole of US Census Bureau Data</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -192,26 +294,25 @@ Jul 11, 2025
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Book Review" data-listing-date-sort="1749355200000" data-listing-file-modified-sort="1749425945767" data-listing-date-modified-sort="1749425945000" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="3" data-categories="Qm9vayUyMFJldmlldw==" data-listing-date-sort="1749355200000" data-listing-file-modified-sort="1749425945767" data-listing-date-modified-sort="1749425945000" data-listing-reading-time-sort="3" data-listing-word-count-sort="567">
 <a href="./posts/2024-10-06-the-quest--energy--security--and-the-remaking-of-the-modern-world-/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2024-10-06-the-quest--energy--security--and-the-remaking-of-the-modern-world-/lawn_mower.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/2024-10-06-the-quest--energy--security--and-the-remaking-of-the-modern-world-/lawn_mower.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 The Quest: Energy, Security, and the Remaking of the Modern World
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Book Review'); return false;">
-Book Review
+
+<div class="listing-category" onclick="window.quartoListingCategory('Qm9vayUyMFJldmlldw=='); return false;">Book Review</div>
+
 </div>
-</div>
-<div class="card-text listing-description">
-Brief comments on Yergin’s work
+<div class="card-text listing-description delink">
+<p>Brief comments on Yergin’s work</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -222,29 +323,240 @@ Jun 8, 2025
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
+<div class="g-col-1" data-index="4" data-categories="RmFtaWx5JTIwTGlmZQ==" data-listing-date-sort="1698552000000" data-listing-file-modified-sort="1726853172989" data-listing-date-modified-sort="1726853172000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1081">
+<a href="./posts/2023-10-29-children--how-to-expand-and-contract-your-world/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/2023-10-29-children--how-to-expand-and-contract-your-world/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Children: how to expand and contract your world
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RmFtaWx5JTIwTGlmZQ=='); return false;">Family Life</div>
+
 </div>
-<div class="g-col-1" data-index="2" data-categories="R,Family Life" data-listing-date-sort="1689998400000" data-listing-file-modified-sort="1753562919599" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="card-text listing-description delink">
+<p>Musings on how my perspectives after children.</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Mara Alexeev
+</div>
+<div class="listing-date">
+Oct 29, 2023
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="TWVkaWNpbmU=" data-listing-date-sort="1695441600000" data-listing-file-modified-sort="1695510127178" data-listing-date-modified-sort="1695510127000" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
+<a href="./posts/2023-09-23-basics-on-birds-and-bees-/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/2023-09-23-basics-on-birds-and-bees-/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Basics on Birds and Bees!
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('TWVkaWNpbmU='); return false;">Medicine</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>The basics and a bit more on human sex determination</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Mara Alexeev
+</div>
+<div class="listing-date">
+Sep 23, 2023
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="6" data-categories="Q29va2luZyUyQ0ZhbWlseSUyMExpZmUlMkNQcm9qZWN0" data-listing-date-sort="1695441600000" data-listing-file-modified-sort="1698607810587" data-listing-date-modified-sort="1698607810000" data-listing-reading-time-sort="1" data-listing-word-count-sort="170">
+<a href="./posts/2023-09-23-meal-plan-to-end-meal-planning/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/2023-09-23-meal-plan-to-end-meal-planning/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Meal plan to end meal planning
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q29va2luZw=='); return false;">Cooking</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RmFtaWx5JTIwTGlmZQ=='); return false;">Family Life</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHJvamVjdA=='); return false;">Project</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>How I learned to stop worrying and love the meal template</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Mara Alexeev
+</div>
+<div class="listing-date">
+Sep 23, 2023
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="7" data-categories="RmFtaWx5JTIwTGlmZQ==" data-listing-date-sort="1691294400000" data-listing-file-modified-sort="1691320005778" data-listing-date-modified-sort="1691320005000" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
+<a href="./posts/2023-08-06-maiden--mother--matriarch/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/2023-08-06-maiden--mother--matriarch/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Maiden, Mother, Matriarch
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RmFtaWx5JTIwTGlmZQ=='); return false;">Family Life</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>These Brits and their podcasts</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Mara Alexeev
+</div>
+<div class="listing-date">
+Aug 6, 2023
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="8" data-categories="Qm9vayUyMFJldmlldw==" data-listing-date-sort="1691208000000" data-listing-file-modified-sort="1695497611332" data-listing-date-modified-sort="1695497611000" data-listing-reading-time-sort="3" data-listing-word-count-sort="478">
+<a href="./posts/2023-08-05-book-review--outlive/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/2023-08-05-book-review--outlive/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Book Review: Outlive
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Qm9vayUyMFJldmlldw=='); return false;">Book Review</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Read Outlive with a physician friend</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Mara Alexeev
+</div>
+<div class="listing-date">
+Aug 5, 2023
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="9" data-categories="RmFtaWx5JTIwTGlmZSUyQ0Jvb2slMjBSZXZpZXc=" data-listing-date-sort="1690862400000" data-listing-file-modified-sort="1691009545332" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="20">
+<a href="./posts/2023-08-01-freedom--a-critique/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/2023-08-01-freedom--a-critique/motherhood_thorns.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Freedom, a critique
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RmFtaWx5JTIwTGlmZQ=='); return false;">Family Life</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Qm9vayUyMFJldmlldw=='); return false;">Book Review</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Reflections on freedom after motherhood</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Mara Alexeev
+</div>
+<div class="listing-date">
+Aug 1, 2023
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="10" data-categories="UiUyQ1Byb2plY3QlMkNCb29rJTIwUmV2aWV3" data-listing-date-sort="1690689600000" data-listing-file-modified-sort="1690885816371" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="281">
+<a href="./posts/2023-07-30-demography-is-destiny/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/2023-07-30-demography-is-destiny/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Demography is Destiny
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHJvamVjdA=='); return false;">Project</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Qm9vayUyMFJldmlldw=='); return false;">Book Review</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Will anyone please think about the children!?</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Mara Alexeev
+</div>
+<div class="listing-date">
+Jul 30, 2023
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="11" data-categories="UiUyQ0ZhbWlseSUyMExpZmU=" data-listing-date-sort="1689998400000" data-listing-file-modified-sort="1753562919599" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1297">
 <a href="./posts/2023-07-22-mom-s-mood-meter/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2023-07-22-mom-s-mood-meter/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/2023-07-22-mom-s-mood-meter/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Mom’s Mood Meter
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RmFtaWx5JTIwTGlmZQ=='); return false;">Family Life</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Family Life'); return false;">
-Family Life
-</div>
-</div>
-<div class="card-text listing-description">
-Plotting my mood over 5+ years
+<div class="card-text listing-description delink">
+<p>Plotting my mood over 5+ years</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -255,26 +567,25 @@ Jul 22, 2023
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Quarto" data-listing-date-sort="1678597200000" data-listing-file-modified-sort="1685807349466" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="12" data-categories="UXVhcnRv" data-listing-date-sort="1678597200000" data-listing-file-modified-sort="1685807349466" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="300">
 <a href="./posts/2023-03-12-updates-to-shiny-app-for-creating-blog-posts/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2023-03-12-updates-to-shiny-app-for-creating-blog-posts/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/2023-03-12-updates-to-shiny-app-for-creating-blog-posts/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Updates to Shiny App for Creating Blog Posts
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
-Quarto
+
+<div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRv'); return false;">Quarto</div>
+
 </div>
-</div>
-<div class="card-text listing-description">
-Improve the slug!
+<div class="card-text listing-description delink">
+<p>Improve the slug!</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -285,32 +596,29 @@ Mar 12, 2023
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="Quarto,R,How-to" data-listing-date-sort="1677992400000" data-listing-file-modified-sort="1678643431246" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="g-col-1" data-index="13" data-categories="UXVhcnRvJTJDUiUyQ0hvdy10bw==" data-listing-date-sort="1677992400000" data-listing-file-modified-sort="1678643431246" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1652">
 <a href="./posts/2023-03-05-personal-website-version-2/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2023-03-05-personal-website-version-2/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/2023-03-05-personal-website-version-2/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Personal Website Version 2.0
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
-Quarto
+
+<div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRv'); return false;">Quarto</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SG93LXRv'); return false;">How-to</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('How-to'); return false;">
-How-to
-</div>
-</div>
-<div class="card-text listing-description">
-Building a new Quarto website
+<div class="card-text listing-description delink">
+<p>Building a new Quarto website</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -321,32 +629,29 @@ Mar 5, 2023
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="R,Quarto,Family Life" data-listing-date-sort="1677387600000" data-listing-file-modified-sort="1684096884886" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="14" data-categories="UiUyQ1F1YXJ0byUyQ0ZhbWlseSUyMExpZmU=" data-listing-date-sort="1677387600000" data-listing-file-modified-sort="1684096884886" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="520">
 <a href="./posts/2023-02-26-a-sticky-bun-but-not-every-day/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2023-02-26-a-sticky-bun-but-not-every-day/plot_sticky_bun.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/2023-02-26-a-sticky-bun-but-not-every-day/plot_sticky_bun.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 A sticky bun, but not every day
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRv'); return false;">Quarto</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RmFtaWx5JTIwTGlmZQ=='); return false;">Family Life</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
-Quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Family Life'); return false;">
-Family Life
-</div>
-</div>
-<div class="card-text listing-description">
-Solving a cafe mystery
+<div class="card-text listing-description delink">
+<p>Solving a cafe mystery</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -357,26 +662,25 @@ Feb 26, 2023
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="Cooking" data-listing-date-sort="1668229200000" data-listing-file-modified-sort="1678644452720" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="15" data-categories="Q29va2luZw==" data-listing-date-sort="1668229200000" data-listing-file-modified-sort="1678644452720" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="363">
 <a href="./posts/2022-11-12-cod-liver-in-nine-acts/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2022-11-12-cod-liver-in-nine-acts/images/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/2022-11-12-cod-liver-in-nine-acts/images/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Cod Liver in Nine Acts
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Cooking'); return false;">
-Cooking
+
+<div class="listing-category" onclick="window.quartoListingCategory('Q29va2luZw=='); return false;">Cooking</div>
+
 </div>
-</div>
-<div class="card-text listing-description">
-So much cod liver
+<div class="card-text listing-description delink">
+<p>So much cod liver</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -387,26 +691,25 @@ Nov 12, 2022
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="Book Review" data-listing-date-sort="1667102400000" data-listing-file-modified-sort="1678641363571" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="g-col-1" data-index="16" data-categories="Qm9vayUyMFJldmlldw==" data-listing-date-sort="1667102400000" data-listing-file-modified-sort="1678641363571" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="584">
 <a href="./posts/2022-10-30-the-prize/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2022-10-30-the-prize/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/2022-10-30-the-prize/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 The Prize
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Book Review'); return false;">
-Book Review
+
+<div class="listing-category" onclick="window.quartoListingCategory('Qm9vayUyMFJldmlldw=='); return false;">Book Review</div>
+
 </div>
-</div>
-<div class="card-text listing-description">
-A book report, partially forgotten
+<div class="card-text listing-description delink">
+<p>A book report, partially forgotten</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -417,26 +720,25 @@ Oct 30, 2022
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="8" data-categories="Family Life" data-listing-date-sort="1638680400000" data-listing-file-modified-sort="1678641196055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="17" data-categories="RmFtaWx5JTIwTGlmZQ==" data-listing-date-sort="1638680400000" data-listing-file-modified-sort="1678641196055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="87">
 <a href="./posts/2021-12-05-pedestrian-nightmare/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2021-12-05-pedestrian-nightmare/busy_car.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./posts/2021-12-05-pedestrian-nightmare/busy_car.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Pedestrian Nightmare
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Family Life'); return false;">
-Family Life
+
+<div class="listing-category" onclick="window.quartoListingCategory('RmFtaWx5JTIwTGlmZQ=='); return false;">Family Life</div>
+
 </div>
-</div>
-<div class="card-text listing-description">
-Dreaming about pedestrian first spaces
+<div class="card-text listing-description delink">
+<p>Dreaming about pedestrian first spaces</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -447,29 +749,27 @@ Dec 5, 2021
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="9" data-categories="R,Project" data-listing-date-sort="1636347600000" data-listing-file-modified-sort="1678640519564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16">
+<div class="g-col-1" data-index="18" data-categories="UiUyQ1Byb2plY3Q=" data-listing-date-sort="1636347600000" data-listing-file-modified-sort="1678640519564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3114">
 <a href="./posts/2021-11-08-alt-responses-to-give-the-god-of-death/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2021-11-08-alt-responses-to-give-the-god-of-death/images/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" data-src="./posts/2021-11-08-alt-responses-to-give-the-god-of-death/images/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Alt Responses to Give the God of Death
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHJvamVjdA=='); return false;">Project</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Project'); return false;">
-Project
-</div>
-</div>
-<div class="card-text listing-description">
-Today???
+<div class="card-text listing-description delink">
+<p>Today???</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -480,26 +780,25 @@ Nov 8, 2021
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="10" data-categories="R" data-listing-date-sort="1621915200000" data-listing-file-modified-sort="1678641169595" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="g-col-1" data-index="19" data-categories="Ug==" data-listing-date-sort="1621915200000" data-listing-file-modified-sort="1678641169595" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="820">
 <a href="./posts/2021-05-25-running-my-first-r-workshop/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2021-05-25-running-my-first-r-workshop/images/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" data-src="./posts/2021-05-25-running-my-first-r-workshop/images/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Running My First R Workshop
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-</div>
-<div class="card-text listing-description">
-And thoughts for making it better!
+<div class="card-text listing-description delink">
+<p>And thoughts for making it better!</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -510,26 +809,25 @@ May 25, 2021
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="11" data-categories="R" data-listing-date-sort="1580014800000" data-listing-file-modified-sort="1726861337406" data-listing-date-modified-sort="1726861337000" data-listing-reading-time-sort="4">
+<div class="g-col-1" data-index="20" data-categories="Ug==" data-listing-date-sort="1580014800000" data-listing-file-modified-sort="1726861337406" data-listing-date-modified-sort="1726861337000" data-listing-reading-time-sort="4" data-listing-word-count-sort="694">
 <a href="./posts/2024-09-20-growing-kittens/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2024-09-20-growing-kittens/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" data-src="./posts/2024-09-20-growing-kittens/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Growing Kittens
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-</div>
-<div class="card-text listing-description">
-How quickly do kittens gain weight?
+<div class="card-text listing-description delink">
+<p>How quickly do kittens gain weight?</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -540,26 +838,25 @@ Jan 26, 2020
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="12" data-categories="R" data-listing-date-sort="1568260800000" data-listing-file-modified-sort="1690653268046" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="21" data-categories="Ug==" data-listing-date-sort="1568260800000" data-listing-file-modified-sort="1690653268046" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="165">
 <a href="./posts/2019-09-12-r-medicine-2019-conference-day-1/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2019-09-12-r-medicine-2019-conference-day-1/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" data-src="./posts/2019-09-12-r-medicine-2019-conference-day-1/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 2019 R-Medicine Conference Day 1
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-</div>
-<div class="card-text listing-description">
-Shipping up to Boston!
+<div class="card-text listing-description delink">
+<p>Shipping up to Boston!</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -570,26 +867,25 @@ Sep 12, 2019
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="13" data-categories="Medicine" data-listing-date-sort="1567396800000" data-listing-file-modified-sort="1678646102448" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="22" data-categories="TWVkaWNpbmU=" data-listing-date-sort="1567396800000" data-listing-file-modified-sort="1678646102448" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
 <a href="./posts/2019-09-02-goals-as-a-chief-resident/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2019-09-02-goals-as-a-chief-resident/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" data-src="./posts/2019-09-02-goals-as-a-chief-resident/image_for_blog_post.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Goals as a chief resident
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Medicine'); return false;">
-Medicine
+
+<div class="listing-category" onclick="window.quartoListingCategory('TWVkaWNpbmU='); return false;">Medicine</div>
+
 </div>
-</div>
-<div class="card-text listing-description">
-Game plan for helping residents at MSKCC Kids
+<div class="card-text listing-description delink">
+<p>Game plan for helping residents at MSKCC Kids</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -600,32 +896,29 @@ Sep 2, 2019
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
-</div>
-<div class="g-col-1" data-index="14" data-categories="How-to,R,Project" data-listing-date-sort="1567224000000" data-listing-file-modified-sort="1678646165853" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="g-col-1" data-index="23" data-categories="SG93LXRvJTJDUiUyQ1Byb2plY3Q=" data-listing-date-sort="1567224000000" data-listing-file-modified-sort="1678646165853" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="305">
 <a href="./posts/2019-08-30-the-first-post-of-the-new-website/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/2019-08-30-the-first-post-of-the-new-website/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" data-src="./posts/2019-08-30-the-first-post-of-the-new-website/image_for_blog_post.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 The first post of the new website
 </h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('How-to'); return false;">
-How-to
+
+<div class="listing-category" onclick="window.quartoListingCategory('SG93LXRv'); return false;">How-to</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHJvamVjdA=='); return false;">Project</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Project'); return false;">
-Project
-</div>
-</div>
-<div class="card-text listing-description">
-Squarespace to Blogdown
+<div class="card-text listing-description delink">
+<p>Squarespace to Blogdown</p>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -636,52 +929,67 @@ Aug 31, 2019
 </div>
 </div>
 </div>
+</div></a>
 </div>
-</a>
 </div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
@@ -689,195 +997,348 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
       return codeEl.innerText;
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
       });
     }
-  }
-});
-</script>
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
+
 
 
 
