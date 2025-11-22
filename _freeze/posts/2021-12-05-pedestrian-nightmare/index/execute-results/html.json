@@ -1,0 +1,15 @@
+{
+  "hash": "8ebdff876190e41e3d898bb93056fd9e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Pedestrian Nightmare\nauthor: 'Mara Alexeev'\ndate: 2021-12-05\ndate-modified: '2025-11-22'\ncategories: [Family Life]\ndraft: false\ndescription: 'Dreaming about pedestrian first spaces'\nimage: 'busy_car.png'\narchives:\n  - function () ,.Internal(date())\ntoc: false\n\nformat:\n  html:\n    code-fold: true\n    code-tools: true\n---\n\n# Big parenting fears\n\nOne of my biggest fears as a parent is the threat of cars to the well-being of my children. And unlike other lurking parenting fears, this one is upsetting because it is a fairly rational fear based on the causes of death and injury to children in and out of vehicles.\n\nI hope to learn a bit more about how my own community could make streets safer and better for folks, so putting this here as a promise to myself.\n\n\n::: {.cell}\n::: {.cell-output-display}\n![Nightmare interaction of pedestrian areas and cars.](./busy_car.png){width=531}\n:::\n:::\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

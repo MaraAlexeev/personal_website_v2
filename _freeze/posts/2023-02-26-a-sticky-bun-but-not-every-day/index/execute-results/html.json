@@ -1,0 +1,17 @@
+{
+  "hash": "e7151524e2380a1fc1e6a3f7299ef15a",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: A sticky bun, but not every day\nauthor: 'Mara Alexeev'\ndate: 2023-02-26\ndate-modified: '2025-11-22'\ncategories: [R,Quarto,Family Life]\ndraft: false\ndescription: Solving a cafe mystery\nimage: 'plot_sticky_bun.png'\narchives:\n  - function () ,.Internal(date())\ntoc: false\n\nformat:\n  html:\n    code-fold: true\n    code-tools: true\n---\n\n\n\n\n\n::: {.cell}\n\n:::\n\n\n::: {.cell}\n\n:::\n\n\nIn the summer of 2020 we moved to Brookline, MA. Our routine immediately developed that we would do daycare drop off and then stop by Temptations Cafe (Hi Nassib!!) We particularly enjoyed their sticky buns, but it took us about 128 trips to the cafe on 108 dates to recognize the pattern of when sticky buns were available or not. \n\nHere I have made a github style waffle plot, that I believe makes the pattern of when sticky buns are available clearer. We finally noticed what the pattern was in October, when the days sticky buns were available increased.\n\nI copied the `gh_waffle` function from [Matti Vuorre's blog post](https://mvuorre.github.io/posts/2016-03-24-github-waffle-plot/) with some minor modifications.\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-4-1.png){width=768}\n:::\n:::\n\n\n\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

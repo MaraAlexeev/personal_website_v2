@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Mara Alexeev's Website"
+  draft-mode: gone # unlinked # Or 'gone' or 'visible'
   navbar:
     left:
       - posts.qmd # add your posts.qmd file to your navbar!
