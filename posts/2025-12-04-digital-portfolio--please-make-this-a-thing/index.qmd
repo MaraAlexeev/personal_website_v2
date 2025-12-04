@@ -1,0 +1,52 @@
+---
+title: Digital Portfolio
+author: 'Mara Alexeev'
+date: 2025-12-04
+date-modified: last-modified
+categories: []
+draft: false
+description: Someone please make this happen for the productivity wins
+slug: digital-portfolio--please-make-this-a-thing
+image: 'suprafile.png'
+archives:
+  - function () ,.Internal(date())
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# Introduction
+
+I use Google products at work and personally. As the product has improved over the years, I more frequently have many types of files (as well as many files) related to a single project. Great creative file power, but it doesn't have the control at the project level that these new powers demand! 
+
+I dream of  a tidy portfolio or suprafile of collected files. This is separate from having a folder with all these files in it for a few important reasons: 
+
+1) Sometimes you have many teams working on files and so things can't live in a single folder
+
+2) It gets hard to flip between files that are related to each other if you have to go back and forth and don't know which files should be viewed as a whole product
+
+3) Understanding the relationships between the files is difficult even if they are all in the same folder together (eg drafts, out of date, brainstorming)
+
+# Idea
+
+My working idea is illustrated here in this public [Google Sheets](https://docs.google.com/spreadsheets/d/1zm2_uOseRxLF6nkZbgJgq2JEVUxUmCgzS1lipgLgrKs/edit?usp=sharing).
+
+
+# Hopes and dreams
+
+Please someone see this idea and steal it. Please let me know if you did because it would encourage me to put up backlog of 100s of other ideas I either want to see happen or do myself. 
+
+# Features
+
+Automate some of the simple tasks like a changelog and a table of contents. 
+
+Create a single source of truth function that allows a project manager to approve major changes eg which files are displayed. 
+
+Suggest edits across files based on changes in one place that impact another file. 
+
+Create a readme that you can just dump raw messages into that ingests them and creates a coherent "memory keeper" of the project. Use the feedback of what people use or read in the Readme to improve the Readme or solicit feedback from the domain experts. 
+
+Have access control features so someone can access a single file but only in a specific way eg they can only add rows in the spreadsheet and have that be visible on the project level instead of at the file level only (eg like how it is in Google Sheets now.)
