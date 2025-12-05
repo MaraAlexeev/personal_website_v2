@@ -1,0 +1,33 @@
+---
+title: Typing tour
+author: 'Mara Alexeev'
+date: 2025-12-05
+date-modified: last-modified
+categories: [Quarto,Project]
+description: Version 1 of a typing game for my children
+slug: typing-tour
+image: 'image_for_blog_post.png'
+archives:
+  - function () ,.Internal(date())
+format: html
+---
+
+# Inspiration
+
+I want to teach my son to touch type. I also want to control the content that he types and keep it as a local project on our home computer. 
+
+Here's my first attempt assisted by Gemini on 2025-12-04. It felt great for a quick version 1. I think it took about 20 minutes to create. In fact, I spent more time troubleshooting my quarto website workflow to display it than I did creating it. (Problem solved by closing RStudio and re-opening my project.)
+
+```{=html}
+<iframe width="780" height="1000" src="typing_tour.html" title="Typing tour version 1"></iframe>
+```
+
+# Next steps
+
+- Create a less monolithic file structure. I want to be able to create different practice passages for him to practice. 
+
+- Have a more comprehensive set of lessons that teach the different strokes.
+
+- Create lessons that focus more on real words rather than bizarre strings. 
+
+- Create combo grammar and typing lessons where you have to fix the grammar or spelling to complete the lesson.
