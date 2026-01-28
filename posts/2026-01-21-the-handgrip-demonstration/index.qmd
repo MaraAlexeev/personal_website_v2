@@ -1,0 +1,177 @@
+---
+title: The handgrip demonstration
+author: 'Mara Alexeev'
+date: 2026-01-28
+date-modified: last-modified
+categories: [R]
+draft: false
+description: A simple way to understand the magnitude of differences by sex
+slug: the-handgrip-demonstration
+image: 'holding_hands.jpg'
+archives:
+  - function () ,.Internal(date())
+toc: false
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+if (!require("pacman")) install.packages("pacman")
+
+# 2. Use p_load instead of library
+pacman::p_load(
+  ggplot2,
+  dplyr,
+  googlesheets4,
+  tidyverse,
+  janitor,
+  gt
+)
+
+
+
+
+gs4_deauth()
+
+grip_data <- read_sheet("https://docs.google.com/spreadsheets/d/1pbNyGKE1txSLDp-fXFI557XrsjzUH99OjTkGxdAZHO4")
+
+
+grip_data_clean <- grip_data %>%
+ janitor::clean_names() %>%
+  rename(
+    sex = gender
+  )
+
+grip_plot <- ggplot(grip_data_clean, aes(x = age_point_for_plotting, y = nhanes_mean_kg, color = sex, fill = sex)) +
+  
+  # 1. Add the shaded ribbon for Standard Deviation (Mean +/- 1 SD)
+  geom_ribbon(aes(ymin = nhanes_mean_kg - nhanes_mean_sd, 
+                  ymax = nhanes_mean_kg + nhanes_mean_sd), 
+              alpha = 0.2,      # Make it transparent
+              color = NA) +     # Remove the ribbon border line
+
+  # 2. Add the line for the Mean
+  geom_line(linewidth = 1) +
+  
+  # 3. Add points to show exactly where the age point (averaged when needed) data measurements are
+  geom_point(size = 2) +
+
+  # 4. Labels and Formatting
+  labs(title = "Mean Grip Strength by Sex and Age",
+       subtitle = "Shaded area represents +/- 1 Standard Deviation",
+       x = "Age (Years)",
+       y = "Mean Grip Strength (kg)",
+       caption = paste0("Source: NHANES | Plot by Mara Alexeev | ", Sys.Date())) +
+  
+  theme_minimal() +
+  scale_color_manual(values = c("Female" = "#E74C3C", "Male" = "#2980B9"),
+                     breaks = c("Male", "Female"),
+                     name = "Sex") +
+   scale_fill_manual(
+    values = c("Female" = "#E74C3C", "Male" = "#2980B9"),
+    breaks = c("Male", "Female"),
+    name = "Sex") +
+  expand_limits(y = 0) 
+
+# Prepare the data
+publication_table <- grip_data_clean %>%
+  # 1. Sort by the numeric age to ensure 6 comes before 10
+  arrange(age_point_for_plotting)%>%
+  
+  # 2. Create a combined "Mean (SD)" column
+  mutate(
+    # sprintf ensures consistent decimal places (e.g., "10.0" instead of "10")
+    Stats_Label = sprintf("%.1f (%.1f)", nhanes_mean_kg, nhanes_mean_sd)
+  ) %>%
+  
+  # 3. Select only the columns we need for the final output
+  select(age_label, sex, Stats_Label) %>%
+  
+  # 4. Pivot to Wide Format (Males and Females side-by-side)
+  pivot_wider(
+    names_from = sex,
+    values_from = Stats_Label
+  )
+
+# Render the formatted table
+final_table <- publication_table %>%
+  gt() %>%
+  
+  # Add Main Titles
+  tab_header(
+    title = md("**Grip Strength Values**"),
+    subtitle = "Mean (Standard Deviation) in kg by Age and Sex"
+  ) %>%
+  
+  # Add a "Spanner" to group Male/Female under one header
+  tab_spanner(
+    label = "Sex",
+    columns = c("Male", "Female") # Adjust if your columns are ordered differently
+  ) %>%
+  
+  # Rename the Age column nicely
+  cols_label(
+    age_label = "Age Group (Years)"
+  ) %>%
+  
+  # Add Source Note at the bottom
+  tab_source_note(
+    source_note = "Data Source: NHANES"
+  ) %>%
+  
+  # Visual Styling (Optional but recommended for papers)
+  opt_row_striping() %>%  # Alternating row colors
+  tab_options(
+    heading.align = "left",
+    table.border.top.style = "solid",
+    table.border.top.width = px(3)
+  )
+
+```
+
+![](holding_hands.jpg){fig-alt="Bride puts on the groom's ring" fig-align="center"}
+
+
+
+One of the more startling realizations of having children in the modern world, is understanding how stark the physical differences are between boys and girls, men and women. From ball throwing distance to pull-up count to top running speed, the modest then nearly complete dominance of boys in all these and other measures is something to behold.
+
+As many have spoken and written about, the differences between the physical strength men and women are real and large. Yet because words are powerful and abstract, others have contorted words to obscure sex as the second most important binary category of humans—the other being whether you are dead or alive—in the minds of their fellow humans. 
+
+I offer a simple, physical demonstration available to any woman who has access to a trustworthy male partner and to any man who has access to a willing female partner. Note the asymmetry of that description. Hands are also required.
+
+First, the woman should take the man’s hand as she would in a normal handshake, then gradually increase the strength of her grip to 100% of her effort or until the man asks her to stop due to pain. Ask the man to describe the level of discomfort he felt.
+
+Reversing roles, have the man slowly increase his grip of his female partner’s hand, until she asks him to stop due to pain. Then have the man estimate what percentage of his maximal effort he was at when she asked him to stop.
+
+Do not read the rest of this short post before you complete that small exercise and reflection. 
+
+I promise you the experience will be better if you have completed the demonstration before reading the rest.
+
+…
+
+…
+
+…
+
+The following graph was created from data available from the NHANES studies (2010-2014) on grip strength. The numbers are directly from this table. To see the code for the plot you can visit my website. Note the points for most age ranges (above 18) are a midpoint of the grouped age range.
+
+A useful, though not completely accurate, model for hand grip strength would be that nearly ALL adult men and stronger than nearly ALL adult women.
+
+```{r}
+
+grip_plot
+```
+
+Grip strength is well correlated to lots of other measures of strength and general health, and the underlying data here support my intuition of how I would benchmark my own strength, as a below average height, medium build, healthy, adult woman, compared to the cohort of preteen/teen boys I would care for as a pediatrician. During training and my early career, I did lots of sports physical clinics as well as many normal well checks. After one surprising encounter with an younger teen boy, who threatening me with physical violence during a completely routine and boring visit, I started to consciously start visits with a threat assessment of patients and their parents. Sad but reality. 
+
+For girls, this was merely a rough size comparison. For boys, I estimated that early bloomers in the 11-12 range could physically overcome me, and by about 13 all healthy boys would easily be able to overpower me. And you can see in the plot and table that at age 13 males now have comparable mean hand grip strength compared to adult women. Puberty—heck of a drug.
+
+```{r}
+
+final_table
+```
