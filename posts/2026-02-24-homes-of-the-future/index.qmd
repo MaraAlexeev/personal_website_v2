@@ -1,0 +1,168 @@
+---
+title: Homes of the Future
+author: 'Mara Alexeev'
+date: 2026-02-24
+date-modified: last-modified
+categories: []
+description: "What will homes look like in 10 years" 
+slug: homes-of-the-future
+image: 'little_house.jpg'
+archives:
+  - function () ,.Internal(date())
+toc: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+# Premise: Homes of the future! (V1)
+
+Robotics, LLMs, computer vision, precision manufacturing--there are tons of exciting ways in which our homes will be organized around these technologies in the future. Today I am going to brainstorm a bit about how the integration of these new (and older!) technologies might look in our homes. I hope this is a bit of a time capsule that I can open in 10 years time to see how my predictions or ideas panned out against reality.
+
+In addition to LLMs and robots, I think we are also in the dark ages of material science and food sciences, so I will also try to tease out some plausible ideas from those topics as well.
+
+# New homes
+
+Here I will be focusing more on how new homes will differ rather than how old homes will be retrofitted. Presumably creating tech for existing styles of homes represents a far larger slice of the market, so that's where innovation will be most profitable in the near term, but I don't care about profits, I care about how awesome it is.
+
+## Climate control
+
+A large amount of energy usage is for heating and cooling our homes. Two obvious paths to optimize the human experience would be by building homes that have materials that are well designed specifically for the climate in the local area as well as the ability to heat and cool homes to keep the occupants comfortable rather than have a single temperature setting for a household.
+
+For example, we already have excellent options for thermostats and programs that heat and cool the home for different times of the day and depend on whether a person is at home or not. However, we still have fairly rough control over which areas of our homes are able to be adjusted. In the future I imagine every room will have a climate control option, which probably will require a few amendments to house design 1) better partitioning of spaces so that one bedroom can be 68 degrees and the hallway 75 degrees and the other bedroom across the hall can be be 72 degrees 2) better climate control integration with home elements such as windows/outside air access being opened or closed, blinds being closed or opened. I also imagine there are many building features that could be added on to homes that would improve climate comfort such as window or door awnings that would become more acceptable once they have auto-adjusting aspects that could allow for fine control based on time of the year and outdoor conditions.
+
+Passive feedback from humans (or pets!) of how they are feeling could also serve as an input to the climate function to adjust the temperature without the need to get up and change it. Imagine you are running hot overnight, your bedroom sensor can detect extra movement or increase in your body temperature and independently adjust the room to a cooler setting to help you stay asleep.
+
+In addition to heating and cooling, I think humidity control and air quality control will become routine parts of the home climate system that will be monitoring and adjust for comfort and well being.
+
+The interplay of climate systems and safety (fire, water damage, earthquakes, etc) seems logical as well. The same systems that keep people comfortable on a summer night will be able to alert them to a home fire or a leak behind the dishwasher.
+
+## Home Construction
+
+Homes will become more modular and standardized AND they will become more customization.
+
+I think of this as similar to Legos. There will be an increased drive towards standard building blocks that can be used easily by both human and robot workers to build homes, but because of generative AI, homes can have incredible pre-build planning and creation of custom blueprints to allow owners and builders to create a home that suits them, that conforms to best known practices and building codes with less oversight from humans in the planning process.
+
+Verification of correctness of builds will also become more important. I imagine testing can be built into the electric systems, plumbing, HVAC, etc that can help detect incorrect construction and verification of correct constructions. (I hope this is actually already done, but I don't know enough about these trades to have pre-knowledge of the specifics.)
+
+I imagine a world where an generative computer program can have inputs of things like local building codes, climate data, labor availability, a catalog of materials, style guides, best practices etc and generate home designs based on the builder's input and smooth away the tedious bits about where outlets can be placed for your specific garage/hobby space to planning for better sound suppression for bedrooms given the outdoor locations of existing roads or buildings.
+
+## Virtual buildings
+
+From the planning stage to the building stage to the future remodel needs, having in depth images and video of the house and its internal structure will be key to the routine care of homes as well as small or large remodeling plans. In fact maybe homes will be designed with future remodels in mind. Example you can buy a house now, but it is planned for 10 years in the future when you want to be able to add on a full bedroom suite to allow an elderly parent to live with you.
+
+Virtual pre-planning will also allow someone to design a kitchen and then test how they would like to work in this kitchen and find which design features are flops before building them.
+
+Robots that will work in our homes will also utilize a virtual copy of the home to plan activities to learn from problem areas (eg why can't the robo-vacuum get this section of the floor here).
+
+I also imagine in the future our homes will have a nice, dumb built in storage feature that allows owners, inspectors, workers, etc to access data about the house. I can see this as a box with a SD card (making sure the data isn't loss between moves/remodels) in it in the utility closet that can interface with a external device to keep track of important details such as blueprints and things like updates eg your roof update with details on the materials used, contractors doing the work, inspection results. Sort of a memory bank for the home that means you won't have to beg your insurance company to believe the previous owner had a new roof put on in July 2017 by a certified roofer with your sole evidence is grainy Google Earth photos or some scrawling notes left on the rafters by the roofer.
+
+## Routines
+
+Imagine never waking up to a beep of a dying battery in your smoke detector again. I can see a whole slew of different routine diagnostics that could be built into a home to detect issues long before you would personally notice. Smoke and heat detectors are one, but also any other detectors you might use in the home. We now have water detectors that are at high risk areas (washing machine, bathrooms, under the kitchen sink, etc) that sound the alarm if they detect water. In addition to temperature, humidity, water, smoke, carbon monoxide, and light detectors, we will probably have more that will be running diagnostics and also reporting on their own health. I suspect the already useful Google Homes and Alexas of the world will have great descendants that will allow us to integrate all this sensor data and control house features from a single point.
+
+It is definitely a shame that with all the new tools for home automation we have many great devices that don't talk to each other--even within the same company! I hope that we will see a more compatible future that allows many players on some standardized platforms. Or I guess our agents will create our own specific software layer on top of our incompatible subsystems.
+
+## PPI aka Physical Programming Interface
+
+More a general principle here, but just with the lovely examples of convergent evolution we see in the natural world, I imagine we will see robotic evolution converging on designs that are well suited for specific situations like cleaning clothing, wiping counter tops, vacuuming, etc but they will still need to interact with a huge variety of objects in the home. Just as with APIs, I can see a future where objects in the home can communicate or share instructions to robots and humans how to interact with them. No more spot testing in an inconspicuous location for your bathroom tile because don't know what the tile is actually made of or how it will interact with this particular cleaner. Maybe the robots will finally be able to use all the laundry symbols that I have to look up each time I try to wash the duvet or mattress cover.
+
+## Cleaning
+
+The houses will be built for robots (and humans) to be able to clean them. Imagine a drone duster!!!! Imagine baseboards that are designed to allow the robo-vacuum to get a perfect edge cleaning.
+
+I imagine the future of robots in the home is of two varieties: general and specialist. A humanoid robot might be very good at doing tasks that we currently do, but might also be able to unleash a type of specialist robot that humans would find too annoying to use. The example I think of is the dishwasher. Imagine a dish washing robot (might look very similar to what our dishwashers look like today) but that can have cameras in the machine that can verify when a dish is clean. So maybe our dishwasher takes fewer dishes at a time (don't want the machine to take up too much space), but a more generalist robot can handle loading and unloading the dishwasher more frequently than a human would want. Also, it makes me consider how will we change how we store things like dishes and food, if we imagine a robot might be accessing them instead of just humans.
+
+Another big chore around the home is cleaning clothing. We currently have really good in-home systems to wash clothing, but I can also imagine that out-of-home cleaning might be so good in the future, that we will just send our clothing away daily to get get cleaned and come back in tidy stacks for the generalist robot to put away. I am just seeing an app that has all of our clothes in it and a denotation of where the clothes live in the home and carries all the specialty cleaning information embedded in a tiny tag that scans and sorts it in the local laundromat. Sort of your mom labeling your underwear for summer camp, but with a future sheen.
+
+Also, it will be interesting how cleaning schedules are affected by the human routine. What will happen when we are home versus away versus when we are asleep?
+
+## Food Preparation
+
+I think it is hard to predict the breakdown of what will become easily done in the home by robots and specialty devices, what will be outsourced and delivered, and what we will continue to do by hand. Many people love to cook, including myself, but what I really love to do is feed my family great tasting, healthy food, I wouldn't mind chopping fewer onions.
+
+## Clothing
+
+A bit away from the home, but maybe more of a lifestyle future. I think that there is definitely a future in which we will have incredibly tailored clothing. A combination of excellent scanning of our body shapes and technology that allows tailoring of clothing as well as construction of clothing that surpasses our current abilities. Sort of 3D printing for clothing. Prediction: crocheting will still be a human superior task for the next decade.
+
+## Health monitoring
+
+People are getting real old. A big proportion of our population in the US is going to be old, super old. And the solution cannot be moving people into supported living centers. There are just way too many old folks and not enough young folks. And while the average life expectancy is not climbing as dramatically as it has in the past, I believe we will see it continue to creep up with new med tech, even if the distribution is stretched eg a very long right tail. This is going to mean we need, and people will want, ways for people to grow old at home without compromising too much on the quality of life.
+
+I have had contact with just too many cases of people falling and breaking a hip and not being found for hours--or days!--later. Granted I'm a physician so these types of stories find me more than non-physicians, but I promise it is just too high. Further more many people have more minor issues that could be monitored at home passively that could alert a person's physician or family if something is amiss.
+
+These can be super simple things--voice activation of calling in every part of the home--to more complicated like monitoring of movement in the home compared to the person's typical routine.
+
+Also, very near in the future is the ability to do nearly all routine health monitoring from the home. I imagine all our homes will house little health kits (more details below) that allow us to monitor the familiar measures like blood pressure and pulse ox, but also we will be able to do self auscultation, snap pictures of our children's ears when they have an earache, and, hopefully with the advent of more home diagnostics, we will be able to do swabs and other simple tests at home. A trip to the doctor will be the rare case for some special examination, procedure, or verification of a home diagnosis.
+
+People will need to find a replacement for the age old hobby of collecting doctors and appointments with advanced age.
+
+## Lighting
+
+In the 2026th year of our Lord, I did not imagine we would still be annoyed at our lighting options. But here we are, and we are squinting. Three things seem most annoying about lighting: cords, needing various placements for various tasks, and various color/intensity needs. Presumably with the improvement of batteries and the ability of robots to deal with re-charging and re-positioning of difficult to reach areas, we will be able to slap lighting anywhere we want it and easily adjust it. Obviously LED lighting is incredible already with ability to control colors, intensity, warmth, etc (my \$80 Christmas lights are insane!) These will get better and more seamless integrated into our life. They will adjust based on ambient conditions and our feedback to them.
+
+## Delivery
+
+Homes will be designed for delivery! It will be easier for carriers to deliver packages (hello drones and autopilot delivery robots) and for the robots inside to accept and use the deliveries. One could imagine a future where the delivery room and the fridge have a shared wall because most groceries and food will be delivered. We will have more grocery store style fridges that have back and front doors to allow for easier first in, first out access and to minimize the distance and complexity from delivery to use.
+
+## Robot bedrooms
+
+We will definitely have utility rooms that are designed to charge and store robots or their accessories. It will be interesting to see what tools get shared between humans and robots eg will we all be using Swiffers in 2050 still and which household accessories will be designed with only a robot user in mind?
+
+What will the laundry room or butler's pantry of the future look like!? We will have storage areas that the robots can easily access, but will we also have far fewer stored items, because we will have routine deliveries that bring the goods as we need them. Instead of using our home space to store 10 rolls of paper towels, we will just have excellent inventory management that has buffer, but not too much excess lying around, taking up space.
+
+## Cars and transportation
+
+I rode in a Tesla last year equipped with some version of the FSD, and I said to my husband: This is the future. No one will drive in the future in routine situations. These means cars will have at least two interesting design pressures to adapt to. First, we will want to do things in the car like work, read, play games, chat face-to-face with other passengers, sleep, etc., so the inside of cars will change to accommodate this. They will become a mobile room of our home. As a parent of three young children, another design pressure I am hoping will demand a response is handling schedule logistics for families. Instead of having 2 or 3 cars, I hope a family with multiple children could plan to have a single car (or no car!) and be able to rely on flex cars to handle the less common situations that force families to buy the car they don't really want because 2 days a month the logistics of family life demand it.
+
+I worry too that we will see people tolerate even more intolerable distances of home to work commutes, but I trust that everyone will be able to make the decisions that make the most sense for them and their families, but I can just see the headlines when these future cars become not an extra, mobile room of the home, but rather become the sole room of the home for people priced out of housing or the workaholic.
+
+Still the idea of being able to go to sleep in one city and wake up in another city 8 hours later, seems like a dream come true for US citizens given our huge country and current far flung family distributions.
+
+## Safety
+
+The three big areas of injuries are the kitchen (hot and sharp), the bathroom (wet and hard surfaces), and stairs (gravity).
+
+### Kitchen
+
+Moving more cooking and prep to robots or out-of-home preparation will decrease the kitchen injuries. I also believe it will be possible for much better prep assistance technology to reduce some of the repetitive tasks in the kitchen like slice veggies or cutting onions.
+
+How we combine these technologies will be interesting. We already have amazing technologies available off the shelf at retailers: electronic pressure cookers, sous vide machines, mini combi ovens. I haven't yet found a bread maker I love, but I haven't tried very hard and "old fashioned" way is fine, but as my number of kids grows and their appetites, cooking and baking has become more of a logistics game than an enjoyable hobby.
+
+There also amazing new tools coming out, like ultrasonic knives, which will help reduce knife injuries because less pressure is required to cut through the substance.
+
+### Bathrooms
+
+We have not been bold at all in imagining what a bathroom could look like. Especially for a people with limited mobility or who are quite aged, a shower pod that is the human equivalent of a car wash would be a game changer for independent living and preserving dignity. Turns out even 90 year olds often don't like someone else bathing them.
+
+### Stairs
+
+First I actually predict there will be a huge pressure to go towards single level homes because of the aging population, but another option that will be a game changer is better, smaller, cheaper in home elevators. For retrofitting existing homes, the terrible chair lifts of today are is such need of a revamp. There has be to better ways: standing lifts, stairs made with the intention of some day having a lift. Alternatively, I think with better approaches to physical therapy as a primary therapy rather than an adjunct, we could see much better muscle and balance preservation in the elderly than we do today. The GLP-1 revolution will also help treat severe obesity that is limiting mobility for some folks. Hopefully, the en masse weight loss doesn't come with a worse situation of wide scale sarcopenia and fragility.
+
+### Pools
+
+While home insurance is doing its part to enforce fencing and other easy safety wins, accidental drowning continues to be a tragic if uncommon outcome. The risk groups tend to be either children or people who can't swim, people under the influence of alcohol or drugs, or people suffering from a medical event (eg seizure or heart attack) who then drown.
+
+It seems like in addition to physical barriers preventing unauthorized access to the pool eg fences, two great technologies will make pools super safe. One will be the deployment of already existing camera and computer vision technology to monitor pools and send alerts for people (or pets!) having trouble in the water. The other will be a rescue robot! We already have great tech for pool robots to clean, I actually think it is not even far off to have robots that work with pool cameras to identify people in trouble and to rescue them.
+
+### Drug overdoses
+
+This one has tons of policy baggage around it (eg why are their so many drug overdoses--like seriously where did all this fentanyl come from!?!!) and the problem that people really like to use drugs in our current cultural moment (and this has been true at different times and spaces.) HOWEVER, people also love monitoring their biometrics, and I think it is not a stretch to say one of the best accepted harm reduction measures would be cheaply and widely available devices like Fitbits and such that could alert people to a seriously depressed respiratory drive, a fall in blood oxygen saturation, or a mini ECG machine that detects early heart attacks or irregular heart rhythms. Fingers crossed that we can get the false positive rate down on some of these already existing technologies and get them deployed and working effectively in real world circumstances. Hopefully, we can also get some better treatment and prevention for drug addiction, but I am focusing on the home (or trying to) not the medical sphere.
+
+### Med Kits
+
+I am sure I must have seen this in a movie because I don't think I am clever enough to come up with this, but I imagine we could have a med kit in homes that can act as a home pharmacy and emergency care dispense kit. Imagine a dose of medication available in every home where seconds and minutes matter: epinephrine, naloxone, a MONA (morphine, oxygen, nitroglycerin, aspirin) delivery system. Then coupled with telemedicine and home (drone!?!?!) delivery of less urgent meds eg antibiotics or pain relief for simple burns, we could improve out of hospital delivery of care and keep people at home who don't need to sit in a waiting room catching whatever influenza like illness the person next to them has.
+
+## Home Factories
+
+A few devices hold such promise to me--CNC machines, 3D printers, combi ovens--and I wonder how many of these types of devices we will have in our homes that produce what we will need on demand versus having access to these things in the community. I can imagine that the cost of the devices is so low that it becomes possible to have them in our homes for mere normies. Then I can imagine an alternate world in which these specialty devices are so impressive and expensive and require such material inventory and maintenance that we will have them in every community but not at home, and we will be able to send out for our custom silverware holder after snapping a few pictures of our drawer and sketching out the details on our phone.
+
+## Retreat!
+
+I will also imagine with the rise of all this amazing tech, we will probably see a similar rise in super simple cabin vacations were we go to get away from it all, but maybe the tech will be so good we won't ever notice the tech that is there and our home lives will be visually simpler than they are today.
+
+## Old fashioned, well fashioned
+
+What will we hold on to as a rewarding, hand crafted part of our lives and what will we hand off? I love having a clean house and tasty meals, and I don't mind doing the work to make these happen, but I do have other things I would like to do which I don't have time for currently. I also love doing things with my hands and learning new skills. I imagine I would probably search for physical tasks to replace the tasks I do that are high on the embodied scale. These sorts of transitions are bound to be fraught with hand wringing about what is convenient and good progress and what destroys our souls. And on that happy note, here's to an awesome future!!
